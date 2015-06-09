@@ -1,0 +1,149 @@
+* {
+	width: auto;
+	font-weight: normal;
+}
+body {
+	background: #fff;
+	background: transparent !important;
+	font-family: Arial, Helvetica, sans-serif;
+	color: black !important;
+	font-size: 12pt;
+	line-height: 18pt;
+	margin: 0;
+	padding: 20px;
+}
+
+#logo {
+	border-bottom: 1px solid #000;
+	margin-bottom: 10pt;
+	padding-bottom: 10pt;
+}
+ 
+h1 {
+	font-weight: bold;
+}
+h2 {
+	font-size: 16pt;
+	font-weight: bold;
+	margin-bottom: 4pt;
+}
+h3 {
+	font-size: 12pt;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+}
+h1, h2 {
+	padding: 0;
+	margin-bottom: 0.5em;
+}
+
+#recipe-title h2 {
+	font-size: 20pt;
+}
+
+.print-popup-controls {
+	position: absolute;
+	top: 15pt;
+	right: 15pt;
+}
+
+.print-popup-controls a {
+	margin-left: 10px;
+}
+
+a {
+	text-decoration: underline;
+	color: #0F52B0;
+}
+
+a img {
+	border: 0;
+}
+
+p {
+	margin: 0 0 10pt 0;
+	padding: 0;
+}
+
+/* Show print-only items */
+.printonly {
+	display: block;
+}
+
+/* Hide screen-only items */
+.screenonly {
+	display: none;
+}
+/* give a page break */
+HR.pagebreak {
+border:none;
+page-break-after: always;
+}
+/* Global layout tweaks */
+
+.recipe #post-details {
+	font-size: 10pt;
+	margin-bottom: 10pt;
+	color: #999;
+}
+
+ul li {
+	margin: 0 0 3pt 0;
+}
+
+font {
+	font-size: 14pt !important;
+	font-weight: bold;
+}
+
+a.print {
+	display: block;
+	float: left;
+	padding-left: 22px;
+	background: url(../images/site/icons_site.png) no-repeat 0 -368px;
+}
+
+a.close {
+	display: block;
+	float: left;
+	padding-left: 22px;
+	background: url(../images/site/icons_site.png) no-repeat 0 -734px;
+}
+#panel-left,
+#list-sort,
+#panel-right,
+.pagination {
+	display: none;
+}
+/* Recipe Book styling */
+.thumb-list {
+	font-size: 0.75em;
+}
+.thumb-list,
+.thumb-list .text-content  {
+	width: auto !important;
+}
+
+.thumb-list li {
+float: left;
+list-style-type: none;
+margin-right: 0;
+width: 100% !important;
+}
+
+.thumb-list li h2,
+.thumb-list h5,
+.thumb-list h5 a {
+	font-weight: bold;
+	font-size: 14px;
+}
+.thumb-list h5 {
+	margin: 10px 0;
+}
+.thumb-list li #recipe-directions {
+	clear: both;
+}
+.thumb-list .boxing {
+	width: auto !important;
+}

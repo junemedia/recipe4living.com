@@ -1,0 +1,266 @@
+/*--------------------------------------------- Article / Blog Posts */
+#post {
+	margin: 15px 0px 25px;
+	position: relative;
+}
+#post .pagination {
+	margin-bottom: 0px;
+}
+#post .entry p {
+	margin: 0 0 15px 0;
+}
+#post .entry ol {
+	margin-top:10px;
+}
+#post .entry ol li {
+	margin-left:25px;
+	margin-bottom:5px;
+}
+#post #pullquote {
+	float: right;
+	clear: right;
+	width: 300px;
+	padding: 25px 0 15px 20px;
+	margin: 0;
+}
+#share_post {
+	font-size:0.875em;
+}
+#share_post li {
+	display: block;
+	float: left;
+}
+#share_post div.rate {
+	float: left;
+	margin: 0 0 0 5px;
+}
+#share_post div.rate a {
+	display: block;
+	float: left;
+	margin: 0 0 0 5px;
+}
+
+#sharethis {
+	line-height: 1.25em;
+	margin-top: 5px;
+}
+
+#sharethis strong {
+	float: left;
+}
+
+#sharethis ul {
+	float: left;
+	margin-left: 5px;
+}
+
+#sharethis li {
+	float: left;
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #4e4e4e;
+}
+
+#sharethis li.last {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#sharethis li a {
+	padding-left: 19px;
+	/*background-image: url(../images/site/icons_share.png);*/
+	background: none;
+	background-repeat: no-repeat;
+}
+
+li#digg a {background-position: 0 0;}
+li#facebook a {background-position: 0 -32px;}
+li#delicious a {background-position: 0 -64px;}
+li#reddit a {background-position: 0 -96px;}
+li#kirtsy a {background-position: 0 -128px;}
+
+
+/*-------------------------------------------- Featured Article */
+
+#featured_article {
+	margin-bottom: 25px;
+}
+
+.landing #featured_article .title {
+	width: 319px;
+	margin: 0 0 20px 15px;
+}
+
+.landing #featured_article cite {
+	display: block;
+	margin: -5px 0 2px 0;
+}
+
+.landing #featured_article p {
+	margin-bottom: 15px;
+}
+#featured_article .image {
+	float:right;
+	width:320px;
+}
+
+
+/*-------------------------------------------- Articles */
+
+#article_title div.img {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+#article_title div.body {
+	float: left;
+	width: 510px;
+}
+
+#article_title h2 {
+	text-transform:none;
+}
+#article_title h3 {
+	margin-bottom: 3px;
+	text-transform:none;
+}
+
+#article_icon {
+	background: url(../images/site/icons_explore.png) no-repeat 0 -180px;
+}
+
+#post_title .img {
+	float: left;
+	margin: 0 15px 0 0;
+}
+#post_title .body {
+	float: left;
+	width: 510px;
+}
+#post_title .body h3 {
+	margin: -2px 0 6px;
+}
+
+#post_title .body p {
+	background: url(../images/site/dotted-small.png) repeat-x 0 0;
+	padding-top: 7px;
+}
+
+#about_author {
+	margin-bottom: 15px;
+}
+
+#about_author p {
+	margin: 0 0 12px 0;
+	font-size:0.75em;
+}
+
+
+/*-------------------------------------------- Quick recipe */
+#quickrecipe_title h2 {
+	margin-bottom: 10px;	
+}
+#quickrecipe_title h3 {
+	font-size: 1em;
+}
+#quickrecipe_title div.im {
+	float: left;
+	width: 300px;
+}
+#quickrecipe_title div.body {
+	float: left;
+	width: 300px;
+}
+
+
+/*-------------------------------------------- Categories */
+
+#explore_icon {background: url(../images/site/icons_explore.png) no-repeat 0 -727px;}
+
+#balancing_act_block .header .title {background: url(../images/site/icons_explore.png) no-repeat 0 -75px;}
+#pregnancy_parenting_block .header .title {background: url(../images/site/icons_explore.png) no-repeat 0 -443px;}
+#career_money_block .header .title {background: url(../images/site/icons_explore.png) no-repeat 0 -311px;}
+#your_business_block .header .title {background: url(../images/site/icons_explore.png) no-repeat 0 -561px;}
+
+#news_icon {background: url(../images/site/icons_explore.png) no-repeat 0 -605px;}
+
+/*-------------------------------------------- Balancing Act */
+#balancing_act_icon {background: url(../images/site/icons_explore.png) no-repeat left top;}
+/*-------------------------------------------- Balancing Act */
+#pregnancy_and_parenting_icon {background: url(../images/site/icons_explore.png) no-repeat left -364px;}
+/*-------------------------------------------- Balancing Act */
+#career_and_money_icon {background: url(../images/site/icons_explore.png) no-repeat left -241px;}
+/*-------------------------------------------- Balancing Act */
+#your_business_icon {background: url(../images/site/icons_explore.png) no-repeat left -488px;}
+
+
+/*-------------------------------------------- Article >> Featured Article */
+
+.articles #featured_article .title {
+	background: url(../images/landing/icon_landing_sprite.png) no-repeat left -146px;
+}
+
+
+/*-------------------------------------------- Checklist */
+.checklist ol {
+	margin: 10px 0 5px;
+}
+.checklist ol li {
+	list-style-image: url(../images/articles/checklist.png);
+	margin: 0 0 10px 25px;
+}
+.checklist .entry ul li {
+	margin: 0;
+}
+
+/*-------------------------------------------- List of all recipes and articles */
+.alphabet {
+	margin-left: 10px;
+}
+.alphabet .letter {
+	padding: 0px 2px;
+}
+.letter-heading {
+	margin: 10px 0px;
+}
+/*-------------------------------------------- Recipes and articles tabs */
+div.article-tabs {
+	background: #fca918;
+	padding: 10px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-radius-topright: 5px;
+	position: relative;
+	height: 21px;
+}
+
+div.article-tabs ul {
+	list-style-type: none;
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+}
+div.article-tabs ul li {
+	float: left;
+	margin-right: 6px;
+}
+div.article-tabs ul li a {
+	display: block;
+	padding: 6px 10px;
+	font-size: 0.75em;
+	font-weight: bold;
+	background: #f9d596;
+}
+
+div.article-tabs ul li a:hover {
+	background: #fae5c1;
+	text-decoration: none;
+}
+div.article-tabs ul li.on a,
+div.article-tabs ul li.on a:hover {
+	background: #fff;
+}

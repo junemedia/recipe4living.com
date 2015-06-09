@@ -1,0 +1,275 @@
+#connect_icon {
+	background: url(../images/site/icons_connect.png) no-repeat 0 -619px;
+}
+#friends_icon {
+	background: url(../images/site/icons_connect.png) no-repeat 0 -564px;
+}
+#members_icon {
+	background: url(../images/site/icons_connect.png) no-repeat 0 -564px;
+}
+
+/*-------------------------------------------- Newest Members */
+
+#newest_members .title {
+	background: url(../images/site/icons_connect.png) no-repeat 0 -527px;
+}
+
+#newest_members li {
+	list-style: none;
+	list-style-image: none;
+}
+
+#newest_members .img {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+#newest_members .body {	
+	float:left;
+	width:250px;
+}
+
+/*-------------------------------------------- Meet a Member */
+
+#meet_a_member .title {
+	background: url(../images/site/icons_connect.png) no-repeat 0 -167px;
+}
+
+#meet_a_member .img {
+	float: right;
+	margin: 0 0 10px 15px;
+}
+
+#meet_a_member .interview {
+	margin: 0 0 10px 0;
+}
+
+/* Members */
+.member_list ul {
+	list-style: none;
+	list-style-image: none;
+	padding: 0;
+	margin: 0;
+	width: auto;
+}
+.member_list li {
+	float: left;
+	margin: 0;
+	padding: 10px;
+	width: 85px;
+	height: 120px;
+	font-size: 0.6875em;
+	line-height: 1.25em;
+	border: 0;
+}
+.member_list li:hover {
+	border: 0;
+}
+.member_list li a.img  {
+	margin-bottom: 5px;
+}
+.photos li {
+	height: 140px;
+}
+
+.memberlisting .member_list li {
+	width: 80px;
+}
+
+.tag-cloud {
+	margin-top:10px;
+}
+.tag-cloud p {
+	font-weight:bold;
+	font-size:0.75em;
+	margin-bottom:4px;
+}
+.tag-cloud a.large {
+	font-size:1.8em;
+}
+
+/*-------------------------------------------- Mom Interview */
+
+#mom_interview .title {
+	background: url(../images/site/icons_connect.png) no-repeat 0 -167px;
+	float: none;
+	width: auto;
+}
+
+#mom_interview .img {
+	float: right;
+	margin: 0 0 10px 15px;
+}
+
+#mom_interview .interview {
+	margin: 0 0 10px 0;
+}
+
+#interviews_icon {
+	background: url(../images/site/icons_connect.png) no-repeat 0 -565px;
+}
+
+/*-------------------------------------------- Interviews >> Featured Interview */
+
+
+.interviews #meet_a_member .content {
+	height:350px;
+}
+.interviews #meet_a_member .header {
+	background: url(../images/site/dotted-small.png) repeat-x left bottom;
+	padding: 0 0 8px 0;
+	margin: 0 0 10px 0;
+}
+
+.interviews #meet_a_member .img {
+	float: right;
+	margin: 0 0 10px 10px;
+}
+
+.interviews .item_list strong {
+	font-style: italic;
+	display: block;
+	padding: 0 0 7px 0;
+	margin: 2px 0 5px 0;
+	font-weight: normal;
+	background: url(../images/site/dotted-small.png) repeat-x left bottom;
+}
+
+/*-------------------------------------------- Search */
+
+ul#tag-cloud {
+	list-style: none;
+	list-style-image: none;
+	padding: 0;
+}
+ul#tag-cloud li {
+	display: inline;
+}
+ul#tag-cloud a {
+	text-decoration: underline;
+}
+ul#tag-cloud a:hover {
+	text-decoration: none;
+}
+#search-members {
+	margin: 10px 0;
+}
+#search-members .submit button {
+	margin: 10px 0 0 26%;
+}
+.memberlisting .standardform .fieldwrap {
+	margin-bottom:10px;
+}
+
+
+/*-------------------------------------------- Profile */
+
+.profile .block {
+	margin: 0 0 30px 0;
+}
+.profile .main .img {
+	float: left;
+	margin: 0 15px 0 0;
+	width: 140px;
+}
+.profile .main .body {
+	float: left;
+	width: 445px;
+}
+.profile .buttons {
+	margin: 5px 0 0 0;
+}
+.profile .buttons a {
+	float: left;
+	display: block;
+	margin: 5px 0 0 0;
+}
+.profile .main .header  {
+	margin: 0 0 10px 0;
+}
+.profile .main .holder {
+	background: #FFF;
+	border: 1px solid #CCC;
+	border-top: 0;
+	padding: 15px;
+	margin: -1px 0 0 0;
+}
+.profile dt {
+	width: 160px;
+	float: left;
+	clear: left;
+	margin: 0 20px 1em 0;
+}
+.profile dd {
+	margin: 0 0 1em;
+	width: 230px;
+	float: left;
+}
+.profile .blog_posts {
+	margin: 0 0 -10px 0;
+	padding: 0;
+}
+.profile .blog_posts li {
+	list-style: none;
+	list-style-image: none;
+	margin: 0 0 10px 0;
+	padding: 0 0 11px 0;
+	background: url(../images/site/dotted-small.png) repeat-x left bottom;
+}
+.profile ul.invisible {
+	list-style: none;
+	list-style-image: none;
+	padding: 0;
+}
+.profile #my_day_snapshot ul h3 {
+
+}
+.profile #comments .item_list ul {
+	margin: 10px 0 0 0;
+}
+.profile #comments .item_list li, .profile #recent_activity .item_list li {
+	padding: 10px;
+}
+.profile #comments .item_list p, .profile #recent_activity .item_list p {
+	font-size: 0.75em;
+}
+.profile #comments .byline {
+	
+}
+#profile_module .tab_menu {
+	margin-bottom: 1px;
+}
+
+/*-------------------------------------------- Photos Detail */
+
+#photo_detail div.header {
+	display: block;
+	margin-bottom: 15px;
+	width:599px;
+}
+
+#photo_detail div.header div.img {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+#photo_detail div.header div.body {
+	float: left;
+	width: 480px;
+	background:none;
+	padding:0;
+}
+div.wizard #photo_detail div.header div.body {
+	width: 400px;
+}
+
+#photo_detail .photo_body {
+	text-align:center;
+	background:#fff;
+	padding:15px;
+}
+#photo_detail .photo_body h3 {
+	font-size:1.3em;
+}
+#photos_icon {
+	background: url(../images/site/icons_contribute.png) no-repeat 0 -112px;
+}

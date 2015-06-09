@@ -1,0 +1,5 @@
+rewriteEngine off
+
+order deny,allow
+deny from all
+allow from 66.54.186.254

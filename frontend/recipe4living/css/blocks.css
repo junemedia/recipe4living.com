@@ -1,0 +1,159 @@
+#search_icon {
+	background: url(../images/site/icons_site.png) no-repeat 0 -248px;
+}
+
+#page-intro {
+	margin-bottom: 30px;
+}
+
+/*-------------------------------------------- Useful Resources */
+
+#useful_resources .title {
+	background: url(../images/site/icons_connect.png) no-repeat 0 -112px;
+}
+
+#useful_resources li {
+	margin: 0 0 10px 0;
+}
+
+
+/*-------------------------------------------- Bottom ads */
+#bottom_feature {
+	margin-top:15px;
+}
+
+#bottom_feature .margin {
+	margin-right: 15px;
+}
+
+#bottom_feature div.img {
+	display: block;
+	height: 90px;
+	margin: 0 0 10px 0;
+}
+
+#bottom_feature strong {
+	display: block;
+}
+
+/*-------------------------------------------- Spotlight */
+
+.spotlight ul {
+	margin-top: 5px;
+}
+
+.spotlight ul li {
+	margin: 0 0 5px 0;
+}
+
+.spotlight li.other {
+	font-size: 0.875em;
+	line-height: 1.25em;
+}
+
+.spotlight li.featured a.img {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+.spotlight li.featured {
+	background: #f1f1f1;
+	padding: 10px;
+	margin: 0 0 10px -20px;
+	list-style: none;
+	height:130px;
+}
+
+.spotlight li.featured .body {
+	float: left;
+	width: 205px;
+}
+.spotlight li.featured a {
+	font-weight:bold;
+}
+.spotlight li.featured cite a {	
+	font-weight:normal;
+}
+
+/*-------------------------------------------- Explore Landing */
+
+.explore li.featured a.img {
+	float: left;
+	margin: 0 15px 7px 0;
+}
+
+/*-------------------------------------------- Save Time Landing */
+#page-intro .img {
+	float:right;
+	width:320px;
+	height:200px;
+	background:#fff;
+}
+#page-intro .body {
+	float:left;
+	padding:8px 10px;
+	font-size:0.875em;
+	width:245px;
+	text-transform:lowercase;
+}
+
+
+
+/*-------------------------------------------- Mom News Block */
+
+.news .item_list div.body,
+.lifesavers .item_list div.body {
+	float: left;
+	width: 270px;
+}
+
+.news .item_list p.snippet,
+.lifesavers .item_list p.snippet {
+	margin-bottom: 5px;
+	font-size: 0.875em;
+}
+
+#news_block .header .title {
+	padding: 5px 0 0 0;
+	background: none;
+}
+
+#news_block ul {
+	margin-bottom: 0px;
+}
+
+#news_block li {
+	margin: 0 0 8px 0;
+	font-size: 0.875em;
+	line-height: 1.25em;
+}
+
+
+
+/*-------------------------------------------- Search */
+
+#search_block .title {
+	background: url(../images/site/icons_site.png) no-repeat 0 -98px;
+}
+
+#search_results .relevance strong {
+	font-size: 0.75em;
+	background: #FFFFCC;
+}
+
+#site_search {
+	margin-bottom: 25px;
+}
+
+#submit_content #site_search label {
+	float: left;
+	line-height: 1.75em;
+	margin: 0 10px 0 0;
+}
+
+#submit_content #site_search input.textinput {
+	margin: 0 10px 0 0;
+	width: 300px;
+	float: left;
+}
+

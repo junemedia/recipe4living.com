@@ -1,0 +1,46 @@
+/* --------------------------------------------------------------------IE6 */
+
+#nav-header,
+#recipes_listing .thumb-list li,
+.rounded h2.main,
+#nav-top li,
+#site-notice,
+.team-member,
+#reference_guides ul li,
+#related_categories ul li,
+.recipe #post,
+#comments li
+{
+	zoom: 0;
+	height: 100%;
+}
+
+form dl dd {
+	float: none;	
+}
+dl.form dd {
+	float: none;	
+}
+
+.button-lg {
+	height: 36px;
+}
+
+#why-join a.button-md {
+	width: 80px;
+}
+#featured_recipe ul {
+	zoom: 1;
+}
+
+#form-share-recipe li {
+	height: 0;
+}
+
+#share-recipe {
+	width: 490px;
+	overflow: hidden;
+}
+.shopping-list .included .portions .portion {
+	display: inline;
+}

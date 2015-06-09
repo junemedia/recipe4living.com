@@ -1,0 +1,37 @@
+#landing_intro {
+	margin-bottom: 15px;
+}
+
+#landing_intro img {
+	float: left;
+	margin-right: 15px;
+}
+
+#landing_featured {
+	width: 460px;
+	overflow: hidden;
+}
+
+#landing_featured ul {
+	width: 465px;
+}
+
+#landing_featured li {
+	width: 120px;
+	height: 250px;
+	float: left;
+	margin: 0 5px 5px 0;
+	padding: 15px;
+	background: #eee;
+}
+
+#landing_featured div.im a {
+	display: block;
+	margin-bottom: 10px;
+}
+
+#landing_featured h3 {
+	font-size: 0.75em;
+	line-height: 1.5em;
+	margin: 0;
+}

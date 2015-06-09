@@ -1,0 +1,24 @@
+/* --------------------------------------------------------------------IE7 */
+
+#recipes_listing .thumb-list li,
+#site-notice
+{
+	zoom: 1;
+}
+
+form dl dd {
+	float: none;	
+}
+dl.form dd {
+	float: none;	
+}
+
+#reference_guides ul li,#related-categories ul li {
+	background-position: 0 5px;
+}
+#featured_recipe ul {
+	zoom: 1;
+}
+.shopping-list .included .portions .portion {
+	display: inline;
+}

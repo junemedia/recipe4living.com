@@ -1,0 +1,234 @@
+/*-------------------------------------------- Sound Off */
+
+#sound_off .title {
+	background: url(../images/site/icons_connect.png) no-repeat 0 -62px;
+}
+
+#sound_off li {
+	margin: 0 0 10px 0;
+}
+
+
+/*-------------------------------------------- Group Discussions */
+#groups_listing {
+	margin-top:10px;
+}
+#groups_icon {
+	background: url(../images/site/icons_connect.png) no-repeat 0 0;
+}
+
+/* Group listing */
+#groups_listing div.body {
+	width: 265px;
+	float: left;
+}
+#groups_listing div.header {
+	margin-bottom: 4px;
+	padding: 0 100px 5px 0;
+	background: url(../images/site/dotted-small.png) repeat-x left bottom;
+	position: relative;
+}
+#groups_listing div.item_list h3 {
+	font-size: 1.143em;
+	line-height: 1.1em;
+}
+#groups_listing div.header small {
+	display: block;
+	font-size: 0.75em;
+}
+#groups_listing div.img {
+	width: 125px;
+	height: 125px;
+}
+#groups_listing div.actions {
+	position: absolute;
+	top: 5px;
+	right: 0px;
+	width: 100px;
+}
+#groups_listing div.actions a {
+	float: right;	
+}
+#groups_listing ul ul {
+	margin: 0 0 3px;
+	list-style-image: url(../images/site/bullet.png);
+	padding-left: 20px;		
+}
+
+#groups_listing .item_list .content li {
+	list-style-image:url(../images/site/bullet.png);
+	margin:0;
+	padding-left:0px;
+}
+
+/* Group header */
+#group_header {
+	position: relative;
+	margin-bottom: 25px;
+}
+#group_header h2 {
+	padding-right: 100px;	
+}
+#group_header div.img {
+	width: 125px;
+	float: left;
+	margin: 0 15px 0 0;
+}
+#group_header .buttons {
+	padding-top:10px;
+}
+#group_header div.body {
+	float: left;
+	width: 460px;
+}
+#group_header div.actions {
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	width: 100px;
+}
+#group_header div.actions a {
+	float: right;	
+	margin-left:7px;
+}
+#group_header p {
+	margin-bottom: 5px;
+}
+#group_header .tags {
+	margin-top: 3px;
+}
+
+/* Latest discussions list */
+#start_discussion button {
+	margin-top:7px;
+}
+#latest_discussions .item_list li {
+	padding: 7px;
+}
+#latest_discussions .button, .members .button,
+#group_links .button_dark, .members .button_dark {
+	margin-top: -22px;
+	margin-left:5px;
+}
+#latest_discussions  .header .title {
+	padding-left:0;
+}
+#discussion-legend ul {
+	margin:0;
+	padding:10px 0 5px 0;
+	list-style-type:none;
+	font-size:0.75em;
+}
+#discussion-legend li {
+	display:inline;
+	margin-right:15px;
+	padding-left:20px;
+}
+#discussion-legend li.popular {
+	background:url(../images/site/flag_yellow.png) no-repeat left;
+}
+#discussion-legend li.very-popular {
+	background:url(../images/site/flag_red.png) no-repeat left;
+}
+
+
+/* Start discussion */
+#start_discussion input.textinput,
+#start_discussion textarea {
+	width: 284px;
+}
+
+
+/* Links */
+
+#group_links ul {
+	margin: 0 0 -10px 0;
+}
+#group_links li {
+	margin: 0 0 10px 0;
+}
+
+/* Discussion post list */
+#post_list div.details {
+	float: left;
+	width: 75px;
+	margin: 0 40px 0 0;
+}
+#post_list div.details p.date {
+	font-size: 0.625em;
+	margin: 5px 0 0 0;
+}
+#post_list div.body {
+	width: 510px;
+}
+#post_list div.body div.content {
+	font-size: 0.75em;
+}
+#post_list div.body h4 {
+	margin: 0 0 10px 0;
+	font-size: 1.1em;	
+	line-height: 1.15em;
+}
+#post_list div.body p.text-content {
+	margin: 10px 0 0 0;
+	padding: 10px 0 0 0;
+	border-top: 1px solid #d8dddf;	
+}
+
+/* ------------------- Group Detail Page - Member List */
+
+.groups .member_list li {
+	width: 80px;
+}
+
+/* ------------------- Group Detail Page - Photos */
+#group-photos ul {
+	width: auto;
+}
+#group-photos li {
+	height: auto;
+	font-size: 0.6875em;
+	text-align: center;
+	padding: 10px;
+	width:80px;
+}
+#groupphotos_listing #group-photos li {
+	width: auto;
+	height: 156px;
+	font-size: 1em;
+	text-align: left;
+	padding: 10px;
+}
+
+#groupphotos_listing #group-photos li img {
+	margin-bottom:10px;
+}
+#group-photos a.img {
+	margin-bottom: 5px;
+	text-align:center;
+}
+#group-photos a.delete {
+	display: block;
+}
+#group-photos img {
+	display: block;
+	background-color: #fff;
+	border: 1px solid #CCC;
+}
+#group-photos small.caption {
+	display: block;
+	font-size: 0.6875em;
+	height: 2em;
+	width: 100px;
+	line-height: 1em;
+}
+/* Photo upload form */
+#group-photo-upload dl .caption {
+	padding-top: 0;
+}
+#group-photo-upload dl dt {
+	width: 15%;	
+}
+#group-photo-upload dl dd {
+	width: 84%;	
+}

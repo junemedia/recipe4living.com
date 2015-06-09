@@ -1,0 +1,11 @@
+cache/
+leon/
+assets/
+nbproject/
+cache_rss/
+.htaccess/
+sitemap*
+*.sql
+.project
+.monitoring
+config*

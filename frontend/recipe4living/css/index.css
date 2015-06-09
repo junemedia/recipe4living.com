@@ -1,0 +1,341 @@
+#panel-center .ad.homepage {
+	margin-bottom: 10px;
+}
+
+/*-------------------------------------------- Featured Recipe */
+
+#featured_recipe {
+	background: #FFF;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+#panel-center #featured_recipe div.content {
+	padding-bottom: 0;
+}
+
+#featured_recipe h2 {
+	font-size: 1.125em;
+	margin-top: 10px;
+}
+
+#featured_recipe p {
+	margin: 5px 0;
+}
+
+#featured_recipe ul {
+	margin: 0px 15px -15px 0px;
+	width:650px;
+}
+
+#featured_recipe ul li {
+	display: block;
+	float: left;
+}
+
+#featured_recipe li a {
+	display: block;
+	padding: 5px;
+	background: #e6e2d9;
+	border-top: 1px solid #c8c2b4;
+	border-left:1px solid #cfcabe;
+	border-right: 1px solid #ffffff;
+	border-bottom: 1px solid #c8c2b4;
+}
+
+#featured_recipe li.first a {
+	border-left: 0;
+	/*padding-left: 5px;*/
+	/*-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;*/
+}
+
+#featured_recipe li.last a {
+	border-right: 0;
+	padding-right: 5px;
+	/*-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px;*/
+}
+
+#featured_recipe li a:hover {
+	background: #f6f3ed;
+}
+
+#featured_recipe li a.current {
+	border-top-color: #FFF;
+	background: #FFF;
+}
+
+
+/* Panels JS, please don't change... */
+#featured_recipe div#panels-holder {
+	width: 650px;
+	overflow: hidden;
+	position: relative;
+}
+#featured_recipe div.panel {
+	float: left;
+	width: 650px;
+	margin: 0px 20px;
+	padding: 0px;
+	overflow: hidden;
+	/*height: 254px;*/
+	height: 380px;
+}
+
+/*-------------------------------------------- Featured Articles, Top Recipes */
+
+#featured_articles, #top_recipes {
+	background: #FFF;
+}
+
+#featured_articles, #top_recipes .text{
+	font-size: 12px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.thumb-list div.im {
+	float: left;
+	margin-right: 10px !important;
+}
+
+.thumb-list div.im img {
+	display: block;
+}
+
+.thumb-list li {
+	margin: 10px 0 0;
+}
+
+.thumb-list h5 {
+	font-size: 0.75em;
+	line-height: 1.4em;
+	font-weight: normal;
+}
+
+.half .thumb-list div.desc {
+	float: left;
+	width: 125px;
+}
+
+
+/*-------------------------------------------- Tip of the Day */
+
+#tip_of_the_day {
+	background: #FFF;
+	margin: 10px 0;
+}
+
+#tip_of_the_day div.im {
+	float: left;
+	margin-right: 10px;
+}
+
+#tip_of_the_day div.im a {
+	display: block;
+}
+
+#tip_of_the_day div.desc {
+	float: left;
+	width: 375px;
+}
+
+/*-------------------------------------------- Reference Guides */
+
+#reference_guides {
+	background: #FFF;
+	margin: 10px 0;
+}
+
+#reference_guides ul,#related_categories ul {
+	margin: 5px 0 0 0;
+}
+
+#reference_guides ul li,#related_categories ul li {
+	background: url(../images/site/bullet.png) no-repeat 0 3px;
+	padding-left: 10px;
+	margin-bottom: 3px;
+}
+
+/*-------------------------------------------- Popular Searches */
+
+#popular_searches {
+	background: #FFF;
+}
+
+#popular_searches ul {
+	float: left;
+	width: 100%;
+	margin: 5px 0 0 0;
+}
+
+#popular_searches ul li {
+	background: url(../images/site/bullet.png) no-repeat 0 3px;
+	padding-left: 10px;
+	margin-bottom: 3px;
+}
+
+/*-------------------------------------------- Cook of the Day */
+
+#cook_of_the_day {
+	background: #FFF;
+	margin-bottom: 10px;
+}
+
+#cook_of_the_day h2 {
+	margin-bottom: 5px;
+}
+
+#cook_of_the_day h3 {
+	font-size: 0.75em;
+}
+
+#cook_of_the_day div.im {
+	float: right;
+	margin: 0 0 0 10px;
+}
+
+/*-------------------------------------------- Chew on that */
+
+#chew_on_that {
+	background: #FFF;
+	margin-bottom: 10px;
+}
+
+#chew_on_that h2 {
+	margin-bottom: 5px;
+}
+
+#chew_on_that h3 {
+	font-size: 0.75em;
+}
+
+/*-------------------------------------------- Latest Activity */
+
+#latest_activity {
+	background: #FFF;
+	margin-bottom: 10px;
+}
+
+/*-------------------------------------------- Polls */
+
+#polls {
+	background: #FFF;
+	margin-bottom: 10px;
+}
+
+#polls h2 {
+	margin-bottom: 5px;
+}
+
+#polls .statements {
+	margin-bottom: 5px;
+}
+
+#polls .statement {
+	width: 240px;
+	margin: 1px 0px;
+	clear: both;
+	background-image: url(../images/polls/bar.jpg);
+	background-repeat: no-repeat;
+}
+
+#polls .statementholder {
+	position: relative;
+	display: block;
+	min-height: 20px;
+	padding-top: 5px;
+}
+
+#polls input {
+	margin-top: 3px;
+	margin-right: 3px;
+}
+
+#polls label {
+	cursor: pointer;
+	font-weight: normal;
+	width: 130px;
+	line-height: 100%;
+}
+
+#polls .percentage {
+	position: absolute;
+	left: 240px;
+	width: 30px;
+	font-size: 11px;
+	text-align: left;
+	padding-left: 3px;
+	line-height: 16px;
+}
+
+#polls .item_separator {
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 10px;
+	padding-top: 10px;
+}
+
+/*-------------------------------------------- Slideshows */
+
+#slideshows {
+	background: #FFF;
+	margin-bottom: 10px;
+}
+
+#slideshows h2 {
+	margin-bottom: 5px;
+}
+
+#slideshows div.im {
+	float: right;
+	margin: 0 0 0 10px;
+}
+
+#slideshows .item_separator {
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 10px;
+	padding-top: 5px;
+}
+
+/*-------------------------------------------- Blog posts */
+
+#blog-posts {
+	background: #FFF;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+#blog-posts h2 {
+	margin-bottom: 5px;
+}
+
+/*-------------------------------------------- Messages */
+
+.messaging-system tbody .new-message td {
+	background-color: #EEEEEE;
+}
+
+/*-------------------------------------------- Site Map */
+
+#site_map {
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: #FFF;
+}
+
+#site_map ul {
+	float: left;
+	width: 100%;
+	margin: 5px 0 0 0;
+}
+
+#site_map ul li{
+	padding-left: 10px;
+	margin-bottom: 3px;
+}
+
+#site_map ul li a {
+	font-size:11px;
+}

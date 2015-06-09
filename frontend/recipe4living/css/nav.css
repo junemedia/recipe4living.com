@@ -1,0 +1,293 @@
+/*-------------------------------------------- Nav Links */
+#nav-links {
+    line-height: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#nav-links ul, #footer ul {
+	list-style: none;
+}
+#nav-links ul li {
+	display: inline;
+	margin: 0 0 0 10px;
+}
+
+/*-------------------------------------------- Nav Call to Action buttons */
+#nav-call-to-action {
+	position: absolute;
+	right: -10px;
+	top: 25px;
+	width: 245px;
+	height: 30px;
+	font-weight: bold;
+	font-size: 0.875em;
+}
+
+#nav-call-to-action img#fbhover {
+	position: absolute;
+	top: -50px;
+	right: 135px;
+	display: none;
+}
+
+#nav-call-to-action img#twhover {
+	position: absolute;
+	top: -50px;
+	right: 110px;
+	display: none;
+}
+
+#nav-call-to-action img#pihover {
+	position: absolute;
+	top: -50px;
+	right: 85px;
+	display: none;
+}
+
+#nav-call-to-action img#youthover {
+	position: absolute;
+	top: -50px;
+	right: 60px;
+	display: none;
+}
+
+#nav-call-to-action img#cotbhover {
+	position: absolute;
+	top: -50px;
+	right: 33px;
+	display: none;
+}
+
+#nav-call-to-action img#rsshover {
+	position: absolute;
+	top: -50px;
+	right: 6px;
+	display: none;
+}
+
+
+
+/*
+#nav-call-to-action ul {
+	list-style: none;
+}
+#nav-call-to-action ul li {
+	display: block;
+	float: left;
+	margin: 0 0 0 15px;
+}
+#nav-call-to-action ul li a.parent {
+	font-weight: bold;
+	font-size: 0.875em;
+	line-height: 1.75em;
+	background-image: url(../images/site/icons_site.png);
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	display: block;
+}
+
+#nav-call-to-action a#share-recipe-link {
+	background-position: 0 0;
+}
+
+#nav-call-to-action a#rss-feeds-link {
+	background-position: 0 -48px;
+}
+
+/*-------------------------------------------- Search */
+#nav-top-form-search {
+	/*position: absolute;
+	top: -3px;
+	left: 315px;*/
+}
+#nav-top-form-search div.categories {
+	margin-bottom: 7px;
+}
+#nav-top-form-search label {
+	color: #4e4e4e;
+	font-weight: normal;
+	font-size: 0.75em;
+	line-height: 1em;
+}
+/*-------------------------------------------- Top Nav */
+
+#nav-top {
+	display: block;
+	margin-top: 0px;
+	position: relative;
+	z-index: 10;
+	height: 32px;
+	background: #464646;
+}
+
+/* Nav bar */
+#nav-top ul {
+	list-style-type: none;
+	padding: 0;
+	float: left;
+	z-index: 12;
+	border-left: 1px solid #5D6A76;
+}
+#nav-top li {
+	padding: 0px;
+	display: block;
+	float: left;
+	position: relative;
+}
+
+/* Drop-down buttons */
+#nav-top li div.nav-item,
+#nav-top li div.nav-icon-item  {
+	font-weight: bold;
+}
+
+
+#hrt {
+background-color:#BF0507;
+}
+#nav-top li#hrt a:hover
+{
+background-color:#ff9d9d;
+}
+
+#nav-top li div.nav-item a {
+	color: #fff;
+	display: block;
+	float: left;
+	padding: 0 20px;
+	border-right: 1px solid #5D6A76;
+	font-size: 0.810em;
+	line-height: 32px;
+}
+#nav-top li div.nav-icon-item span {
+	color: #fff;
+	display: block;
+	float: left;
+	padding: 0 12px;
+	font-size: 0.810em;
+	line-height: 32px;
+}
+
+#nav-top li div.nav-icon-item img
+{
+float: left;
+    height: 24px;
+    margin-left: 15px;
+    margin-top: 4px;
+    width: 24px;
+}
+
+#nav-top li.drops div.nav-item a {
+	background-image: url(../images/site/icons_site.png);
+	background-repeat: no-repeat;
+	background-position: 100% -113px;
+	padding-right: 27px;
+}
+
+#nav-top li div.nav-item a:hover,
+#nav-top li:hover div.nav-item a,
+#nav-top li.selected div.nav-item a {
+	background-color: #5D6A76;
+	text-decoration: none;
+}
+
+
+/* Drop-downs */
+#nav-top li div.nav-popup {
+	position: absolute;
+	z-index: 9999;
+	display: none;
+	background: #5D6A76;
+	border-top: 0;
+	padding: 5px;
+	left: -1px;
+	top: 100%;
+	width: 150px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}
+#nav-top li:hover div.nav-popup, #nav-top li.hover div.nav-popup, #nav-top li.open div.nav-popup {
+	display: block;
+}
+#nav-top li div.nav-popup ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 5px;
+	border: 0;
+	width: 150px;
+}
+#nav-top li div.nav-popup ul li {
+	float: none;
+	text-align: left;
+}
+#nav-top li div.nav-popup li a {
+	display: block;
+	color: #FFF;
+	float: none;
+	background: none;
+	border: 0;
+	font-size: 0.75em;
+	line-height: 1.25em;
+	font-weight: bold;
+	padding: 4px 11px;
+	text-decoration: none;
+}
+#nav-top li div.nav-popup li a:hover {
+	background: #fff;
+	color: #0F52B0;
+	text-decoration: none;
+	position: relative;
+}
+
+
+/*-------------------------------------------- Browse Recipes */
+#nav-left {
+	margin-bottom: 7px;
+}
+
+.recipe .rounded h2.main {
+	margin-bottom: 0;
+}
+
+#nav-left div.block {
+	margin-bottom: 0px;
+}
+#nav-left li {
+	padding-bottom: 2px;
+}
+#nav-left div.last {
+	margin-bottom: 0;
+}
+
+#nav-left a.parent {
+	font-size: 0.9em;
+	display: block;
+	margin-bottom: 8px;
+}
+
+#nav-left .text-content ul {
+	padding: 0;
+	margin: 3px 0 3px 0;
+}
+
+#nav-left a.more {
+	display: block;
+	font-size: 0.6875em;
+	color: #666;
+}
+
+#nav-left div.block h3 {
+	font-size: 0.75em;
+	margin-bottom: 2px;
+}
+
+#nav-left h3, #nav-left h3 a {
+	color: #333;
+}
+
+#nav-left ul.expanded {
+	margin-left: 10px;
+}

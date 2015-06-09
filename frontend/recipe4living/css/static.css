@@ -1,0 +1,154 @@
+/*-------------------------------------------- About */
+
+.team-member {
+	padding: 15px;
+	background: #e7f0fc;
+	margin-top: 15px;
+}
+
+.team-member img {
+	float: left;
+	margin: 5px 15px 10px 0;
+}
+
+/*-------------------------------------------- Contact */
+#contact-form div.fieldwrap {
+	margin-bottom: 15px;
+}
+#form_contact {
+	margin-top: 15px;
+}
+#contact button {
+	margin-left: 35%;
+}
+#contact .inline select, #contact .inline input.textinput {
+	margin: 0px;
+}
+
+#contact-form div.inline div.validation-advice {
+	margin-left: 35%;
+}
+
+/*-------------------------------------------- Links */
+
+.links ul {
+	margin-bottom: 15px;
+}
+
+/*-------------------------------------------- RSS */
+
+#rss li.parent {
+	margin-bottom: 15px;
+}
+
+/*-------------------------------------------- Newsletter */
+
+#newsletter label {
+	float: left;
+	margin: 0 15px 0 0;
+	line-height: 1.75em;
+}
+
+#newsletter input.textinput {
+	width: 200px;
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+#newsletter .submit {
+	margin: 2px 0 0 0;
+}
+
+/*--------------------------------------------- Help & FAQs */
+
+#help ul.bullets h4 {
+	margin-bottom: 5px;
+}
+
+#help .help-list li {
+	clear: both;
+	margin-bottom: 15px;
+}
+
+#help p {
+	margin: 0;
+}
+
+/*--------------------------------------------- Press Coverage */
+
+#press .text-content h3 {
+	margin-bottom: 0px;
+}
+
+#press .text-content li {
+	margin-bottom: 10px;
+}
+
+/*--------------------------------------------- Press Coverage */
+
+#team_content h2 {
+	margin: 0 0 5px 0;
+}
+#team_content img.img, #about_content img.img {
+	float: left;
+	margin: 3px 22px 10px 0;
+}
+#team_content p {
+	margin-bottom: 1em;
+	font-size:1.18em;
+	line-height:20px;
+}
+
+
+/*--------------------------------------------- Advertise */
+
+#advertise_content p, #advertise_content ul {
+	margin-bottom: 1em;
+}
+
+/*--------------------------------------------- Advertise */
+#static_content p, #static_content ul {
+	margin-bottom: 1em;
+	font-size: 0.75em;
+}
+
+#static_content small {
+	margin: -15px 0 5px 0;
+	font-size: 0.6875em;
+	display: block;
+	text-align: right;
+}
+
+#static_content ol li {
+	list-style: upper-roman;
+	list-style-position: inside;
+}
+
+#static_content ol h3 {
+	text-transform: uppercase;
+	display: inline;
+	clear: right;
+	font-size: 1em;
+}
+
+#partner_list {
+	margin-bottom: 1em;
+}
+#partner_list ul {
+	width:625px;
+}
+#partner_list li {
+	height: 120px;
+	width:177px;
+}
+
+#search_listing .item_list div.body {
+	width:505px;
+}
+#search_listing #tab_menu ul {
+	font-size:0.83em;
+}
+
+.static .text-content h2 {
+	margin-top: 20px;
+}

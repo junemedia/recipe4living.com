@@ -1,0 +1,400 @@
+#account_icon {
+	/*background: url(../images/site/icons_connect.png) no-repeat 0 -676px;*/
+	background: none;
+}
+#recent_activity .header .title {
+	/*background: url(../images/site/icons_connect.png) no-repeat 0 -743px;*/
+	background: none;
+}
+.account a#change-password {font-size: 0.75em;}
+
+/*-------------------------------------------- Sign In */
+#sign-in {
+	margin-bottom: 10px;
+}
+#sign-in h2,
+#why-join h2 {
+	font-size: 1em;
+	margin-bottom: 0.75em;
+}
+#form_sign_in  {
+	margin-top: 10px;
+}
+#form_sign_in div.fieldwrap,
+#forgot-password-form div.fieldwrap {
+	margin-bottom: 10px;
+}
+
+#form_sign_in input.textinput,
+#forgot-password-form input.textinput {
+	width: 181px;
+}
+#forgot-password-link {
+	font-size: 0.75em;
+	margin: 4px 0 0 12px;
+	display: block;
+}
+#forgot-password-form label {
+	padding-top: 10px;
+}
+#why-join {
+	background: #f4f8ff;
+}
+
+#why-join ul {
+	margin-bottom: 10px;
+}
+
+/*-------------------------------------------- Register */
+
+#register-stages {
+	width: 490px;
+	overflow: hidden;
+}
+
+#register-stages div.title {
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+}
+
+#register-progress {
+	background-image: url(../images/account/register-steps.png);
+	width: 470px;
+	height: 50px;
+	margin: 0px auto;
+}
+
+.register-step2 {
+	background-position: 0 -50px;
+}
+
+
+/*-------------------------------------------- Profile */
+
+#profile h1 {
+	margin-bottom: 5px;
+}
+
+#profile #user-im {
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+#profile div.header {
+	float: left;
+	width: 300px;
+}
+
+.user-rank {
+	background-image: url(../images/site/user-ranking.png);
+	background-repeat: no-repeat;
+	display: block;
+	padding-left: 56px;
+	line-height: 1.25em;
+}
+
+.rank1 {background-position: 0 0px;}
+.rank2 {background-position: 0 -30px;}
+.rank3 {background-position: 0 -60px;}
+.rank4 {background-position: 0 -90px;}
+.rank5 {background-position: 0 -120px;}
+
+#profile div.body div.block {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #ddd;
+}
+
+/* --------------------------------------- Sidebar Navigation */
+#account_nav div.img {
+	float: left;
+}
+#account_nav p.info {
+	float: left;
+	font-size: 0.75em;
+	line-height: 1.2em;
+	padding-top: 5px;
+	margin-left: 10px;
+	width: 195px;
+}
+#account_nav ul {
+	margin-top: 10px;
+	font-size:0.85em;
+	text-transform:lowercase;
+}
+
+#account_nav .new {
+	color: #CC0000;
+	font-size: 0.65em;
+	font-weight: bold;
+	margin: 0px 5px;
+	text-transform: uppercase;
+}
+
+/*-------------------------------------------- Listings */
+.account .item_list .actions {
+	width: 140px;
+	float: left;
+}
+.account .item_list h3 {
+	font-size: 1em;
+	margin-bottom: 5px;
+}
+.account .item_list h4 {
+	font-size: 0.875em;
+	text-transform: lowercase;
+}
+.account .item_list .actions a.img {
+	display: block;
+	margin: 0 0 5px;
+	float: none;
+}
+.account .item_list .info {
+	width: 450px;
+	float: left;
+}
+.account .item_list .info p {
+	font-size: 0.75em;
+	margin-bottom: 8px;
+}
+.account .item_list .actions ul.links {
+	display: block;
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+.account .item_list .actions li {
+	display: block;
+	padding: 0;
+	margin: 5px 0 0 0;
+}
+
+/* Small listing */
+.account .small_list .header {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #ddd;
+}
+.account .small_list .header h3 {
+	font-size: 0.8125em;
+	margin-bottom: 0;
+	float: left;
+}
+.account .small_list .header small.date {
+	font-size: 0.6875em;
+	float: right;
+}
+.account .small_list .header em {
+	font-size: 0.75em;
+}
+.account .small_list .body {
+	float: none;
+	padding: 5px 0;
+}
+.account .small_list .actions {
+	text-align: right;
+	border-top: 1px solid #ddd;
+	padding-top: 6px;
+	margin-top: 6px;
+	width: auto;
+	float: none;
+}
+.account .small_list .actions small {
+	font-size: 0.6875em;
+}
+#message-current {
+	margin-bottom: 15px;
+}
+
+/* --------------------------------------- Account Alerts Module */
+#account_alerts h2 {
+	float:left;
+	width:100px;
+}
+#account_alerts li {
+	font-size:0.75em;
+}
+#account_alerts li a.delete {
+	font-size:0.91667em;
+	padding-left: 13px;
+	margin-left: 4px;
+}
+#account_alerts .button_dark {
+	margin-top:0;
+}
+#account_alerts .title .fr {
+	margin-left:8px;
+}
+.alert-list li {
+	padding:8px;
+}
+.alert-list li span.alert-detail {
+	width: 550px;
+}
+#edit-alerts {
+	margin: -62px 10px 0 0;
+}
+/* --------------------------------------- Account Details */
+#account-details {
+	margin-bottom: 10px;
+}
+
+#account-details-form #form_age {
+	width: 50px;
+}
+
+select#form_timezone {
+	width: 294px;
+}
+
+/* --------------------------------------- Recent Activity */
+#recent_activity {
+	margin-top: 10px;
+}
+
+/*----------------------------------------- Account Photos */
+#account-photos ul {
+	width: auto;
+}
+#account-photos li {
+	width: auto;
+	height: auto;
+	font-size: 1em;
+	text-align: left;
+	padding: 10px;
+}
+#account-photos a.img {
+	margin-bottom: 5px;
+}
+#account-photos a.delete {
+	display: block;
+}
+#account-photos img {
+	display: block;
+	background-color: #fff;
+	border: 1px solid #CCC;
+}
+#account-photos small.caption {
+	display: block;
+	font-size: 0.6875em;
+	height: 2em;
+	width: 100px;
+	line-height: 1em;
+}
+
+/* Photo upload form */
+#account-photo-upload dl .caption {
+	padding-top: 0;
+}
+#account-photo-upload dl dt {
+	width: 15%;	
+}
+#account-photo-upload dl dd {
+	width: 84%;	
+}
+
+/* ------------------- Group Detail Page - Member List */
+
+.profile .member_list .button_dark {
+	margin-top: -27px;
+}
+.profile .member_list li {
+	width: 80px;
+}
+
+#account-privacy-form label.radio {
+	float: left;
+	margin: 4px 10px 0 0;
+}
+
+/* --------------------------- Delete My Account */
+#delete-account {
+	font-size:0.75em;
+}
+
+.delete-text p {
+	padding: 3px 3px 3px 6px;
+}
+
+/*-------------------------------------------- Inbox */
+.messaging-wrap {
+	padding: 20px;
+}
+.messaging-wrap table#inbox {
+	margin-top: 15px;
+}
+.messaging-wrap table#inbox thead th {
+	background: #0F52B0;
+	color: #fff;
+	border: 0;
+}
+.messaging-system input.check {
+	margin: 0px auto;
+	float: none;
+}
+.messaging-system .message-check {
+	width: 20px;
+	text-align: center;
+}
+.messaging-system .message-actions {
+	width: 65px;
+	font-weight: bold;
+}
+.messaging-system .message-actions a img {
+	padding: 5px;
+}
+.messaging-system small {
+	display: block;
+	line-height: 1.25em;
+	color: #999;
+}
+.messaging-system tr td {
+	background: #FFF;
+}
+form.message-write {
+	font-size: 1.35em;
+}
+form.message-write dl dt {
+	width: 18%;
+}
+form.message-write dl dd {
+	width: 78%;
+}
+#message-detail h2.recent {
+	padding-top: 15px;
+	border-top: 1px dashed #ccc;
+	margin-top: 25px;
+	font-size: 1.1em;
+}
+
+#message-detail li {
+	padding: 10px;
+}
+#message-detail li.odd {
+	background: #f1f1f1;
+}
+#message-detail ul#message-current li.odd {
+	background: #e9f2fe;
+}
+/* New Messages */
+.messaging-system tr.new-message td {background: #fff;}
+.messaging-system tr.new-message td.message-subject {font-weight: bold;}
+
+#message-actions label, #message-actions a {
+	font-size: 0.75em;
+	float: left;
+}
+
+#message-actions a {
+	margin-left: 8px; 
+}
+/* Send Message */
+#write-message {
+	margin-bottom: 20px;
+}
+#write-message input.textinput,
+#write-message textarea {
+	width: 300px;	
+}

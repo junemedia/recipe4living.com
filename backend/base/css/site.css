@@ -1,0 +1,713 @@
+body, textarea {
+	font-size: 8pt;
+	font-family: georgia, verdana, arial sans-serif;
+}
+.normal {
+	font-size: 8pt;
+	color: black;
+	text-decoration: none;
+}
+.normal:hover {
+	text-decoration: none;
+}
+h1 {
+	border-bottom: 4px solid #000;
+}
+td, th {
+	border: 1px solid #ccc;
+	text-align: left;
+	padding: 8px 8px;
+}
+th {
+	background: #f4f4f4;
+	padding: 10px 8px;
+}
+fieldset{
+	border: 1px solid #ccc;
+}
+table, fieldset, p, form {
+	margin: 0 0 10px 0;
+}
+table {
+	border-collapse: collapse;
+}
+table.vertical tr td:first-child, table.horizontal th {
+	border: 1px #888888 solid;
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 18pt;
+	margin: 8px 10px 8px 3px;
+	display: inline;
+}
+h3 {
+	font-weight: normal;
+	font-size: 12pt;
+	display: inline;
+}
+img {
+	border: 0px;
+}
+
+div.header_wrapper {
+	margin-bottom: 8px;
+}
+
+.body_wrapper {
+	width: 550px;
+	margin: 0px auto;
+}
+
+.breadcrumbs {
+	padding-bottom: 10px;
+	text-transform: lowercase;
+}
+
+/*************** SITEWIDE *********************/
+
+textarea {
+	width: 550px;
+	height: 300px;
+	padding: 8px;
+	border: 3px #D7CADF double;
+	text-align: left;
+}
+
+form {
+	margin: 10px 5px 5px;
+}
+
+ul {
+	padding-left: 25px;
+}
+
+input {
+	padding: 3px;
+}
+
+.textinput {
+	width: 450px;
+	background-color: white;
+}
+
+code {
+	font-style: normal;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underlined {
+	text-decoration: underline;
+}
+
+.centered {
+	margin: 0px auto !important;
+}
+
+small, .small {
+	font-size: 8pt;
+}
+
+.small.link {
+	font-size: 8pt;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+.resolved {
+	font-style: italic;
+}
+
+.action {
+	margin: 0px 3px;
+}
+
+.chunk {
+	margin: 20px 0px;
+}
+
+input.bigbutton {
+	margin: 10px 0px;
+	font-size: 12pt;
+}
+
+/***************** MESSAGES *****************/
+
+div.message {
+	font-weight: bold;
+	padding: 10px 15px;
+	margin: 0 0 10px 0;
+}
+div.message-info {
+	background: #b6f0a2;
+	color: #2e4625;
+}
+div.message-warn {
+	background: #F9E782;
+	color: #45412E;
+}
+div.message-error {
+	background: #c00;
+	color: #fff;
+}
+
+/***************** PAGINATION ******************/
+
+div.pagination {
+	margin: 5px auto;
+	font-size: 0.875em;
+	line-height: 2em;
+	height: 2em;
+}
+div.pagination ul {
+	list-style: none;
+	list-style-image: none;
+	clear:both;
+	padding: 0;
+}
+div.pagination li {
+	display: block;
+	float: left;
+	margin: 0 2px 0 0;
+}
+div.pagination li a,
+div.pagination li span.item {
+	display: block;
+	font-weight: bold;
+	padding: 0px 10px;
+	background: #f1f1f1;
+}
+div.pagination li span.item {
+	color: #eee;
+	background: #fafafa;	
+}
+div.pagination li a:hover,
+div.pagination li span.current {
+	text-decoration: none;
+	background: #FFFFFF;
+	color: #2798bd;
+}
+	
+/**********************************************/
+
+/***********************LISTINGS****************/
+
+td, input {
+	font-family: Segoe UI, Verdana;
+	font-size: 9pt;
+}
+
+td.textfield, th.textfield {
+	padding: 0px;
+}
+
+td.textfield {
+	width: 750px;
+}
+
+td.textfield a, th.textfield a {
+	display: block;
+}
+
+td.textfield a {
+	width: 734px;
+	height: 100%;
+	padding: 8px;
+}
+
+th.textfield a {
+	padding: 10px 8px;
+}
+
+table.horizontal tr.metadata th, table.vertical td.metadata {
+	background-color: #CCCCCC;
+	font-weight: bold;
+	font-style: Georgia;
+}
+
+tr.high_priority.even {
+	background-color: #FFCFCF;
+}
+
+tr.high_priority.odd {
+	background-color: #FFC4C4;
+}
+
+tr.normal_priority.even {
+	background-color: #FFFFFF;
+}
+
+tr.normal_priority.odd {
+	background-color: #F8F8F8;
+}
+
+tr.low_priority.even {
+	background-color: #E2FEFF;
+}
+
+tr.low_priority.odd {
+	background-color: #F2FAFF;
+}
+
+tr.hovered {
+	background-color: #FFFFCC !important;
+	cursor: default;
+}
+
+th.medium {
+	width: 300px;
+}
+
+/***************** USER ********************/
+
+.user .img {
+	margin-right: 12px;
+}
+
+.user .text {
+	padding-top: 5px;
+}
+
+.user .text h3 {
+	margin: 16px 6px 0px 0px;
+}
+
+.user .text .details {
+	font-size: 7pt;
+	font-style: italic;
+	margin: 0px 6px 6px 6px;
+}
+
+.user img {
+	border: 1px #CCCCCC solid;
+}
+
+.user img:hover {
+	border: 1px #AAAAAA solid;
+}
+
+
+/*************** REPORTS ******************/
+.reports_reply {
+	
+}
+
+.reports_reply div {
+	margin: 10px 0px;
+}
+
+.reports_reply label {
+	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.reports_reply dd {
+	margin-left: 0px;
+	margin-bottom: 10px;
+}
+
+.reports_reply input {
+	width: 280px;
+}
+
+.reports_reply textarea {
+	width: 340px;
+	height: 70px;
+}
+
+
+/******** Quicksearch users ********/
+.quicksearch-user {
+	width: 200px;
+	padding: 5px;
+	border: 1px solid #DDDDDD;
+	border-top: 0px;
+	
+	cursor: pointer;
+}
+.quicksearch-user:hover {
+	padding-bottom: 3px;
+	border-bottom: 3px solid #CCCCCC;
+	background-color: #F5F5F5;
+}
+.quicksearch-user .image {
+	float: left;
+	margin-right: 5px;
+}
+.quicksearch-user .title {
+	font-size: 12pt;
+}
+.quicksearch-user p.recipes {
+	margin: 0px;
+	font-style: italic;
+	color: #AAAAAA;
+}
+
+/******** Quicksearch items ********/
+.quicksearch-item {
+	width: 200px;
+	padding: 5px;
+	border; 1px solid #DDDDDD;
+	border-top: 0px;
+
+	cursor: pointer;
+}
+.quicksearch-item:hover {
+	padding-bottom: 3px;
+	border-bottom: 3px solid #CCCCCC;
+	background-color: #F5F5F5;
+}
+.quicksearch-item .image {
+	float: left;
+	margin-rigiht: 5px;
+}
+.quicksearch-item .title {
+	font-size: 12pt;
+}
+.quicksearch-item p.author {
+	margin: 0px;
+	font-style: italic;
+	color: #AAAAAA;
+}
+
+/******** Recipe4living: ingredients page ***********/
+.recipe-ingredients {
+	float: left;
+}
+.recipe-ingredients ul.alphabet {
+	list-style: none;
+}
+.recipe-ingredients ul.alphabet li {
+	float: left;
+}
+.recipe-ingredients ul.alphabet li a {
+	display: block;
+	padding: 5px;
+	width: 10px;
+	text-decoration: none;
+	font-weight: bold;
+}
+.recipe-ingredients ul.alphabet li:hover {
+	background-color: #EAEAEA;
+}
+.recipe-ingredients #panels,
+.recipe-ingredients .panel {
+	position: relative;
+}
+.recipe-ingredients .group_panels_inner {
+	width: 20800px; /* 800px times 26 characters in the alphabet */
+}
+.recipe-ingredients .group_panel {
+	float: left;
+	width: 850px;
+	padding-top: 10px;
+}
+
+.recipe-ingredients-panel {
+	position: fixed;
+	top: 30px;
+	right: 0px;
+}
+.recipe-ingredients-panel .panel {
+	margin-bottom: 10px;
+	padding: 12px;
+	border: 2px #DDDDDD solid;
+	border-right: 0px;
+	
+	background-color: #EEEEEE;
+}
+.recipe-ingredients-panel .panel li.spacer {
+	display: block;
+	height: 1px;
+}
+.recipe-ingredients-panel .panel a {
+	text-decoration: none;
+}
+.recipe-ingredients-panel .panel a:hover {
+	text-decoration: underline;
+}
+.recipe-ingredients-panel .actions ul {
+	list-style: none;
+	padding-left: 0px;
+}
+.recipe-ingredients-panel .actions li {
+	margin: 5px auto;
+}
+.recipe-ingredients-panel .message {
+	margin-top: 10px;
+}
+.recipe-ingredients-panel .proposed li a.ingredient_search {
+	display: none;
+	float: right;
+}
+.recipe-ingredients-panel .proposed li:hover a.ingredient_search {
+	display: block;
+}
+.recipe-ingredients-panel .proposed li:hover {
+	background-color: #E3E3E3;
+}
+.recipe-ingredients-panel .ingredients-search #search_results {
+	margin-top: 10px;
+}
+.recipe-ingredients-panel .ingredients-search ul {
+	padding-left: 15px;
+}
+.recipe-ingredients-panel .ingredients-search li {
+	padding-bottom: 5px;
+}
+
+/******* Categories admin **********/
+#left_column {
+	width: 200px;
+	float: left;
+	padding: 10px;
+	background-color: #F8F8F8;
+}
+#left_column a {
+	display: block;
+	padding: 5px 2px;
+	text-decoration: none;
+	margin: 0px;
+}
+#left_column ul {
+	margin: 0px;
+	padding-left: 20px;
+	height: auto;
+}
+#left_column li {
+	margin-left: 5px;
+	list-style-image: url('/backend/base/images/famfamfam/folder.png');
+}
+#left_column li.current {
+	list-style-image: url('/backend/base/images/famfamfam/folder_go.png');
+}
+#left_column li.current > a {
+	font-weight: bold;
+	font-size: 10pt;
+}
+#left_column li a.selected {
+	background-color: #F0F0F0;
+}
+#left_column li:hover {
+	list-style-image: url('/backend/base/images/famfamfam/folder_edit.png');
+}
+#left_column li.expandable:hover {
+	list-style-image: url('/backend/base/images/famfamfam/folder_magnify.png');
+}
+#left_column li.expandable  li.expandable > ul {
+	display: block;
+}
+#left_column li.expandable li.expandable:hover > ul {
+	display: block;
+}
+#panel {
+	float: left;
+	padding: 20px;
+}
+#panel ul {
+	margin: 0px;
+	padding-left: 20px;
+}
+#panel div#tasks {
+	margin-top: 20px;
+}
+#panel div#tasks li {
+	padding: 5px 0px;
+}
+#panel #items_search_results {
+	width: 350px;
+	padding-left: 10px;
+}
+#panel li a {
+	text-decoration: none;
+}
+#panel li.create {
+	list-style-image: url('/backend/base/images/famfamfam/page_white_add.png');
+}
+#panel li.file {
+	list-style-image: url('/backend/base/images/famfamfam/page_white_text.png');
+}
+#panel li.recipe {
+	list-style-image: url('/backend/base/images/famfamfam/page_white.png');
+}
+#panel li.mkdir {
+	list-style-image: url('/backend/base/images/famfamfam/folder_add.png');
+}
+#panel li.edit {
+	list-style-image: url('/backend/base/images/famfamfam/folder_edit.png');
+}
+#panel li.rmdir {
+	list-style-image: url('/backend/base/images/famfamfam/folder_delete.png');
+}
+#panel li.ls {
+	list-style-image: url('/backend/base/images/famfamfam/folder_magnify.png');
+}
+#panel li.flush {
+	list-style-image: url('/backend/base/images/famfamfam/arrow_refresh.png');
+}
+#panel div#items {
+	margin-top: 20px;
+	width: 450px;
+}
+#panel div#tasks .item,
+#panel .item {
+	padding: 2px;
+}
+#panel .item:hover {
+	background-color: #F2F2F2;
+}
+#panel .item .item_tasks {
+	display: none;
+}
+#panel .item:hover .item_tasks {
+	display: block;
+}
+#panel .item .item_tasks li {
+	display: inline;
+	list-style: none;
+	padding: 0px 3px;
+}
+#panel small {
+	font-size: 0.9em;
+}
+#panel label {
+	display: block;
+	margin-bottom: 10px;
+}
+#panel label span {
+	display: block;
+}
+
+/******** Box admin **********/
+#box_details button,
+#box_details input[type=submit] {
+	border-width: 1px;
+	margin: 1px;
+	
+	cursor: pointer;
+}
+#box_details button:hover,
+#box_details input[type=submit]:hover {
+	border-color: #AAAAAA;
+	border-width: 2px;
+	margin: 0px;
+}
+#box_details ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Individual box content blocks */
+#box_details li.content {
+	width: 220px;
+	float: left;
+	border: 1px #DDDDDD solid;
+	padding: 10px;
+	margin: 5px;
+	text-align: center;
+}
+#box_details li.content:hover {
+	border: 2px #BBBBBB solid;
+	margin: 4px;
+	background-color: #F5F5F5;
+}
+#box_details li.content .image {
+	display: block;
+	border: 1px #DDDDDD solid;
+	margin: 0px auto 10px auto;
+}
+#box_details li.content .title {
+	font-size: 1.2em;
+	padding: 5px auto;
+}
+#box_details li.content label {
+	display: block;
+	margin: 0px auto;
+	padding: 5px 0px;
+}
+
+#box_details .slide_article li.content{
+	width:460px;
+}
+
+#box_details .slide_article #new p label{
+	width:460px !important;
+}
+
+#box_details li.content label:hover {
+	background-color: #E8E8E8;
+}
+
+#box_details li.content.dailyTip {
+	width: 400px;
+}
+#box_details li.content.dailyTip label {
+	width: 100%;
+}
+#box_details li.content.dailyTip textarea {
+	width: 350px;
+	height: 100px;
+}
+
+/* Add new box content block */
+#box_details li.new.content, 
+#box_details li.new.content:hover {
+	background-color: #F0FFF0;
+	border-color: #88AA88;
+}
+#box_details li.new.content label:hover {
+	background-color: #D8EFD8;
+}
+#box_details li.new.content input.button {
+	font-weight: bold;
+}
+
+#box_details li.new.content.featuredItems {
+	width: 1200px;
+	clear: both;
+}
+
+/* Search box content block */
+#box_details li.content .search input[type=text] {
+	width: 300px;
+}
+#box_details li.content .search input[type=text],
+#box_details li.content .search input[type=submit] {
+	font-size: 1.4em;
+	padding: 5px;
+}
+#box_details .results {
+	margin-top: 10px;
+}
+#box_details li.content .search .results li {
+	border: 0px;
+	margin: 1px;
+	width: 235px;
+	float: left;
+}
+#box_details li.content .search .results li:hover {
+	border: 1px #E0FFE0 solid;
+	margin: 0px;
+}
+#box_details li.content .search .results label {
+	cursor: pointer;
+}
+#box_details li.content .search li .author {
+	font-size: 0.95em;
+}
+
+#box_details li.staticContent {
+	width: 650px !important;
+}
+

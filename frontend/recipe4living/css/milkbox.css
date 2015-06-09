@@ -1,0 +1,98 @@
+/*-------------------------------------------- Milkbox */
+#mbOverlay {
+	position: absolute;
+	left: 0;
+	width:100%;
+	background-color: #000;
+	z-index:100;
+	cursor: pointer;
+}
+#mbCenter {
+	position: absolute;
+	z-index: 101;
+	overflow: hidden;
+	left: 50%;
+	top: 10%;
+	background-color: #fff;
+	border: 5px solid #1e689f;
+	margin: 0;
+	padding: 5px;
+}
+.mbLoading{
+	background: #fff url(../images/milkbox/loading.gif) no-repeat center;
+}
+#mbImage {
+	margin:0;
+	padding:0;
+	height:0;
+	border: none;
+	font-size: 0;
+	overflow: hidden;
+}
+.clear {
+	clear: both;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	overflow: hidden;
+}
+
+
+/* Bottom */
+#mbBottom { 
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666;
+	line-height: 1.4em;
+	text-align: left;
+	padding-top: 8px;
+	margin: 0;
+}
+
+/* Navigation */
+#mbNavigation {
+	float:right;
+	width:27px;
+	padding-top:3px;
+	border-left:1px solid #9c9c9c;
+}
+#mbCount { 
+	width: 55px; 
+	overflow: hidden;
+	padding-top: 1px;
+	float: right;
+	text-align: right;
+	font-size: 9px;
+}
+#mbCloseLink, #mbPrevLink, #mbNextLink {
+	outline:none;
+	display:block;
+	float:right;
+	height:20px;
+	cursor: pointer;
+}
+#mbPrevLink, #mbNextLink {
+	width:17px;
+}
+#mbPrevLink {
+	background: transparent url(../images/milkbox/prev.gif) no-repeat;
+}
+#mbNextLink {
+	background: transparent url(../images/milkbox/next.gif) no-repeat;
+}
+a#mbPrevLink:hover, a#mbNextLink:hover, a#mbCloseLink:hover {
+	background-position: 0 -23px;
+}
+#mbCloseLink {
+	width: 20px;
+	background: transparent url(../images/milkbox/close.gif) no-repeat;
+}
+
+/* Description */
+#mbDescription{
+	margin-right: 27px;
+	padding: 0px 10px 0 0;
+	font-weight: bold;
+	text-align: justify;
+}
