@@ -31,6 +31,7 @@
 require_once(dirname(__FILE__).'/../../../../r4l/magpierss/rss_fetch.inc');
 
 $ff_cacheFile = dirname(__FILE__) . '/../../../../cache_rss/ff_rss_xml.cache';
+/*
 $expire = time() - fileatime($ff_cacheFile);
 if($expire > 86400 || !file_exists($ff_cacheFile)) {
 	$rss_xml = file_get_contents("http://www.fitandfabliving.com/index.php?option=com_obrss&task=feed&id=1:rss-feed");
@@ -40,10 +41,12 @@ if($expire > 86400 || !file_exists($ff_cacheFile)) {
 	fwrite($handle, $rss_xml);
 	fclose($handle);
 }
+*/
 $ff_rss = fetch_rss("http://".$_SERVER['SERVER_NAME']."/cache_rss/ff_rss_xml.cache");
 
 
 $wim_cacheFile = dirname(__FILE__) . '/../../../../cache_rss/wim_rss_xml.cache';
+/*
 $expire = time() - fileatime($wim_cacheFile);
 if($expire > 86400 || !file_exists($wim_cacheFile)) {
 	$rss_xml = file_get_contents("http://www.workitmom.com/articles/rss?format=rss");
@@ -52,10 +55,12 @@ if($expire > 86400 || !file_exists($wim_cacheFile)) {
 	fwrite($handle, $rss_xml);
 	fclose($handle);
 }
+*/
 $wim_rss = fetch_rss("http://".$_SERVER['SERVER_NAME']."/cache_rss/wim_rss_xml.cache");
 
 
 $rwm_cacheFile = dirname(__FILE__) . '/../../../../cache_rss/rwm_rss_xml.cache';
+/*
 $expire = time() - fileatime($rwm_cacheFile);
 if($expire > 86400 || !file_exists($rwm_cacheFile)) {
 	$rss_xml = file_get_contents("http://www.runningwithmascara.com/feed/");
@@ -64,10 +69,12 @@ if($expire > 86400 || !file_exists($rwm_cacheFile)) {
 	fwrite($handle, $rss_xml);
 	fclose($handle);
 }
+*/
 $rwm_rss = fetch_rss("http://".$_SERVER['SERVER_NAME']."/cache_rss/rwm_rss_xml.cache");
 
 
 $cot_cacheFile = dirname(__FILE__) . '/../../../../cache_rss/cot_rss_xml.cache';
+/*
 $expire = time() - fileatime($cot_cacheFile);
 if($expire > 86400 || !file_exists($cot_cacheFile)) {
 	$rss_xml = file_get_contents("http://www.chewonthatblog.com/feed/");
@@ -76,6 +83,7 @@ if($expire > 86400 || !file_exists($cot_cacheFile)) {
 	fwrite($handle, $rss_xml);
 	fclose($handle);
 }
+*/
 $cot_rss = fetch_rss("http://".$_SERVER['SERVER_NAME']."/cache_rss/cot_rss_xml.cache");
 
 ?>
