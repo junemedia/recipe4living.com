@@ -1,5 +1,10 @@
-rewriteEngine off
+RewriteEngine On
 
-order deny,allow
-deny from all
-allow from 66.54.186.254
+<Limit GET POST>
+ order deny,allow
+ deny from all
+ allow from 66.54.186.254
+ allow from 66.117.119.138
+</Limit>
+
+
