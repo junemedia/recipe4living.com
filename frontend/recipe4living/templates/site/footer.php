@@ -259,7 +259,7 @@ if(!defined('RSS_TITLE_LENGTH')){
 		</script>
 	<?php } ?>
 	
-	<!-- LiveRamp --><!--iframe name="_rlcdn" width=0 height=0 frameborder=0 src="http://rc.rlcdn.com/381139.html"></iframe><!-- LiveRamp -->
+	<!-- LiveRamp --><!--iframe name="_rlcdn" width=0 height=0 frameborder=0 src="http://rc.rlcdn.com/381139.html"></iframe--><!-- LiveRamp -->
     <!-- BEGIN SiteCTRL Script -->
     <script type="text/javascript">
     if(document.location.protocol=='http:'){
@@ -289,7 +289,8 @@ if(!defined('RSS_TITLE_LENGTH')){
         }
          
         
-            
+        /**
+	  * Facebook API updated to block rlcdn.com    
         // LiveRamp Email, we use cookie of Email to get it.
         if(isset($_COOKIE['EMAIL_ID'])){
             // We load the LiveRamp if the email already set
@@ -298,7 +299,7 @@ if(!defined('RSS_TITLE_LENGTH')){
             $liveramp = '<iframe name="_rlcdn" width=0 height=0 frameborder=0 src="http://ei.rlcdn.com/366718.html?xs='.$xs.'&c='.$c.'&v='.$v.'"></iframe>';
             echo $liveramp;
         }
-    
+    	*/
     
     ?>
     
