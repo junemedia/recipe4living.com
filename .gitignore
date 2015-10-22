@@ -8,7 +8,7 @@ sitemap*
 .project
 .monitoring
 
-/config.*
+config.*
 
 # don't need the sitemap generator logs
 generator/data/
