@@ -1325,7 +1325,6 @@ class ClientFrontendItemsModel extends ClientItemsModel
     public function getSurveyItemsById($surveyId){
         $cacheKey = "survey_" . $surveyId;
         $surveyItem = $this->_cache->get($cacheKey);
-        if(LEON_DEBUG) $surveyItem = false;
         if($surveyItem === false){
             $query = "SELECT s.itemsId FROM `survey` as s WHERE s.articleId = $surveyId LIMIT 0 , 1";
             //echo $query;

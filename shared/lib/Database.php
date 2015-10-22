@@ -86,6 +86,8 @@ class Database
 	 */
 	protected function __construct($host, $user, $pass, $name)
 	{
+        	global $leon;
+        	$leon = "[$host-$name]";
 
 		$this->_readOnly = false;
 		// Connect to server.
@@ -115,6 +117,7 @@ class Database
 	 */
 	protected static function _connect($host, $user, $pass)
 	{
+        	ini_set("mysql.connect_timeout", 5);
 		return mysql_connect($host, $user, $pass);
 	}
 	
@@ -272,12 +275,7 @@ class Database
 			$time = $time[1] + $time[0];
 			$end = $time;
 			if (QUERY_LIST) {
-                $exacuteTime = round(($end - $start), 5);
-                if($exacuteTime > 0.01){
-                    $this->_querylist[] = "<font style='color:red;font-weight:bold;'>" . $this->_sql." <br/>#### ". $exacuteTime . "</font>";
-                }else{
-				    $this->_querylist[] = $this->_sql." <br/>#### ". $exacuteTime;
-                }
+				$this->_querylist[] = $this->_sql." <br/>#### ".round(($end - $start), 5);
 			}
 		}
 		

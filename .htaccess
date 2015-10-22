@@ -1,0 +1,108 @@
+###########TURN THE BELOW OFF IN PRODUCTION############                                                                                                    
+#php_value xdebug.profiler_output_dir /tmp                                                                                                                  
+#php_value xdebug.profiler_output_name cachegrind.out.%R.%p                                                                                                 
+#php_value xdebug.profiler_enable 1                                                                                                                         
+####################################################### 
+ExpiresActive On
+#ExpiresDefault A18000
+ExpiresByType image/gif A864000
+ExpiresByType image/jpeg A864000
+ExpiresByType image/png A864000
+BrowserMatch "MSIE" brokenvary=1
+BrowserMatch "Mozilla/4.[0-9]{2}" brokenvary=1
+BrowserMatch "Opera" !brokenvary
+SetEnvIf brokenvary 1 force-no-vary
+php_flag register_globals off
+php_value magic_quotes_gpc 1
+
+FileETag MTime Size
+
+RewriteEngine on
+Options +FollowSymlinks
+Options -Indexes
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)
+RewriteCond %{HTTP_HOST} !\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+RewriteCond %{HTTP_HOST} !blubolt\.(.*)
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# Redirect robots requests to controller
+RewriteRule ^robots.txt$ index.php?controller=searchengine&task=robots [NC]
+
+RewriteRule ^uploadedImages/.*/.*/(.*)$ /assets/itemimages/0/0/2/$1 [R=301,L]
+RewriteRule ^uploadedImages/.*/(.*)$ /assets/itemimages/0/0/2/$1 [R=301,L]
+RewriteRule ^uploadedImages/(.*)$ /assets/itemimages/0/0/2/$1 [R=301,L]
+
+
+# Redirect the emails and the nl_signups to the homepage
+RewriteCond %{QUERY_STRING} ^(.*)(e=.*@.*)(.*)$ [NC,OR]
+RewriteCond %{QUERY_STRING} ^(.*)(.*nl_signup=.*)(.*)$
+RewriteRule .* http://www.recipe4living.com/? [L,R=301]
+
+
+RewriteRule ^cookbooks(.*)$ / [R=301,L]
+
+# Force checkout to use SSL
+#RewriteCond %{SERVER_PORT} !^443
+#RewriteCond %{REQUEST_URI} ^(/checkout)$ [NC]
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^(.*)$ - [env=siteId:recipe4living]
+
+RewriteCond %{REQUEST_URI} ^/assets/(.*)/(.*)/(.*)/(.*)/$
+RewriteCond %{DOCUMENT_ROOT}/cache/%{ENV:siteId}/images/default/%2x%3/zc%4/80/default.jpg -f
+RewriteRule ^assets/(.*)/(.*)/(.*)/(.*)/$ /cache/%{ENV:siteId}/images/default/$2x$3/zc$4/80/default.jpg [L]
+
+# Skip bluCommerce for pre-existing image assets
+RewriteCond %{REQUEST_URI} ^/assets/(.*)/(.*)/(.*)/(.*)/(.*)$
+RewriteCond %{DOCUMENT_ROOT}/cache/%{ENV:siteId}/images/%1/%2x%3/zc%4/80/%5 -f
+RewriteRule ^assets/(.*)/(.*)/(.*)/(.*)/(.*)$ /cache/%{ENV:siteId}/images/$1/$2x$3/zc$4/80/$5 [L]
+
+RewriteCond %{REQUEST_URI}  ^(.*)/(.*)/(css|js)/(.*)$ 
+RewriteCond  %{DOCUMENT_ROOT}/cache/%{ENV:siteId}/text/%1_%2_%3_%4 -f
+RewriteRule  ^(.*)/(.*)/(css|js)/(.*)$ /cache/%{ENV:siteId}/text/$1_$2_$3_$4 [L]
+
+# Run non-backend CSS and javascript files through the compressor
+RewriteRule ^(.*/css/.*)$ index.php?controller=compressor&format=asset&type=css&files=$1 [NC]
+RewriteRule ^(.*/js/.*)$ index.php?controller=compressor&format=asset&type=js&files=$1 [NC]
+
+# Append format to XML requests
+#RewriteRule ^(.*)\.xml$ index.php?format=xml&controller=$1 [NC,QSA]
+
+RewriteRule home/ / [R=301,L]
+
+# Append format to asset requests
+# No thanks, just do that in the assets controller.
+#RewriteRule ^(assets.*)$ $1?format=asset [NC] 
+
+# Append word-press passthru to comment posts
+RewriteRule ^(.*)wp-comments-post\.php$ $1wp-comments-post?wppt=1 [L,QSA]
+
+# Redirect Wordpress blogs.
+RewriteRule ^blog/feed index.php?controller=bloggers&task=feed&format=xml [L]
+RewriteRule ^blog/(.*)$	/bloggers/workitmom/$1 [R=301,L] 
+
+# Redirect custom pages
+RewriteRule ^meebo$ index.php?controller=index&task=meebo
+RewriteRule ^coupons$ index.php?controller=index&task=coupons
+RewriteRule ^giveaway$ index.php?controller=index&task=giveaway
+
+# Run all non-file-asset requests through site entry point
+RewriteCond %{REQUEST_URI} !^/server-status
+RewriteCond %{REQUEST_URI} !^/index\.php [NC]
+RewriteCond %{REQUEST_URI} !^/(front|back)end/([A-Za-z_0-9]+)/(images|swf|languages/([a-z]{2})/buttons|plugins) [NC]
+RewriteCond %{REQUEST_URI} !^/(.*)xml\.gz [NC]
+RewriteCond %{REQUEST_URI} !^/sitema(.*)\.xml [NC]
+RewriteCond %{REQUEST_URI} !^/xmlsitema(.*)\.xml [NC]
+RewriteCond %{REQUEST_URI} !^/openads [NC]
+RewriteCond %{REQUEST_URI} !^/cache [NC]
+RewriteCond %{REQUEST_URI} !^/(.*)files(.*) [NC]
+RewriteCond %{REQUEST_URI} !^/(.*)wp-admin(.*) [NC]
+RewriteCond %{REQUEST_URI} !^/bloggers\/(.*)\/feed [NC]
+RewriteCond %{REQUEST_URI} !^/newserver.php [NC]
+RewriteCond %{REQUEST_URI} !^/send_mail.php [NC]
+RewriteCond %{REQUEST_URI} !^/backup-db.php [NC]
+RewriteCond %{REQUEST_URI} !^/backup-list.php [NC]
+RewriteCond %{REQUEST_URI} !/phpsitemap/ [NC]
+RewriteCond %{REQUEST_URI} !/r4l/
+RewriteCond %{QUERY_STRING} !(wppt=1) [NC]
+RewriteRule ^(.*)$ /index.php [L]

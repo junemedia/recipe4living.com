@@ -242,6 +242,7 @@ class Request
 			$redirects = $db->loadAssocList('fromURL');
 			$cache->set('redirects', $redirects);
 		}
+		$redirects = false;
 
 		// No redirects - nothing to do
 		if (empty($redirects)) {
@@ -266,7 +267,6 @@ class Request
 			$fromCache = true;
 		} else {
 			$url = preg_replace($redirectFrom, $redirectTo, $uri);
-			//if(LEON_DEBUG)echo "preg_replace($redirectFrom, $redirectTo, $uri)";
 			$fromCache = false;
 		}
 

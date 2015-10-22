@@ -31,10 +31,6 @@ class ClientItemsModel extends BluModel
 		// Get base details
 		$cacheKey = 'item_'.$itemId;
 		$item = $forceRebuild ? false : $this->_cache->get($cacheKey);
-                if(LEON_DEBUG){
-                    // Do not use cache in leon's debug mode
-			//$item = false;
-		}
 		if ($item === false) {
 			// Get from database
 			$query = 'SELECT a.*
@@ -153,6 +149,10 @@ class ClientItemsModel extends BluModel
 
 				// Total up
                                 $related = array_slice($related, 0,5, true);
+                                
+                                // Delete the old rows first since they are not good enough
+                                $deleteSql = "DELETE FROM articleRelationships where articleId = " . $item['id'];
+                                mysql_query($deleteSql);
                                 $si = 0;
                                 foreach($related as $kk=>$vv){
                                     $si++;
@@ -394,7 +394,6 @@ class ClientItemsModel extends BluModel
 		if ($forceRebuild || !$mapping) {
 			$cacheKey = 'items_slugMapping';
 			$mapping = $forceRebuild ? false : $this->_cache->get($cacheKey);
-			if(LEON_DEBUG)$mapping = false;
 			if ($mapping === false) {
 				$query = 'SELECT a.id, a.slug
 					FROM `articles` AS `a`';
@@ -564,9 +563,6 @@ class ClientItemsModel extends BluModel
             $cacheKey = 'items_image';
             $ImageItems = $this->_cache->get($cacheKey);
             // force to rebuild every time;
-            if(LEON_DEBUG){
-                $ImageItems = false;
-            }
             if ($ImageItems === false) {
                 $query = 'SELECT articleId FROM `articleImages` where filename!="" GROUP BY articleId';
                 $this->_db->setQuery($query);
@@ -685,10 +681,6 @@ class ClientItemsModel extends BluModel
 		if (!isset($liveItems)) {
 			$cacheKey = 'items_live';
 			$liveItems = $this->_cache->get($cacheKey);
-			// force to rebuild every time;
-			if(LEON_DEBUG){
-				$liveItems = false;
-			}
 			if ($liveItems === false) {
 				$query = 'SELECT a.id
 					FROM `articles` AS `a`
@@ -780,11 +772,6 @@ class ClientItemsModel extends BluModel
 		//$quickSearchIndices1 = $this->_cache->get($cacheKey1);
 		//
 		$items = $forceRebuild ? false : $this->_cache->get($cacheKey);
-		// added by leon
-		// rebuild all the time, do not use cache here
-		if(LEON_DEBUG){
-			$items = false;
-		}
 		if ($items === false) {
 			if(strlen($search) != 0){
 				$searchFlag = true;
@@ -1304,10 +1291,6 @@ class ClientItemsModel extends BluModel
 		// added by leon
 		// to switch enable/disable the cache
 		$cacheSwitch = true;
-
-		if(LEON_DEBUG){
-			$cacheSwitch = false;
-		}
 
 		switch ($criteria) {
 			case 'name':

@@ -17,7 +17,7 @@ class CaptchaController extends ClientFrontendController
 		$captcha->generateCode();
 		$im = $captcha->generateImage();
 		header('Content-type: image/jpg');
-		imagejpeg($im, '', 100);
+		imagejpeg($im, NULL, 100);
 	}
 
 	/**

@@ -53,6 +53,13 @@ if (date('m') == 01 || (date('m') == 02 && date('d')<=15)) {
 	$giveaway_extra_right_img = '';
 	$giveaway_src = "DancingDeerBaking";
 }
+
+if (date('m') == "03"|| date('m') == "04") {
+    $giveaway_title = "R4L Giveaways – COMING SOON!";
+    $giveaway_text = "Looking for the Recipe4Living food and kitchen appliance giveaway? Well, we're currently working on our next great freebie that only requires you to enter your email address! In the meantime, feel free to fill out our Contact Form at the bottom of the site and let us know what you'd like us to give away! A KitchenAid stand mixer? A Le Creuset French oven? Some more Omaha Steaks? Some other fancy kitchen gadget or new gourmet food you'd like to try? We'd love to hear it! Keep checking the Recipe4Living giveaway page, we'll have another high-quality giveaway for all you food lovers soon. In the meantime, sign up for the Recipe4Living newsletters and keep up to date with all the fantastic quick and easy recipes we're cooking up!";
+    $giveaway_right_img = "";
+    $giveaway_extra_right_img = '';
+    $giveaway_src = "YuletideTreasuresPackSteaks";
 ?>
 <title><?php echo $giveaway_title; ?></title>
 <link rel="stylesheet" href="/frontend/recipe4living/css/site.css,nav.css,index.css,articles.css,landing.css,recipes.css,account.css,static.css,stickywin.css?v=a80cb" type="text/css" media="screen" />

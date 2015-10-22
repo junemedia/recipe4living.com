@@ -125,12 +125,12 @@ function sessionGC($max_lifetime) {
 
 session_set_save_handler("sessionOpen", "sessionClose","sessionRead", "sessionWrite", "sessionDestroy", "sessionGC");
 
-if ($_COOKIE['PHPSESSID']) {
+if (@$_COOKIE['PHPSESSID']) {
 	$PHPSESSID = $_COOKIE['PHPSESSID'];
 } else {
-	if($_POST['PHPSESSID']){
+	if(@$_POST['PHPSESSID']){
 		$PHPSESSID = $_POST['PHPSESSID'];
-	} else if ($_GET['PHPSESSID']){
+	} else if (@$_GET['PHPSESSID']){
 		$PHPSESSID = $_GET['PHPSESSID'];
 	}
 }

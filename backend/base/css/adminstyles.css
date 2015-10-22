@@ -15,7 +15,7 @@ body {    background-color: transparent;    font-size:12px;    font-family:arial
 #sub_nav {background:#041d30; height:35px; margin-bottom: 20px;}
 #sub_nav ul {margin:0; padding:0; list-style-type:none;}
 #sub_nav li { float:left;}
-#sub_nav li .nav_outer a {display:block; padding:10px 13px; font-size:12px; text-decoration:none; font-weight:bold; border-right:1px solid #0c3858; color:#a1c3dc; text-transform: lowercase; }
+#sub_nav li .nav_outer a {display:block; padding:10px 17px; font-size:12px; text-decoration:none; font-weight:bold; border-right:1px solid #0c3858; color:#a1c3dc; text-transform: lowercase; }
 #sub_nav li .nav_outer a:hover {background:#fff; color:#041d30;}
 #sub_nav li .nav_outer a.on, #sub_nav li .nav_outer.on a {background:#fff; color:#041d30;}
 

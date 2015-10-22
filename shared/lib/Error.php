@@ -93,10 +93,8 @@ class Error
 			case E_RECOVERABLE_ERROR:
 				$this->_handleWarning();
 		        break;
-            case E_STRICT:
-                break;
-            case E_DEPRECATED:
-                break;
+case E_STRICT:
+break;
 			case E_USER_NOTICE:
 		    case E_NOTICE:
 		    default:
@@ -124,11 +122,14 @@ class Error
 	    $errorLine = $this->_logError(true);
 
 	    // Send for help
-	    
-	    mail('leonz@silvercarrot.com,samirp@silvercarrot.com',
-	    	'Fatal Error on '.$_SERVER['HTTP_HOST'] . ' - ' . $_SERVER['SERVER_ADDR'],
+	   
+            date_default_timezone_set('America/Chicago');
+            global $leon; 
+	    mail('leonz@junemedia.com',
+	    	'R4L Code Error ' . $_SERVER['SERVER_ADDR'].' - '. $leon . ' - ' . date("Y-m-d H:m:s", time()),
 		'Server IP: ' . $_SERVER['SERVER_ADDR'] . "\n".
 		'Client IP: ' . $_SERVER['REMOTE_ADDR'] . "\n".
+                'Database Info: ' . $leon . "\n".
 	    	$errorLine[3]."\n".
 	    	'Severity: '.$errorLine[2]."\n".
 	    	'File: '.$errorLine[4]."\n".
@@ -136,7 +137,7 @@ class Error
 	    	'Stack: '.str_replace('>>>', "\n      ", $errorLine[6])."\n".
 	    	'Visitor ID: '.$errorLine[0]."\n".
 	    	'URI: '.$errorLine[7]."\n",
-	    	'From: leon.zhao.R4L <leonz@silvercarrot.com>');
+	    	'From: leon.zhao.R4L <leonz@junemedia.com>');
 	    
 	    // Output lies
 	    echo '
@@ -170,11 +171,6 @@ class Error
 				<p>It\'s only going to take a minute so please bear with us. We\'ll be back up very, very soon!</p>
 			</body>
 			</html>';
-		if(LEON_DEBUG){
-            		echo "<h1 style='color:#FF6600;'>Leon's Debug Information for reference:</h1>";
-            		$document = Document::getInstance('print');
-            		echo $document->printDebugInfo();
-        	}
 		exit;
 	}
 
@@ -292,56 +288,6 @@ class Error
 			$this->errorFile." (".$this->errorLine.")\n".
 			$backTraceLine.
 			"\nhttp://".$_SERVER['SERVER_NAME'].$requestUri."\n";
-		if(LEON_DEBUG){		
-			$type = self::$_errorLevels[$this->errorType];
-			$message = $this->errorMessage;
-			$file = $this->errorFile;
-			$line_debug = $this->errorLine;
-			$traceString = implode('<br />', $errorLines);
-			self::_displayError($type, $message, $file, $line_debug, $traceString);
-		}
-		// Output to CSV error log
-		//if (DEBUG) {
-			//if ($socket == false) {
-            //    		$socket = fsockopen("udp://maintenance.blubolt.com", 22727, $errno, $errstr, 1);
-        	//        }
-
-            //            fwrite ($socket, $humanErrorString);
-	
-			// It's been a really early error - log it elsewhere
-	
-			// Output
-//			fputcsv($logFile, $line, '|', '"');
-		//	$fp = fopen('errorLog.csv', 'a');
-		//	fputcsv($fp, $line);
-		//	fclose($fp);
-		// Output to screen in debug mode
-		/*
-			} else if (DEBUG_INFO) {
-			
-			$type = self::$_errorLevels[$this->errorType];
-			$message = $this->errorMessage;
-			$file = $this->errorFile;
-			$line = $this->errorLine;
-			$traceString = implode('<br />', $errorLines);
-			
-			self::_displayError($type, $message, $file, $line, $traceString);
-		}
-		*/
-		            //if($_SERVER["REMOTE_ADDR"] == "127.0.0.1")
-            //if(($_SERVER["REMOTE_ADDR"] == "66.54.186.254") || ($this->errorType == 1))
-	
-	    if(($this->errorType == 1) || ($_SERVER["REMOTE_ADDR"] == "66.54.186.254"))
-            {
-                $this->_saveError($errorLines);
-                
-                //$file = dirname(__FILE__) . '/../../errorLog.csv';
-                //$fp = fopen($file, 'a');
-                //fputcsv($fp, $line);
-		//fwrite($fp, $humanErrorString);
-                //fclose($fp);            
-                
-            }
 	
 		return $line;
 	}
@@ -388,7 +334,6 @@ class Error
      */    
      protected function _saveError($errorLines)
      {
-        //date_default_timezone_set('ASIA/SHANGHAI');
         //global $timeStartLog;
         $data = array();
 

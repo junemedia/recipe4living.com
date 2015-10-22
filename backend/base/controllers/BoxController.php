@@ -111,7 +111,7 @@ class BoxController extends ClientBackendController
 			$limit = 10;
 			$itemsModel = BluApplication::getModel('items');
 			$offset = ($page-1)*$limit;
-			$items = $itemsModel->getItems(null, null, null, array(), $search,false,true);
+			$items = $itemsModel->getItems(null, null, null, array(), $search);
 			// Do some final filtering (by live flag)
 			$items = $itemsModel->filterLiveItems($items);
 			$total = count($items);

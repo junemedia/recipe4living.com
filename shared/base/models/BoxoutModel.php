@@ -20,9 +20,6 @@ class BoxoutModel extends BluModel
 		if (!$mapping) {
 			$cacheKey = 'boxSlugMapping';
 			$mapping = $this->_cache->get($cacheKey);
-			if(LEON_DEBUG){
-                		$mapping = false;
-            		}
 			if ($mapping === false) {
 				$query = 'SELECT bo.slug, bo.id
 					FROM `boxOut` AS `bo`';
@@ -103,11 +100,7 @@ class BoxoutModel extends BluModel
 		$cacheKey = 'box_'.$boxId.'_'.$siteId.'_'.$langCode.'_'.serialize($args);
 		$box = $this->_cache->get($cacheKey);
 
-        	if(LEON_DEBUG){
-            		$box = false;
-        	}
-
-		// Reload for Chicago office only
+        // Reload for Chicago office only
        	if (($_SERVER["REMOTE_ADDR"] == "66.54.186.254")) { $box = false; }
        	
 		/*if(($_SERVER["REMOTE_ADDR"] == "66.54.186.254") && ($cacheKey == "box_9_recipe4living_EN_a:1:{s:5:\"limit\";i:5;}") ) {

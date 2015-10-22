@@ -3,9 +3,12 @@ leon/
 assets/
 nbproject/
 cache_rss/
-.htaccess/
 sitemap*
 *.sql
 .project
 .monitoring
-config*
+
+/config.*
+
+# don't need the sitemap generator logs
+generator/data/

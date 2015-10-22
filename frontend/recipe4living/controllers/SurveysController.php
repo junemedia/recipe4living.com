@@ -80,13 +80,7 @@ class Recipe4livingSurveysController extends Recipe4livingArticlesController
                 //This is the thank you page
                 
                 if(isset($_POST['recipeSurvey']) && $vote_id = trim($_POST['recipeSurvey'])){
-                    $result = $itemsModel->saveSurveyVote($vote_id, $this->_itemId);
-                    if($result){   
-                    }else{
-                        if(LEON_DEBUG){
-                            echo "DB save error : " . mysql_error();
-                        }
-                    }    
+                    $result = $itemsModel->saveSurveyVote($vote_id, $this->_itemId);    
                 }
                 
 

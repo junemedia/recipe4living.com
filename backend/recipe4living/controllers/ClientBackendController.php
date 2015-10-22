@@ -70,14 +70,6 @@ class ClientBackendController extends BackendController
 			)
 		);
 		$nav[] = Array(
-			'name' => 'Giveaway',
-			'link' => SITEURL.'/giveaway',
-			'on' => Array('giveaway_listing', 'giveaway_details'),
-			'children' => Array( 
-				SITEURL.'/giveaway/add' => 'Create giveaway'
-			)
-		);
-		$nav[] = Array(
 			'name' => 'Blogs',
 			'link' => SITEURL.'/blogs',
 			'on' => Array('blog_listing', 'blog_details'),
