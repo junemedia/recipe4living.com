@@ -9,6 +9,13 @@ sitemap*
 .monitoring
 
 /config.*
+logs/
+*.bak
+*.bak.php
 
 # don't need the sitemap generator logs
 generator/data/
+
+# sitemap gets generated
+xmlsitemap.*
+xmlsitemap-test*
