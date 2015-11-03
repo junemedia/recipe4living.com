@@ -19,3 +19,18 @@ generator/data/
 # sitemap gets generated
 xmlsitemap.*
 xmlsitemap-test*
+
+
+# ignore these until we can figure out if they're necessary or not
+# probably mostly not
+ror.xml
+backend/nohup.out
+backend/scrape.tar.gz
+generator/
+giveaway2/r4l_home_test_ff.htm
+giveaway2/r4l_home_test_ff_files/
+openads
+phpsitemap/
+send_mail.php
+uploads/
+website.php
