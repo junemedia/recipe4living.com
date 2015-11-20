@@ -20,7 +20,7 @@ class ClientPermissionsModel extends PermissionsModel
 		if (parent::allowStagingAccess()) {
 			return true;
 		}
-		
+
 		// HQs
 		$visitorIP = Request::getVisitorIPAddress();
 		if ($this->_isBluboltHQ($visitorIP)) {
@@ -29,19 +29,18 @@ class ClientPermissionsModel extends PermissionsModel
 		if ($this->_isClientHQ($visitorIP)) {
 			return true;
 		}
-		
+
 		// Staging password
 		if (isset($_SERVER['PHP_AUTH_USER'])) {
-			if ($_SERVER['PHP_AUTH_USER'] == 'r4lpreview') {
-				if (md5($_SERVER['PHP_AUTH_PW']) == '88d2d2246a7324e64b2af3b0ef6fe973') {
+			if ($_SERVER['PHP_AUTH_USER'] == BluApplication::getSetting('stageUser') &&
+				    $_SERVER['PHP_AUTH_PW'] == BluApplication::getSetting('stagePass')) {
 					return true;
-				}
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	/**
 	 *	Check if IP address is local
 	 *
@@ -54,15 +53,15 @@ class ClientPermissionsModel extends PermissionsModel
 		if (parent::_isLocal($ip)) {
 			return true;
 		}
-		
+
 		// Subnet mask (192.168.51.0/255.255.255.0)
 		if (preg_match('/^192\.168\.51\.[0-9]{1,3}$/', $ip)) {
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	/**
 	 *	Is client IP address
 	 *
@@ -75,5 +74,3 @@ class ClientPermissionsModel extends PermissionsModel
 		return $ip == '216.48.124.31' || $ip == '198.63.247.2';
 	}
 }
-
-?>
