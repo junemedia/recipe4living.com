@@ -9,6 +9,7 @@ sitemap*
 .monitoring
 
 /config.*
+!/config.template.php
 logs/
 *.bak
 *.bak.php
