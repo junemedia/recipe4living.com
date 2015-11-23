@@ -78,17 +78,22 @@ class SearchengineController extends ClientFrontendController
 		$this->_doc->setMimeType('text/plain');
 		$this->_doc->setFormat('raw');
 
-    // Please don't index our staging server, ok, thanks.
+		# Please don't index our staging server, ok, thanks.
 		if (defined('STAGING') && STAGING === true) {
 			echo 'User-agent: *'."\r\n";
 			echo 'Disallow: /'."\r\n";
 		}
 		else {
-			echo "User-agent: Mediapartners-Google\r\n";
-			echo "Disallow:\r\n";
-			echo 'User-agent: *'."\r\n";
-			echo 'Sitemap: http://www.recipe4living.com/xmlsitemap.xml'."\r\n";
+			echo 'Sitemap: http://www.recipe4living.com/xmlsitemap.xml'."\r\n\n";
 
+			# Google ads
+			# empty Disallow value indicates that all URLs can be retrieved
+			# (at least one Disallow field needs to be present in a record)
+			echo "User-agent: Mediapartners-Google\r\n";
+			echo "Disallow:\r\n\n";
+
+			# Everybody else
+			echo 'User-agent: *'."\r\n";
 			foreach ($disallow as $url) {
 				echo 'Disallow: '.$url."\r\n";
 			}
