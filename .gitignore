@@ -1,12 +1,15 @@
 cache/
 leon/
 assets/
-nbproject/
 cache_rss/
 sitemap*
 *.sql
+
+## IDEs, frameworks, etc. files
+nbproject/
 .project
 .monitoring
+
 
 /config.*
 !/config.template.php
@@ -21,6 +24,8 @@ generator/data/
 xmlsitemap.*
 xmlsitemap-test*
 
+# phpinfo()
+info.php
 
 # ignore these until we can figure out if they're necessary or not
 # probably mostly not
@@ -30,7 +35,6 @@ backend/scrape.tar.gz
 generator/
 giveaway2/r4l_home_test_ff.htm
 giveaway2/r4l_home_test_ff_files/
-openads
 phpsitemap/
 send_mail.php
 uploads/
