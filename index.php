@@ -7,7 +7,7 @@
  * @package BluApplication
  */
 if (!isset($_SERVER['HTTP_USER_AGENT'])) $_SERVER['HTTP_USER_AGENT'] = 'none';
-if(	($_SERVER['REMOTE_ADDR'] == '216.180.167.121')|| 
+if(	($_SERVER['REMOTE_ADDR'] == '216.180.167.121')||
 	($_SERVER['REMOTE_ADDR'] == '216.48.124.25')||
 	($_SERVER['REMOTE_ADDR'] == '192.168.51.31')||
 	($_SERVER['REMOTE_ADDR'] == '127.0.0.1')
@@ -18,7 +18,7 @@ if(	($_SERVER['REMOTE_ADDR'] == '216.180.167.121')||
 	//echo $_SERVER['REMOTE_ADDR'];
 	//require(dirname(__FILE__) . '/error_diplay.php');
 	//exit;
-} 
+}
 global $timeStartLog;
 global $leon;
 $leon = "leon:";
@@ -58,11 +58,11 @@ function __autoload($className)
 		require_once(BLUPATH_BASE.'/shared/interfaces/'.$className.'.php');
 		return;
 	}
-	
+
 	// Allows more complex inheritance while staying sane.
 	$fail = false;
 	$siteId = BluApplication::getSetting('siteId');
-	
+
 	$path = BLUPATH_BASE.'/'.SITEEND;
 	if (strpos($className, ucfirst($siteId)) === 0) {
 		$path .= '/'.$siteId;
@@ -70,18 +70,18 @@ function __autoload($className)
 	} else {
 		$path .= '/base';
 	}
-	
+
 	if (strpos($className, 'Controller') !== false) {
 		$path .= '/controllers';
 	} else {
 		$fail = true;
 	}
-	
+
 	if (!$fail && file_exists($path.'/'.$className.'.php')) {
 		require_once($path.'/'.$className.'.php');
 		return;
 	}
-	
+
 	// Fail
 	//trigger_error('Could not find '.$className, E_USER_ERROR);
 }

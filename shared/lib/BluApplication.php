@@ -12,7 +12,7 @@ class BluApplication
 	 *	Backend switch.
 	 */
 	const BACKEND_SWITCH = 'oversight';
-	
+
 	/**
 	 * Requested uri
 	 *
@@ -79,7 +79,7 @@ class BluApplication
 	 * @var string
 	 */
 	private static $_breadcrumbs = null;
-	
+
 	/**
 	 *	Settings
 	 *
@@ -96,12 +96,13 @@ class BluApplication
 	private function __construct()
 	{
 		$siteId = self::getSiteId();
-		
+
 		// Get config name from domain if in DEBUG mode
 		//}
 
 		// Set cache directory as soon as we know it
-		define('BLUPATH_CACHE', BLUPATH_BASE.'/cache/'.$siteId);        /*
+		define('BLUPATH_CACHE', BLUPATH_BASE.'/cache/'.$siteId);
+				/*
          * Added by Leon
          * Deal with duplicated links such as artiles/articles/recipes/xxx.htm
          * Find out the true links for the duplicated items
@@ -125,7 +126,7 @@ class BluApplication
 
 		// Set default timezone
 		date_default_timezone_set(self::getSetting('timeZone'));
-		
+
 		// Perform internal routing
 		self::_applyRedirectMap();
 
@@ -137,44 +138,44 @@ class BluApplication
 			$args = substr($args, 0, $qsPos);
 		}
 		$args = trim($args, '/');
-		
 
-        /*
-         * Added by Leon
-         * Deal with duplicated links such as artiles/articles/recipes/xxx.htm
-         * Find out the true links for the duplicated items
-         */
-	       
-        if(!empty($args) && (substr($args,-4) == ".htm"))
-        {
-            $filters = array("article/", "articles/", "recipe/", "recipes/");
-            //$args = str_replace($filters, "", $args);
-            
-            $tmpArgs = explode('/', trim($args));
-            $slug = $tmpArgs[(count($tmpArgs)-1)];
-            $slug = substr($slug, 0, -4);
- 
-            $typeQuery = "SELECT type,slug from articles WHERE slug like '" . $slug . "' LIMIT 0,1";
-            //echo $typeQuery . "<br>";
-            $r = mysql_query($typeQuery);
-            if($r)
-            {
-                while($row = mysql_fetch_array($r))
-                {
-                    $args = str_replace($filters, $row["type"] . 's/', $args);
-                }
-            }
-        }
-	//echo "<!--" . $args . "-->";
 
-        // add more custom links
-        if(trim($args) == "articles/a_dash_of_fun/current_contests") $args = "articles/enter_our_giveaways.htm";
-        if(trim($args) == "articles/facebook/forgot-password-form") $args = "facebook/login/forgot-password-form";
-		
+		/*
+		 * Added by Leon
+		 * Deal with duplicated links such as artiles/articles/recipes/xxx.htm
+		 * Find out the true links for the duplicated items
+		 */
+
+		if(!empty($args) && (substr($args,-4) == ".htm"))
+		{
+			$filters = array("article/", "articles/", "recipe/", "recipes/");
+			//$args = str_replace($filters, "", $args);
+
+			$tmpArgs = explode('/', trim($args));
+			$slug = $tmpArgs[(count($tmpArgs)-1)];
+			$slug = substr($slug, 0, -4);
+
+			$typeQuery = "SELECT type,slug from articles WHERE slug like '" . $slug . "' LIMIT 0,1";
+			//echo $typeQuery . "<br>";
+			$r = mysql_query($typeQuery);
+			if($r)
+			{
+				while($row = mysql_fetch_array($r))
+				{
+					$args = str_replace($filters, $row["type"] . 's/', $args);
+				}
+			}
+		}
+		//echo "<!--" . $args . "-->";
+
+		// add more custom links
+		if(trim($args) == "articles/a_dash_of_fun/current_contests") $args = "articles/enter_our_giveaways.htm";
+		if(trim($args) == "articles/facebook/forgot-password-form") $args = "facebook/login/forgot-password-form";
+
 		if (!empty($args)) {
 			$args = explode('/', trim($args, '/'));
 		}
-		
+
 		// Has bot?
 		define('ISBOT', Request::isBot());
 
@@ -187,7 +188,7 @@ class BluApplication
 		} else {
 			define('SITEEND', 'frontend');
 		}
-		
+
 		// Check if visitor is banned
 		$visitorIP = Request::getVisitorIPAddress();
 		$permissionsModel = BluApplication::getModel('permissions');
@@ -207,7 +208,7 @@ class BluApplication
 			$languageCode = self::getSetting('defaultLang', 'en');
 		}
 		self::$_languageCode = strtolower($languageCode);
-		
+
 		// Override default controller as appropriate
 		if (SITEEND == 'backend') {
 			self::$_option = self::getSetting('defaultBackendController');
@@ -246,36 +247,36 @@ class BluApplication
 
 		// Determine controller name
 		$option = strtolower(Request::getString('controller', empty($args[0]) ? '' : $args[0]));
-                $controllerName = false;
-                if ($option && !in_array($option, array('frontend', 'clientfrontend', 'backend'))) {
-                        if ($controllerName = self::_includeController($option)) {
-                                if (!empty($args) && ($option == $args[0])) {
-                                        array_shift($args); 
-                                }
-                                self::$_option = $option;
-                        }
-                }
-                if (!$controllerName) {
-if (!defined("CLI"))                        $controllerName = self::_includeController(self::$_option);
-                }
+		$controllerName = false;
+		if ($option && !in_array($option, array('frontend', 'clientfrontend', 'backend'))) {
+			if ($controllerName = self::_includeController($option)) {
+				if (!empty($args) && ($option == $args[0])) {
+					array_shift($args);
+				}
+				self::$_option = $option;
+			}
+		}
+		if (!$controllerName) {
+			if (!defined("CLI")) $controllerName = self::_includeController(self::$_option);
+		}
 
-//		$controllerName = ucfirst(strtolower(self::$_option)).'Controller';
-//		$controllerName = self::_includeController(self::$_option);
-		
+		//$controllerName = ucfirst(strtolower(self::$_option)).'Controller';
+		//$controllerName = self::_includeController(self::$_option);
+
 		// Admin auth for backend
 		if (SITEEND == 'backend' && !$permissionsModel->allowAdminAccess($controllerName, $siteId)) {
 			$controllerName = false;
 			self::$_option = false;
-			$document = BluApplication::getDocument();	
+			$document = BluApplication::getDocument();
 			$document->setStatus('HTTP/1.1 401 Unauthorized');
 			$document->setAuthentication('Basic realm="'.self::getSetting('storeName').' Admin"');
 			$document->hideContents();
-			
+
 		// Staging server authentication
 		} else if (STAGING && !$permissionsModel->allowStagingAccess()) {
 			$controllerName = false;
 			self::$_option = false;
-			$document = BluApplication::getDocument();	
+			$document = BluApplication::getDocument();
 			$document->setStatus('HTTP/1.1 401 Unauthorized');
 			$document->setAuthentication('Basic realm="'.self::getSetting('storeName').' Staging"');
 			$document->hideContents();
@@ -300,13 +301,13 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 
 		// Store remaining arguments
 		self::$_args = $args;
-		if (Session::get('UserID') == false) { 
+		if (Session::get('UserID') == false) {
 			$cache = self::getCache();
 			if ($_SERVER['REQUEST_URI'] != 'contact') {
 				self::$_cacheKey = 'viewcache_'.$_SERVER['REQUEST_URI'];
 
 				self::$_cachedDocument =  $cache->get(self::$_cacheKey, null, 0, false);
-		
+
 				if (self::$_cachedDocument !== false) {
 					$cache->increment(self::$_cacheKey.'_views', $siteId);
 					self::$_viewCache = true;
@@ -325,7 +326,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 		define('BLUPATH_LANGUAGE', BLUPATH_BASE.'/'.SITEEND.'/'.$siteId.'/languages/'.self::$_languageCode);
 		define('BLUPATH_ASSETS', BLUPATH_BASE.'/assets/'.$siteId);
 	}
-	
+
 	/**
 	 *	Apply the redirect mappings to the request URI and GET/POST
 	 *
@@ -339,13 +340,13 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 		$mapped = $routesModel->route(urldecode($_SERVER['REQUEST_URI']), $rerouted);
 		if ($rerouted) {
 			$appendTrailingSlash = ($mapped = preg_replace('/^(.*)\/$/', '$1', $mapped));
-			
+
 			// Parse out base url and get vars from mapping
 			$urlPieces = explode('?', $mapped);
 			$mappedUri = $urlPieces[0];
 			if (isset($urlPieces[1])) {
 				$getVars = explode('&', $urlPieces[1]);
-				
+
 				// Push get vars into request
 				if (!empty($getVars)) {
 					foreach($getVars as $var) {
@@ -358,12 +359,12 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 					}
 				}
 			}
-			
+
 			if ($appendTrailingSlash) {
 				$mapped .= '/';
 			}
 		}
-		
+
 		// Store new request URI
 		$_SERVER['REQUEST_URI'] = $mapped;
 	}
@@ -381,15 +382,15 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 		}
 		return $instance;
 	}
-	
+
 	/**
-	 * Get site Id 
-	 * 
+	 * Get site Id
+	 *
 	 * @return string siteId
 	 */
 	public static function getSiteId() {
 		$config = new Config();
-		$settings = get_object_vars($config);	
+		$settings = get_object_vars($config);
 		return $settings['siteId'];
 	}
 
@@ -408,9 +409,9 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 			// Load static config
 			$config = new Config();
 			self::$_settings = get_object_vars($config);
-			
+
 			$siteId = self::$_settings['siteId'];
-			
+
 			// Multisites
 			if (!isset(self::$_settings['sites'])) {
 				self::$_settings['sites'] = array($siteId => $siteId);
@@ -421,17 +422,17 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 			$dbSettings = $cache->get('settings');
 			if ($dbSettings === false) {
 				$db = self::getDatabase();
-				
+
 				// Get for site specific if there is an entry in siteId - new clients
-				$query = 'SELECT c.* 
+				$query = 'SELECT c.*
 					FROM `config` AS `c`
 					WHERE c.siteId = "'.$db->escape($siteId).'"';
 				$db->setQuery($query);
 				$dbSettings = $db->loadResultAssocArray('configKey', 'configValue');
-				
+
 				// if there is no entry in config siteId column get everything what is blank - old clients
 				if (empty($dbSettings)) {
-					$query = 'SELECT c.* 
+					$query = 'SELECT c.*
 						FROM `config` AS `c`
 						WHERE c.siteId = ""';
 					$db->setQuery($query);
@@ -442,11 +443,11 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 				foreach ($dbSettings as &$dbSetting) {
 					$dbSetting = unserialize($dbSetting);
 				}
-				
+
 				// Store in cache
 				$cache->set('settings', $dbSettings);
 			}
-			
+
 			// One settings array to rule them all
 			self::$_settings = array_merge(self::$_settings, $dbSettings);
 		}
@@ -478,7 +479,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 							'databasePass' => self::getSetting('databasePass'),
 							'databaseName' => self::getSetting('databaseName'));
 			}
-	
+
 			$instance = Database::getInstance($database['databaseHost'], $database['databaseUser'], $database['databasePass'], $database['databaseName']);
 		}
 		return $instance;
@@ -563,7 +564,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 
 			// RoutesModel needs to load without a SITEEND
 			if (defined('SITEEND')) {
-				
+
 				// Include end model if exists
 				$endModelPath = BLUPATH_BASE.'/'.SITEEND.'/base/models/'.$name.'.php';
 				if (file_exists($endModelPath)) {
@@ -619,23 +620,23 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 		return $reflectionObj->newInstanceArgs($args);
 
 	}
-	
+
 	/**
 	 * Get details of given plugins
-	 * 
+	 *
 	 * @param string Plugin type
 	 * @param bool Enabled status
 	 */
 	public static function getPlugins($type = null, $enabled = null)
 	{
 		$siteId = self::getSetting('siteId');
-	
+
 		$cache = self::getCache();
 		$cacheKey = 'plugins_'.$type.'_'.$enabled;
 		$plugins = $cache->get($cacheKey);
 		if ($plugins === false) {
 			$db = self::getDatabase();
-			
+
 			// Build where clauses
 			$where = array();
 			if ($type !== null) {
@@ -644,7 +645,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 			if ($enabled !== null) {
 				$where[] = ' enabled = '.($enabled ? 1 : 0);
 			}
-			
+
 			// Get plugins
 			$query = 'SELECT *
 				FROM plugins WHERE siteId = "'.$db->escape($siteId).'"';
@@ -654,24 +655,24 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 			$query .= ' ORDER BY sequence';
 			$db->setQuery($query);
 			$plugins = $db->loadAssocList();
-			
+
 			// Unserialize settings
 			if (!empty($plugins)) {
 				foreach ($plugins as &$plugin) {
-					$plugin['settings'] = unserialize($plugin['settings']);	
+					$plugin['settings'] = unserialize($plugin['settings']);
 				}
 			}
-			
+
 			// Store in cache
 			$cache->set($cacheKey, $plugins);
 		}
-		
+
 		return $plugins;
 	}
-	
+
 	/**
 	 * Include source files required for the given plugin
-	 * 
+	 *
 	 * @param string Plugin type
 	 * @param string Plugin id
 	 * @return string Plugin class name
@@ -680,24 +681,24 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 	{
 		$type = strtolower($type);
 		$name = ucfirst(strtolower($name));
-		
+
 		// Include base plugin
 		require_once(BLUPATH_BASE.'/shared/plugins/Plugin.php');
-		
+
 		// Include type base plugin
 		$typeBaseFile = BLUPATH_BASE.'/shared/plugins/'.$type.'/'.ucfirst($type).'.php';
 		if (!file_exists($typeBaseFile)) {
 			return false;
 		}
 		require_once($typeBaseFile);
-		
+
 		// Include the plugin itself
 		$pluginFile = BLUPATH_BASE.'/shared/plugins/'.$type.'/'.ucfirst($type).$name.'.php';
 		if (!file_exists($pluginFile)) {
 			return false;
 		}
 		require_once($pluginFile);
-		
+
 		// Return class name
 		return ucfirst($type).$name;
 	}
@@ -714,25 +715,25 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 		if (!isset($instances)) {
 			$instances = array();
 		}
-		
+
 		// Get plugin name
 		$type = strtolower($type);
 		$name = ucfirst(strtolower($name));
-		
+
 		// Get plugin arguments
 		$args = func_get_args();
 		$args = array_slice($args, 1);
 		$signature = $type.$name.'_'.serialize($args);
-		
+
 		// Load plugin instance
 		if (empty($instances[$signature])) {
-			
+
 			// Include base plugin, type base plugin, and the plugin itself
 			$pluginName = self::_includePlugin($type, $name);
 			if (!$pluginName) {
 				return false;
 			}
-			
+
 			// Get plugin instance
 			if (count($args)) {
 				$reflectionObj = new ReflectionClass($pluginName);
@@ -754,7 +755,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 	public static function &getDefaultPlugin($type)
 	{
 		$type = strtolower($type);
-		
+
 		// Get default plugin name
 		$plugins = self::getPlugins($type, true);
 		if (empty($plugins)) {
@@ -766,7 +767,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 		$defaultPlugin = reset($plugins);
 		return self::getPlugin($type, $defaultPlugin['id']);
 	}
-	
+
 	/**
 	 * Include source files required for the given controller
 	 *
@@ -784,10 +785,10 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 		// Include end base controller
 		require_once(BLUPATH_BASE.'/'.SITEEND.'/base/controllers/'.ucfirst(SITEEND).'Controller.php');
 //if (CLI) echo (BLUPATH_BASE.'/'.SITEEND.'/base/controllers/'.ucfirst(SITEEND).'Controller.php');
-		
+
 		// Include client-specific end base controller
 		$baseControllerPath = BLUPATH_BASE.'/'.SITEEND.'/base/controllers/Client'.ucfirst(SITEEND).'Controller.php';
-		$siteBaseControllerPath = BLUPATH_BASE.'/'.SITEEND.'/'.$siteId.'/controllers/Client'.ucfirst(SITEEND).'Controller.php';		
+		$siteBaseControllerPath = BLUPATH_BASE.'/'.SITEEND.'/'.$siteId.'/controllers/Client'.ucfirst(SITEEND).'Controller.php';
 		if (file_exists($siteBaseControllerPath)) {
 //if (CLI) echo $siteBaseControllerPath;
 			require_once($siteBaseControllerPath);
@@ -811,7 +812,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 			require_once ($siteControllerPath);
 			$foundName = ucfirst($siteId).$name;
 		}
-		
+
 		return $foundName;
 	}
 
@@ -940,30 +941,29 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 
 
 
-        /**
-         * Dispatches the application
-         *
-         * Pulls the relevant options from the request and calls the correct
-         * controller method.
-         */
-        public function dispatchRaw($controller,$task=null,$args=Array())
-        {
-                if (!$task) {
-                        $task = 'view';
-                }
+	/**
+	 * Dispatches the application
+	 *
+	 * Pulls the relevant options from the request and calls the correct
+	 * controller method.
+	 */
+	public function dispatchRaw($controller,$task=null,$args=Array())
+	{
+		if (!$task) {
+			$task = 'view';
+		}
 
-                // Render controller
-                $controller = $this->getController($controller, $args);
-                if ($controller != false) {
-                        $controller->$task();
+		// Render controller
+		$controller = $this->getController($controller, $args);
+		if ($controller != false) {
+			$controller->$task();
 
-                        // Get redirect if requested
-                        $this->_redirect = $controller->getRedirect();
-                } else {
-                        return false;
-                }
-        }
-
+			// Get redirect if requested
+			$this->_redirect = $controller->getRedirect();
+		} else {
+			return false;
+		}
+	}
 
 
 	/**
@@ -993,17 +993,17 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 		if (($option == 'recipes' || $option == 'index' || $option == 'profile' || $option == 'articles') && (self::$_task != 'contact') && Session::get('UserID') == false && $siteEnd != 'backend') {
 			self::$_viewCache = true;
 		} else {
-			self::$_viewCache = false;	
+			self::$_viewCache = false;
 		}
 
 		if (DEBUG || (defined('NOVIEWCACHE') && NOVIEWCACHE)) self::$_viewCache = self::$_cachedDocument = false;
 //		self::$_cachedDocument =  $cache->get(self::$_cacheKey, null, 0, false);
-		
+
 		if (self::$_cachedDocument !== false && self::$_viewCache == true) {
 			return;
 		}
 
-		
+
 		// Start breadcrumb instance
 		self::$_breadcrumbs = new Breadcrumbs();
 
@@ -1022,7 +1022,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 		$document = $this->getDocument();
 		$document->setContents(ob_get_clean());
 		$document->setBreadcrumbs(self::$_breadcrumbs);
-		
+
 		// Get top nav, after main controller task has been completed.
 		switch ($document->getFormat()) {
 			case 'site':
@@ -1031,7 +1031,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 				if (SITEEND == 'backend') {
 					break;
 				}
-				
+
 				// Get top nav
 				ob_start();
 				$controller->topnav();
@@ -1047,13 +1047,13 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 	{
 
 		if (self::$_cachedDocument !== false && self::$_viewCache == true) {
-//			if ($_SERVER['REMOTE_ADDR'] == '87.80.43.97') 
+//			if ($_SERVER['REMOTE_ADDR'] == '87.80.43.97')
 //				Utility::irc_dump('successfully served a cached document '.$_SERVER['REQUEST_URI']. ' - '.memory_get_peak_usage(), 'max');
 			echo self::$_cachedDocument;
 			return;
 		}
 
-//			if ($_SERVER['REMOTE_ADDR'] == '87.80.43.97') 
+//			if ($_SERVER['REMOTE_ADDR'] == '87.80.43.97')
 //			Utility::irc_dump('successfully served a NON-cached document '.$_SERVER['REQUEST_URI']. ' - '.memory_get_peak_usage(), 'max');
 		// Redirect if requested
 		if ($redirect = $this->_redirect) {
@@ -1069,7 +1069,7 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 			}
 			return;
 		}
-		
+
 		// Force caching-off for backend.
 		if (SITEEND == 'backend'){
 			header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
@@ -1088,48 +1088,48 @@ if (!defined("CLI"))                        $controllerName = self::_includeCont
 
 		// Render document
 		$document->render();
-		
-		if (self::$_viewCache == true) {	
+
+		if (self::$_viewCache == true) {
 			$cache = self::getCache();
 			$cache->set(self::$_cacheKey, ob_get_contents(), 600);
 		}
-		
+
 		// Flush buffer
 		ob_flush();
 		//$this->saveScriptLog();
 
 		/**
-        	* @desc We need to make sure we close the db connections
-        	* @author Leon Zhao
-        	*/
-        	$db = BluApplication::getDatabase();
-        	$r = $db->close();
+		 * @desc We need to make sure we close the db connections
+		 * @author Leon Zhao
+		 */
+		$db = BluApplication::getDatabase();
+		$r = $db->close();
 
 	}
-    public function saveScriptLog()
-    {
-        date_default_timezone_set('America/Chicago');
-        global $timeStartLog;
-        $data = array();
-        $timeEndLog = microtime(true);
-        $data['start'] = date('Y-m-d H:i:s', $timeStartLog);
-        $data['end'] = date('Y-m-d H:i:s', $timeEndLog);
-        $data['life'] = round($timeEndLog - $timeStartLog, 2);
-        $data['script_url'] = $_SERVER['REQUEST_URI'];
-        $data['client_ip_address'] = $_SERVER['REMOTE_ADDR'];
-        $data['server_address'] = $_SERVER['SERVER_ADDR'];
-        
-        $sql = "INSERT INTO `log_script_life` (`id`, `start`, `end`, `life`, `script_url`, `client_ip_address`, `server_address`)
-            VALUES (
-            'NULL', 
-            '" . $data['start'] . "', 
-            '" . $data['end'] . "', 
-            '" . $data['life'] . "', 
-            '" . $data['script_url'] . "', 
-            '" . $data['client_ip_address'] . "', 
-            '" . $data['server_address'] . "'
-            )";
-        mysql_query($sql);
-    }
+	public function saveScriptLog()
+	{
+		date_default_timezone_set('America/Chicago');
+		global $timeStartLog;
+		$data = array();
+		$timeEndLog = microtime(true);
+		$data['start'] = date('Y-m-d H:i:s', $timeStartLog);
+		$data['end'] = date('Y-m-d H:i:s', $timeEndLog);
+		$data['life'] = round($timeEndLog - $timeStartLog, 2);
+		$data['script_url'] = $_SERVER['REQUEST_URI'];
+		$data['client_ip_address'] = $_SERVER['REMOTE_ADDR'];
+		$data['server_address'] = $_SERVER['SERVER_ADDR'];
+
+		$sql = "INSERT INTO `log_script_life` (`id`, `start`, `end`, `life`, `script_url`, `client_ip_address`, `server_address`)
+				VALUES (
+					'NULL',
+					'" . $data['start'] . "',
+					'" . $data['end'] . "',
+					'" . $data['life'] . "',
+					'" . $data['script_url'] . "',
+					'" . $data['client_ip_address'] . "',
+					'" . $data['server_address'] . "'
+				)";
+		mysql_query($sql);
+	}
 }
 ?>

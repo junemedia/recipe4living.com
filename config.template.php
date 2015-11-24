@@ -1,13 +1,13 @@
 <?php
 
 /**
- *      Debug
+ * Debug
  */
 define('DEBUG', false);
 define('NOVIEWCACHE', false);
 
 /**
- *      Display error info
+ * Display error info
  */
 define('DEBUG_INFO', false);
 define('STAGING', false);
@@ -18,7 +18,7 @@ define('STAGING', false);
 define('NEEDPASSWORD', false);
 
 /**
- *      Cache
+ * Cache
  */
 define('CACHE', false);
 define('CACHECLIENT', 'memcached');
@@ -26,17 +26,17 @@ define('ULTRACACHE', false);
 define('CACHEBUILD', false);
 
 /**
- *      Adverts
+ * Adverts
  */
 define('ADS', true);
 
 /**
- *      STUPIDLY LONG SQL QUERY LIST?
+ * STUPIDLY LONG SQL QUERY LIST?
  */
 define('QUERY_LIST', false);
 
 /**
- *      Purify
+ * Purify
  */
 define('PURIFY', false);
 
@@ -46,55 +46,56 @@ define('PURIFY', false);
  *
  * @package BluApplication
  */
-class Config {
+class Config
+{
 
-  // login credentials for staging site
-  var $stageUser = '';
-  var $stagePass = '';
+	// login credentials for staging site
+	var $stageUser = '';
+	var $stagePass = '';
 
-  /* Database settings */
+	/* Database settings */
 
-  /* Server settings */
-  var $baseUrl = '';
+	/* Server settings */
+	var $baseUrl = '';
 
-  /* Data cache */
-  var $memcacheSessionHost = '';
-  var $memcacheSessionPort = '';
+	/* Data cache */
+	var $memcacheSessionHost = '';
+	var $memcacheSessionPort = '';
 
-  /* Site settings */
-  var $siteId = 'recipe4living';
-  var $defaultFrontendController = 'recipes';
-  var $defaultBackendController = 'recipes';
+	/* Site settings */
+	var $siteId = 'recipe4living';
+	var $defaultFrontendController = 'recipes';
+	var $defaultBackendController = 'recipes';
 
-  /* Product/news commenting permissions */
-  const COMMENT_ANON = 1;  // Allow comments from anonymous users
-  const COMMENT_REGISTERED = 2;  // Allow comments from registered users
-  const COMMENT_CAPTCHA_ANON = 4;  // Require a captcha for anonymous users
-  const COMMENT_CAPTCHA_REGISTERED = 8;  // Require a captcha for registered users
+	/* Product/news commenting permissions */
+	const COMMENT_ANON = 1;  // Allow comments from anonymous users
+	const COMMENT_REGISTERED = 2;  // Allow comments from registered users
+	const COMMENT_CAPTCHA_ANON = 4;  // Require a captcha for anonymous users
+	const COMMENT_CAPTCHA_REGISTERED = 8;  // Require a captcha for registered users
 
-  const COMMENT_ALL = 3;  // COMMENT_ANON | COMMENT_REGISTERED
-  const COMMENT_CAPTCHA_ALL = 12; // COMMENT_CAPTCHA_ANON | COMMENT_CAPTCHA_REGISTERED
+	const COMMENT_ALL = 3;  // COMMENT_ANON | COMMENT_REGISTERED
+	const COMMENT_CAPTCHA_ALL = 12; // COMMENT_CAPTCHA_ANON | COMMENT_CAPTCHA_REGISTERED
 
-  function __construct() {
-    $this->databases = Array(
+	function __construct() {
+		$this->databases = Array(
 			Array (
 				'databaseHost' => '',
 				'databaseUser' => '',
 				'databasePass' => '',
 				'databaseName' => ''
 			)
-    );
+		);
 
-    $this->caches = Array (
-      'data' => Array (
-        Array('127.0.0.1', '11211')
-      ),
-      'session' => Array (
-        Array('127.0.0.1', '11211')
-      ),
-      'bigslab' => Array(
-        Array('127.0.0.1', '11211')
-      ),
-    );
-  }
+		$this->caches = Array (
+			'data' => Array (
+				Array('127.0.0.1', '11211')
+			),
+			'session' => Array (
+				Array('127.0.0.1', '11211')
+			),
+			'bigslab' => Array(
+				Array('127.0.0.1', '11211')
+			),
+		);
+	}
 }
