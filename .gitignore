@@ -8,7 +8,6 @@ sitemap*
 ## IDEs, frameworks, etc. files
 nbproject/
 .project
-.monitoring
 
 
 /config.*
@@ -22,14 +21,12 @@ generator/data/
 
 # sitemap gets generated
 xmlsitemap.*
-xmlsitemap-test*
 
 # phpinfo()
 info.php
 
 # ignore these until we can figure out if they're necessary or not
 # probably mostly not
-ror.xml
 backend/nohup.out
 backend/scrape.tar.gz
 generator/
