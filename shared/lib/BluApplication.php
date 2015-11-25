@@ -97,30 +97,16 @@ class BluApplication
 	{
 		$siteId = self::getSiteId();
 
-		// Get config name from domain if in DEBUG mode
-		//}
-
 		// Set cache directory as soon as we know it
 		define('BLUPATH_CACHE', BLUPATH_BASE.'/cache/'.$siteId);
-				/*
-         * Added by Leon
-         * Deal with duplicated links such as artiles/articles/recipes/xxx.htm
-         * Find out the true links for the duplicated items
-         */
-		//echo "<!--" . $args . "-->";
-		/*
-		*
-		* @param string Configuration setting name
-		*	@param mixed Fallback value
-		* @return mixed Configuration setting value
-		*/
+
 		// Register error handler
 		register_shutdown_function(array(new Error(),'shutdownHandler'));
 		set_exception_handler(array(new Error(), 'handleException'));
 		set_error_handler(array(new Error(),'handleError'));
 
+		// Set up session
 		Session::start();
-
 
 		$baseUrl = self::getSetting('baseUrl');
 
@@ -145,7 +131,6 @@ class BluApplication
 		 * Deal with duplicated links such as artiles/articles/recipes/xxx.htm
 		 * Find out the true links for the duplicated items
 		 */
-
 		if(!empty($args) && (substr($args,-4) == ".htm"))
 		{
 			$filters = array("article/", "articles/", "recipe/", "recipes/");
@@ -156,7 +141,6 @@ class BluApplication
 			$slug = substr($slug, 0, -4);
 
 			$typeQuery = "SELECT type,slug from articles WHERE slug like '" . $slug . "' LIMIT 0,1";
-			//echo $typeQuery . "<br>";
 			$r = mysql_query($typeQuery);
 			if($r)
 			{
@@ -166,7 +150,6 @@ class BluApplication
 				}
 			}
 		}
-		//echo "<!--" . $args . "-->";
 
 		// add more custom links
 		if(trim($args) == "articles/a_dash_of_fun/current_contests") $args = "articles/enter_our_giveaways.htm";
@@ -178,8 +161,6 @@ class BluApplication
 
 		// Has bot?
 		define('ISBOT', Request::isBot());
-
-		// Set up session
 
 		// Detect site-end and set default controller
 		if (!empty($args) && ($args[0] == self::BACKEND_SWITCH)) {
@@ -593,7 +574,9 @@ class BluApplication
 
 	/**
 	 * 	Get a data model object - pretty much a direct copy from getModel function.
-	 *	The need for this is that we need to separate classes representing real-world concepts from classes that control them, even though both types need access to the database and thus both categorise as models.
+	 *	The need for this is that we need to separate classes representing
+	 *	real-world concepts from classes that control them, even though both
+	 *	types need access to the database and thus both categorise as models.
 	 *
 	 * 	@param string Model name
 	 * 	@return BluObject Model instance
@@ -784,22 +767,18 @@ class BluApplication
 		$siteId = self::getSetting('siteId');
 		// Include end base controller
 		require_once(BLUPATH_BASE.'/'.SITEEND.'/base/controllers/'.ucfirst(SITEEND).'Controller.php');
-//if (CLI) echo (BLUPATH_BASE.'/'.SITEEND.'/base/controllers/'.ucfirst(SITEEND).'Controller.php');
 
 		// Include client-specific end base controller
 		$baseControllerPath = BLUPATH_BASE.'/'.SITEEND.'/base/controllers/Client'.ucfirst(SITEEND).'Controller.php';
 		$siteBaseControllerPath = BLUPATH_BASE.'/'.SITEEND.'/'.$siteId.'/controllers/Client'.ucfirst(SITEEND).'Controller.php';
 		if (file_exists($siteBaseControllerPath)) {
-//if (CLI) echo $siteBaseControllerPath;
 			require_once($siteBaseControllerPath);
 		} elseif (file_exists($baseControllerPath)) {
-//if (CLI) echo $baseControllerPath;
 			require_once($baseControllerPath);
 		}
 
 		// Include end controller if exits
 		$endControllerPath = BLUPATH_BASE.'/'.SITEEND.'/base/controllers/'.$name.'.php';
-//if (CLI) echo $endControllerPath;
 		if (file_exists($endControllerPath)) {
 			require_once($endControllerPath);
 			$foundName = $name;
@@ -807,7 +786,6 @@ class BluApplication
 
 		// Load site-specific end controller if exists
 		$siteControllerPath = BLUPATH_BASE.'/'.SITEEND.'/'.$siteId.'/controllers/'.$name.'.php';
-//if (CLI) echo $siteControllerPath;
 		if (file_exists($siteControllerPath)) {
 			require_once ($siteControllerPath);
 			$foundName = ucfirst($siteId).$name;
@@ -980,10 +958,6 @@ class BluApplication
 
 		$args = self::getArgs();
 		$option = self::getOption();
-
-//		$cache = self::getCache();
-
-
 		$siteEnd = 'unknown';
 
 		if (defined('SITEEND')) {
@@ -997,7 +971,6 @@ class BluApplication
 		}
 
 		if (DEBUG || (defined('NOVIEWCACHE') && NOVIEWCACHE)) self::$_viewCache = self::$_cachedDocument = false;
-//		self::$_cachedDocument =  $cache->get(self::$_cacheKey, null, 0, false);
 
 		if (self::$_cachedDocument !== false && self::$_viewCache == true) {
 			return;
@@ -1047,14 +1020,10 @@ class BluApplication
 	{
 
 		if (self::$_cachedDocument !== false && self::$_viewCache == true) {
-//			if ($_SERVER['REMOTE_ADDR'] == '87.80.43.97')
-//				Utility::irc_dump('successfully served a cached document '.$_SERVER['REQUEST_URI']. ' - '.memory_get_peak_usage(), 'max');
 			echo self::$_cachedDocument;
 			return;
 		}
 
-//			if ($_SERVER['REMOTE_ADDR'] == '87.80.43.97')
-//			Utility::irc_dump('successfully served a NON-cached document '.$_SERVER['REQUEST_URI']. ' - '.memory_get_peak_usage(), 'max');
 		// Redirect if requested
 		if ($redirect = $this->_redirect) {
 
@@ -1096,7 +1065,6 @@ class BluApplication
 
 		// Flush buffer
 		ob_flush();
-		//$this->saveScriptLog();
 
 		/**
 		 * @desc We need to make sure we close the db connections
