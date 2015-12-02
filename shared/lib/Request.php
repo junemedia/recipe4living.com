@@ -150,7 +150,7 @@ class Request
 		// Set the value in the hash
 		$input[$key] = $value;
 	}
-	
+
 	/**
 	 * Set cookie
 	 *
@@ -175,24 +175,24 @@ class Request
 	{
 		static $visitorIP = null;
 		if (!$visitorIP) {
-			
+
 			// Get client IP
 			if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 				$visitorIP = $_SERVER['HTTP_CLIENT_IP'];
 			} else {
 				$visitorIP = false;
 			}
-	
+
 			// Get IPs of forwarder clients
 			if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 				$forwardIPs = explode(', ', $_SERVER['HTTP_X_FORWARDED_FOR']);
-	
+
 				// Add client IP
 				if ($visitorIP) {
 					array_unshift($forwardIPs, $visitorIP);
 					$visitorIP = false;
 				}
-	
+
 				// Get last valid IP address in list
 				foreach(array_reverse($forwardIPs) as $forwardIP) {
 					if (!preg_match('/^(?:10|172\.(?:1[6-9]|2\d|3[01])|192\.168|127\.0)\./', $forwardIP)) {
@@ -202,7 +202,7 @@ class Request
 					}
 				}
 			}
-	
+
 			// Fall back to server remote address
 			if (!$visitorIP) {
 				$visitorIP = $_SERVER['REMOTE_ADDR'];
@@ -327,7 +327,7 @@ class Request
 		return $newUrl;
 	}
 
-	
+
 	/**
 	 * See if the visitor is a search engine bot
 	 *
@@ -339,7 +339,7 @@ class Request
 		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) {
 			return false;
 		}
-		
+
 		// Get user agent
 		$userAgent = $_SERVER['HTTP_USER_AGENT'];
 
@@ -430,14 +430,14 @@ class Request
 	private static function deleteSnapshot($hash = 'default'){
 		return Session::delete(self::SNAPSHOT_KEY.strtolower($hash), array());
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	#### SNAPSHOT IS A GOOD IDEA, BUT WAS IMPLEMENTED BADLY, TRY AGAIN:
-	
+
 	/**
 	 *	Set $_REQUEST into $_SESSION
 	 *
@@ -447,10 +447,10 @@ class Request
 	public static function storeRequest()
 	{
 		$sessionKey = self::SNAPSHOT_KEY;
-		
+
 		Session::set($sessionKey, $_REQUEST);
 	}
-	
+
 	/**
 	 *	Get $_REQUEST from $_SESSION
 	 *
@@ -460,13 +460,13 @@ class Request
 	public static function restoreRequest()
 	{
 		$sessionKey = self::SNAPSHOT_KEY;
-		
+
 		if ($request = Session::get($sessionKey)) {
 			$_REQUEST = $request;
 			Session::delete($sessionKey);	// Clear up.
 		}
 	}
-	
+
 	####
 
 	/**
@@ -530,16 +530,16 @@ class Request
 		if (!$file = self::getVar($key, false, 'FILES')) {
 			return $default;		// No file uploaded
 		}
-		
+
 		// Test integrity
 		if (!Upload::isValid($file)) {
 			return $default;		// Uploaded file corrupt.
 		}
-		
+
 		// Return
 		return $file;
 	}
-	
+
 	/**
 	 *	Shortcut for retrieving an array of $_FILES.
 	 *
@@ -555,21 +555,21 @@ class Request
 		if (empty($_FILES[$key])) {
 			return $default;
 		}
-		
+
 		// Reorder, lol PHP.
 		$uploads = array();
 		foreach ($_FILES[$key] as $attribute => $info) {
 			self::_reorderFiles($uploads, $info, $attribute);
 		}
-		
+
 		// Return
 		return $uploads;
 	}
-	
+
 	/**
 	 *	Lol PHP
 	 *
-	 *	@static 
+	 *	@static
 	 *	@see http://us3.php.net/manual/en/features.file-upload.multiple.php
 	 *	@access private
 	 *	@param mixed Data

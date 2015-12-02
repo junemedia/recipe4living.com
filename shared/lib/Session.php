@@ -22,18 +22,18 @@ class Session
 				case 'memcached' :
 					$sessionSavePath = $memcacheSessionHost.':'.$memcacheSesssionPort;
 					ini_set('session.save_handler', $cacheClient);
-				if(ULTRACACHE) {
-					ini_set('session.serialize_handler', 'igbinary');
-				}
+					if(ULTRACACHE) {
+						ini_set('session.serialize_handler', 'igbinary');
+					}
 					session_save_path($sessionSavePath);
-				break;
+					break;
 				default :
 					$sessionSavePath = 'tcp://'.$memcacheSessionHost.':'.$memcacheSesssionPort.'?persistent=1&weight=1&timeout=2&retry_interval=10';
 					ini_set('session.save_handler', $cacheClient);
 					session_save_path($sessionSavePath);
-				break;
+					break;
 			}
-			
+
 		}
 
 		// Don't limit caching
@@ -51,37 +51,37 @@ class Session
 			// Flash replaces + with SPACE
 			$uploadKey = str_replace(' ', '+', $uploadKey);
 
-				// Decrypt and start names session
-		        $crypto = Crypto::getInstance(md5(BluApplication::getSetting('cryptoSalt')));
-		        session_id($crypto->decrypt($uploadKey));
-	    	}
+			// Decrypt and start names session
+			$crypto = Crypto::getInstance(md5(BluApplication::getSetting('cryptoSalt')));
+			session_id($crypto->decrypt($uploadKey));
+		}
 
-	    // Below if condition code added by Samir Patel on Oct 12th, 2011 to increase session time limit for office IPs
+		// Below if condition code added by Samir Patel on Oct 12th, 2011 to increase session time limit for office IPs
 		// add white list IPs in array to increase session time limit
 		if (in_array($_SERVER['REMOTE_ADDR'], array('66.54.186.254','208.103.93.46'))) {
 			// Increase session cookie time in user's browser - 12 hours
 			ini_set('session.cookie_lifetime', 12*60*60);
-			
+
 			// Increase the retention of the session information on the server - 12 hours
 			ini_set('session.gc_maxlifetime', 12*60*60);
 
 			// Increase the retention of the session information on the server - 12 hours
 			ini_set('session.cache_expire', 12*60*60);
 		}
-                
-                /** Admin user session longer **/
-                if (isset($_SERVER['PHP_AUTH_USER'])) {
+
+		/** Admin user session longer **/
+		if (isset($_SERVER['PHP_AUTH_USER'])) {
 			// Increase session cookie time in user's browser - 15 hours
 			ini_set('session.cookie_lifetime', 15*60*60);
-			
+
 			// Increase the retention of the session information on the server - 15 hours
 			ini_set('session.gc_maxlifetime', 15*60*60);
 
 			// Increase the retention of the session information on the server - 15 hours
-			ini_set('session.cache_expire', 15*60*60);                    
-                }
-                /** Admin user session longer END **/
-                
+			ini_set('session.cache_expire', 15*60*60);
+		}
+		/** Admin user session longer END **/
+
 		// Start the session
 		session_start();
 	}
@@ -116,7 +116,7 @@ class Session
 	public static function set($key, $value)
 	{
 		$_SESSION[$key] = $value;
-		
+
 		// For some reason session variables don't save correctly in
 		// rare circumstances unless we explicity reference them?!?
 		// Go Figure.
