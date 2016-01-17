@@ -311,4 +311,5 @@
 
 	</div>
 	<div class="screenonly">
+	<?php $this->_advert('swoop'); ?>
 </div>
