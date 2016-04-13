@@ -114,6 +114,11 @@ abstract class ClientFrontendController extends FrontendController
 		ob_start();
 		$this->_advert('WEBSITE_BOTTOM_NAV');
 		Template::set('footerAdvert', ob_get_clean());
+
+		// Underdog media tag
+		ob_start();
+		$this->_advert('underdog');
+		Template::set('underdogAdvert', ob_get_clean());
 	}
 	
 	public function _getLandingLinks($slug)
@@ -153,6 +158,7 @@ abstract class ClientFrontendController extends FrontendController
 		case 'WEBSITE_BOTTOM_NAV':
 		case 'WEBSITE_LEFT_SIDEBAR_BELOW_GOOGLE':
 		case 'swoop':
+		case 'underdog':
 			include(BLUPATH_TEMPLATES.'/site/ads/'.$type.'.php');
 		break;
 		

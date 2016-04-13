@@ -313,6 +313,7 @@ pjs.parentNode.insertBefore(js, pjs);
 }(document, "script", "pubexchange-jssdk"));</script>
 <!-- pub exchange tags scripts END -->
     
+<div class="screenonly"><?= Template::get('underdogAdvert'); ?></div>
     
 </body>
 </html>
