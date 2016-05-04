@@ -118,9 +118,9 @@ if(!defined('RSS_TITLE_LENGTH')){
 	foreach ($wim_rss as $item) { ?>
 		<div id="li_item">
             <a target="_blank" title="<?php echo $item['title']; ?>" href="<?php echo $item['link']; ?>">
-            <?php $string = $item['title']; 
-                if (strlen($string) > RSS_TITLE_LENGTH) { 
-                    $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...'; 
+            <?php $string = $item['title'];
+                if (strlen($string) > RSS_TITLE_LENGTH) {
+                    $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...';
                 } else {$string = $item['title'];} echo $string; ?>
             </a>
         </div>
@@ -161,14 +161,14 @@ if(!defined('RSS_TITLE_LENGTH')){
 	foreach ($cot as $item) { ?>
 		<div id="li_item">
             <a target="_blank" title="<?php echo $item['title']; ?>" href="<?php echo $item['link']; ?>">
-            <?php 
-                $string = $item['title']; 
-                if (strlen($string) > RSS_TITLE_LENGTH) { 
-                    $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...'; 
+            <?php
+                $string = $item['title'];
+                if (strlen($string) > RSS_TITLE_LENGTH) {
+                    $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...';
                 }else {
                     $string = $item['title'];
-                } 
-                echo $string; 
+                }
+                echo $string;
             ?>
             </a>
         </div>
@@ -182,7 +182,7 @@ if(!defined('RSS_TITLE_LENGTH')){
 <?php
 //	END OF RSS OF OTHER SITES
 ?>
-<div style="clear: left;"></div>              
+<div style="clear: left;"></div>
 
 <div class="mainFooterDiv">
 	<a target="_blank" id="box-link-ff" href="http://www.fitandfabliving.com/"></a>
@@ -213,23 +213,23 @@ if(!defined('RSS_TITLE_LENGTH')){
 
 
 
-	
-  
 
 
-		
+
+
+
 	<div class="clear"></div>
-	
+
 
 
 	<?php if (DEBUG_INFO && isset($debugInfo)) { echo $debugInfo; } ?>
 
-	
-	
+
+
 
 	<?php if (ADS) {
 			$array_url_to_hide_vibrant_code = array('giveaway','login','register','share','delicious_and_gluten_free_with_tasteguru_it_s_true','stonefire');
-				
+
 				if ($_SERVER['REQUEST_URI'] != '') {
 					$found_in_array = false;
 					foreach ($array_url_to_hide_vibrant_code as $temp_slug) {
@@ -241,24 +241,24 @@ if(!defined('RSS_TITLE_LENGTH')){
 				} else {
 					$found_in_array = true;
 				}
-				
+
 				if (isset($_GET['cid'])) { $found_in_array = true; }
 		?>
 
 		<!-- FM Tracking Pixel -->
 		<script type='text/javascript' src='http://static.fmpub.net/site/recipe4livingco'></script>
 		<!-- FM Tracking Pixel -->
-		
+
 		<?php if ($found_in_array == false) {
 			echo '<script type="text/javascript">var infolinks_pid = 1863387;var infolinks_wsid = 0;</script><script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>';
 		} ?>
-		
+
 		<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
 		<script type="text/javascript">
 			_qacct="p-ed7ji9FtIlPSo";quantserve();
 		</script>
 	<?php } ?>
-	
+
 	<!-- LiveRamp --><!--iframe name="_rlcdn" width=0 height=0 frameborder=0 src="http://rc.rlcdn.com/381139.html"></iframe--><!-- LiveRamp -->
     <!-- BEGIN SiteCTRL Script -->
     <script type="text/javascript">
@@ -269,9 +269,9 @@ if(!defined('RSS_TITLE_LENGTH')){
     </script>
     <!-- END SiteCTRL Script -->
     <?php
-    
+
          $encryption_key = "36851a80704f3cbe";
-    
+
         function lr_encrypt($input, $encryption_key) {
           $input = pkcs5_pad($input, mcrypt_get_block_size(MCRYPT_BLOWFISH, MCRYPT_MODE_CBC));
           $td = mcrypt_module_open(MCRYPT_BLOWFISH, '', MCRYPT_MODE_CBC, '');
@@ -282,15 +282,15 @@ if(!defined('RSS_TITLE_LENGTH')){
           mcrypt_module_close($td);
           return array(bin2hex($data), bin2hex($iv), 'bf-cbc');
         }
-         
+
         function pkcs5_pad($text, $blocksize) {
           $pad = $blocksize - (strlen($text) % $blocksize);
           return $text . str_repeat(chr($pad), $pad);
         }
-         
-        
+
+
         /**
-	  * Facebook API updated to block rlcdn.com    
+	  * Facebook API updated to block rlcdn.com
         // LiveRamp Email, we use cookie of Email to get it.
         if(isset($_COOKIE['EMAIL_ID'])){
             // We load the LiveRamp if the email already set
@@ -300,10 +300,10 @@ if(!defined('RSS_TITLE_LENGTH')){
             echo $liveramp;
         }
     	*/
-    
+
     ?>
-    
-<!-- pub exchange tags scripts START -->    
+
+<!-- pub exchange tags scripts START -->
 <script>(function(d, s, id) {
 var js, pjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) return;
@@ -312,8 +312,10 @@ js.src = "//cdn.pubexchange.com/modules/partner/recipe_4_living";
 pjs.parentNode.insertBefore(js, pjs);
 }(document, "script", "pubexchange-jssdk"));</script>
 <!-- pub exchange tags scripts END -->
-    
+
 <div class="screenonly"><?= Template::get('underdogAdvert'); ?></div>
-    
+
+<?php include BLUPATH_TEMPLATES.'/site/ads/liveramp.php'; ?>
+
 </body>
 </html>
