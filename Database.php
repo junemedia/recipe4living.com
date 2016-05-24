@@ -258,7 +258,7 @@ class Database
 	 */
 	protected function _connect($host, $user, $pass)
 	{
-		return mysql_pconnect($host, $user, $pass, true);
+		return mysql_connect($host, $user, $pass, true);
 	}
 
 	/**
