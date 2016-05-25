@@ -3,7 +3,7 @@
 			<tr>
 				<td width="600px" valign="top">
 					<?php
-						$iframe_url = "http://stage.r4l.popularliving.com/subctr/unsub/r4l/entry.php?listid=".$_REQUEST['lid']."&jobid=".$_REQUEST['jid'];
+						$iframe_url = BluApplication::getSetting('subctrURL') . "/subctr/unsub/r4l/entry.php?listid=".$_REQUEST['lid']."&jobid=".$_REQUEST['jid'];
 						
 						if (isset($_REQUEST['e'])) {
 							setcookie("EMAIL_ID", $_REQUEST['e'], time()+642816000, "/", ".recipe4living.com");

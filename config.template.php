@@ -49,6 +49,9 @@ define('PURIFY', false);
 class Config
 {
 
+	// url to the subscription center
+	var $subctrURL = 'http://r4l.popularliving.com';
+
 	// login credentials for staging site
 	var $stageUser = '';
 	var $stagePass = '';
