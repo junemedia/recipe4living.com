@@ -174,11 +174,11 @@ class MaillistPlugin extends Plugin
     {
     	// Need to be able to unsubscribe people who aren't subscribed.
     	$recipient = $this->getRecipient($email);
-    	
+
     	if ($recipient == false) {
     		$this->subscribeRecipient($email, null, null, array_keys($this->getMailingLists()));
     	}
-    	
+
 		$query = 'UPDATE mailSubscribers AS ms
 				LEFT JOIN mailListSubscriptions AS mls ON mls.subscriberId = ms.id
 			SET ms.status = "unsubscribed",
@@ -245,7 +245,7 @@ class MaillistPlugin extends Plugin
     {
 		// Nothing to do - we are always in sync. with ourselves ;)
     }
-	
+
 	/**
 	 *	Get external provider's list ID mapping
 	 *

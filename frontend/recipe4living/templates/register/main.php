@@ -5,14 +5,14 @@
 			<div id="panel-center" class="column">
 
 				<div id="register-progress" class="register-step<?= $currentStageNum; ?>"></div>
-				
+
 				<div id="register-stages" class="wizard">
 				<?php
 					$stageNum = 0;
 					foreach ($registerStages as $registerStage) {
 					// Need to increment stage number regardless of if we complete the loop else it shows nothing
 					$i = ++$stageNum;
-					
+
 						if ($stageNum < $currentStageNum) {
 							$status = 'complete';
 							continue;	// Just don't show it.
@@ -38,21 +38,21 @@
 						<div class="clear"></div>
 					</div>
 				<?php
-						
+
 					}
 				?>
 				</div>
 
 				<div class="clear"></div>
 			</div>
-				
+
 			<div id="panel-left" class="column">
 				<?php $this->leftnav(); ?>
 			</div>
-	
+
 			<div id="panel-right" class="column">
 				<?php include(BLUPATH_TEMPLATES.'/site/newsletter.php') ?>
-				
+
 				<?php //if (STAGING) { ?>
 				<div class="ad">
 					<!-- REMOVE AD - /frontend/recipe4living/templates/register/main.php -->
@@ -61,16 +61,16 @@
 					<!-- FM Test STAMP 300x250 expands to 300x600 Zone -->
 				</div>
 				<?php //} ?>
-				
+
 				<div class="ad"><?php $this->_advert('AD_RIGHT1'); ?></div>
 
 				<?php // $this->landing_featured_question(); ?>
-				
+
 				<?php $this->_box('reference_guides', array('limit' => 10)); ?>
 
 				<div class="ad"><?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?></div>
 			</div>
-			
+
 			<div class="clear"></div>
 		</div>
 
