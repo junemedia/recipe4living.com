@@ -20,6 +20,6 @@
 		s.setAttribute('data-serverbase', serverbase);
 		doc.head.appendChild(s);
 	}
-})('SW-57430661-3');
+})('SW-10152718-14');
 </script>
 <!-- -SWOOP -->
