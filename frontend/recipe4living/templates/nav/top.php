@@ -51,14 +51,7 @@
 						<a href="<?= SITEURL ?>/hints_tips/product_reviews"><span>Product Reviews</span></a>
 					</div>
 				</li>
-				
-				<li class="parent">
-					<div class="nav-item">
-						<a href="http://videos.recipe4living.com/"><span>Videos</span></a>
-					</div>
-				</li>
-				
-				
+
 				<li class="parent" style="padding:0px;">
 					<div class="nav-icon-item">
 						<span>Follow Us:</span>
