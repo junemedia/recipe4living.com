@@ -178,12 +178,12 @@ class Cache
 		// Boo, rain
 		if (!$connectionSuccess) {
 			$this->_cacheHasFailed = true;
-            		mail('leonz@junemedia.com',
+            		mail('r4l.tech@junemedia.com',
                 	'Memcache Failed connection on '.$_SERVER['HTTP_HOST'] . ' - ' . $_SERVER['SERVER_ADDR'],
                 	'Server IP: ' . $_SERVER['SERVER_ADDR'] . "\n".
                 	'Client IP: ' . $_SERVER['REMOTE_ADDR'] . "\n".
                 	'Database Info: ' . mysql_get_host_info() . "\n".
-                	'From: leon.zhao.R4L.memcache <leonz@junemedia.com>');
+                	'From: r4l.tech <r4l.tech@junemedia.com>');
             		exit();
 		}
 		

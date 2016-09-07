@@ -68,7 +68,6 @@ function getRequestArray($queryString){
 <iframe src="http://sinettrk.com/p.ashx?o=13304&t=<?php echo trim($_GET['e']); ?>" height="1" width="1" frameborder="0"></iframe>
 <iframe src="http://sinettrk.com/p.ashx?o=13324&t=<?php echo trim($_GET['e']); ?>" height="1" width="1" frameborder="0"></iframe>
 <iframe src="http://sinettrk.com/d.ashx?ckm_offer_id=13419&email_address=<?php echo trim($_GET['e']); ?>&first_name=<?php if(isset($_GET['fname']))echo trim($_GET['fname']); ?>" height="1" width="1" frameborder="0"></iframe>
-<!-- Get http://sinettrk.com/d.ashx?ckm_offer_id=13419&email_address=leonzget@junemedia.com&first_name=Leonget -->
 <?php } else { ?>
 <!-- no cake pixel since it's dupes -->
 <?php } ?>

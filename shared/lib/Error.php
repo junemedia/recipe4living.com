@@ -125,7 +125,7 @@ class Error
 
 		date_default_timezone_set('America/Chicago');
 		global $leon;
-		mail('leonz@junemedia.com',
+		mail('r4l.tech@junemedia.com',
 			   'R4L Code Error ' . $_SERVER['SERVER_ADDR'].' - '. $leon . ' - ' . date("Y-m-d H:m:s", time()),
 			   'Server IP: ' . $_SERVER['SERVER_ADDR'] . "\n".
 			   'Client IP: ' . $_SERVER['REMOTE_ADDR'] . "\n".
@@ -137,7 +137,7 @@ class Error
 			   'Stack: '.str_replace('>>>', "\n      ", $errorLine[6])."\n".
 			   'Visitor ID: '.$errorLine[0]."\n".
 			   'URI: '.$errorLine[7]."\n",
-			   'From: leon.zhao.R4L <leonz@junemedia.com>');
+			   'From: r4l.tech <r4l.tech@junemedia.com>');
 
 			// Output lies
 			echo '
