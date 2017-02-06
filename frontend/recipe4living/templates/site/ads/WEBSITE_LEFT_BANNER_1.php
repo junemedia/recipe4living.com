@@ -1,6 +1,15 @@
 <?php if (!isset($_GET['cid'])) { ?>
-<div class="screenonly">
-	<script type="text/javascript">netseer_tag_id = "2358";netseer_ad_width = "150";netseer_ad_height = "100";netseer_task = "ad";</script>
-	<script src="http://contextlinks.netseer.com/dsatserving2/scripts/netseerads.js" type="text/javascript"></script>
+<div class="screenonly" style="padding: 5px 15px;">
+  <script id="mNCC" language="javascript">
+    medianet_width = "120";
+    medianet_height = "300";
+    medianet_crid = "578022840";
+    medianet_versionId = "111299";
+    (function() {
+      var isSSL = 'https:' == document.location.protocol;
+      var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CU52X6SM' + (isSSL ? '&https=1' : '');
+      document.write('<scr' + 'ipt type="text/javascript" id="mNSC" src="' + mnSrc + '"></scr' + 'ipt>');
+    })();
+  </script>
 </div>
 <?php } ?>
