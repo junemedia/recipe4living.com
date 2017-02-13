@@ -34,19 +34,11 @@
 
 		<!-- Right -->
 		<div id="panel-right" class="column">
+			<div class="ad"><?php $this->_advert('AD_RIGHT1', 'index'); ?></div>
 
-			<div class="ad">
-				<?php $this->_advert('AD_RIGHT1', 'index'); ?>
-			</div>
-
-			<?php $this->_box('right_column_featured_recipes', array('limit' => 1,'boxid'=>34)); ?>
-			<?php $this->_box('right_column_feature_collection', array('limit' => 3,'boxid'=>35)); ?>
 			<?php include(BLUPATH_TEMPLATES.'/polls/polls.php') ?>
-			<div class="clear"></div>
 
-			<div class="ad">
-				<?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?>
-			</div>
+			<?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?>
 		</div>
 
 	</div>

@@ -31,24 +31,13 @@
     <?php }?>
 
     <div id="panel-right" class="column">
-      <?php include(BLUPATH_TEMPLATES.'/site/newsletter.php') ?>
-
-      <div class="ad"> </div>
-
       <div class="ad"><?php $this->_advert('AD_RIGHT1'); ?></div>
 
-      <?php if($iscategory){
-        $this->_box('right_column_featured_recipes', array('limit' => 1,'boxid'=>34));
-      }?>
-
-      <?php if ($iscategory) { ?>
-        <?php $this->_box('right_column_feature_collection', array('limit' => 3,'boxid'=>35)); ?>
-      <?php } else {
+      <?php if (!$iscategory) {
         $this->_box('reference_guides', array('limit' => 10));
       } ?>
-      <div class="clear"></div>
 
-      <div class="ad"><?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?></div>
+      <?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?>
     </div>
     <div class="clear"></div>
   </div>
