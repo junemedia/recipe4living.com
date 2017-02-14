@@ -15,12 +15,6 @@
 	<?php }?>
 	<?php }?>
 
-     
 </div>
 */
 ?>
-<div class="our_best">
-    <div id="pubexchange_rail_by_partner_1"></div>
-</div>
-
-	
