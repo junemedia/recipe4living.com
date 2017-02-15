@@ -64,9 +64,7 @@
         </div>
 
         <div class="clear2"></div>
-        <div class="entry_right" style="overflow: hidden;">
-          <div id="pubexchange_below_content"></div>
-        </div>
+        <?php include BLUPATH_TEMPLATES.'/site/ads/medianet_604x250.php'; ?>
         <div class="clear"></div>
       </div>
     </div>
