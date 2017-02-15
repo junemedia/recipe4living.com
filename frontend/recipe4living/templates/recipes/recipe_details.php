@@ -156,6 +156,8 @@
 						$this->view_page(); ?>
 					</div>
 
+					<?php include BLUPATH_TEMPLATES.'/site/ads/medianet_604x250.php'; ?>
+
 					<?php Template::startScript(); ?>
 					var fontResizer = new FontResizer($('post').getElement('.entry'), {initial: 0.75});
 					$('post').getElement('.font-decrease').addEvent('click', function (event) {

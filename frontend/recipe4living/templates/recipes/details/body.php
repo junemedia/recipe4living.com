@@ -211,6 +211,7 @@
 				<?php } ?>
 			</ul>
 		</div>
+		<div class="clear"></div>
 	</div>
 	<?php } ?>
 
@@ -234,5 +235,6 @@
 				<?php } ?>
 			</ul>
 		</div>
+		<div class="clear"></div>
 	</div>
 	<?php }} ?>
