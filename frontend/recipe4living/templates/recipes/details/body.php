@@ -43,35 +43,22 @@
 		</div>
 	</div>
 	<?php } ?>
-<? /*	<div id="recipe-ingredients" class="block">
-		<h2>Normalized Ingredients</h2>
-<h3>aN.B. We're probably not going to actually display these on the live site, with the exception of in shopping lists, as they're pretty illegible.</h3>
-		<div class="content">
-
-<ul>
-<? foreach ($item['tidyIngredients'] as $ingredient) { if (!is_array($ingredient['details'])) { continue; }  ?>
-<li><?=$ingredient['amount'];?> <?=$ingredient['details']['weights'][$ingredient['weightId']]['Msre_Desc'];?> <?=$ingredient['details']['Long_Desc'];?></li>
-<? } ?>
-</ul>
-</div>
-</div>
-<? */ ?>
 	<?php if (!empty($item['yield']['quantity'])) { ?>
 	<div id="recipe-servingSize" class="block">
 		<h2>Serving Size / Yield</h2>
 		<div class="content">
 			<span class="servingsize" itemprop="recipeYield">
             <?php
-            
+
                 echo $item['yield']['quantity'].' ';
-			        if ($item['yield']['measure'] == 'people') {
-				        echo 'serving';
-				        if ($item['yield']['quantity'] > 1) {
-				        echo 's';
-				        }
-			        } else {
-				        echo $item['yield']['measure'];
-			        } 
+							if ($item['yield']['measure'] == 'people') {
+								echo 'serving';
+								if ($item['yield']['quantity'] > 1) {
+								echo 's';
+								}
+							} else {
+								echo $item['yield']['measure'];
+							}
             ?>
             </span>
 		</div>
@@ -98,35 +85,35 @@
 				<span class="item" style="text-align: center;" >
 					<h2 style="line-height: 1.25em; color: rgb(255, 255, 255); margin-bottom: 0px;" class="fn">Our Readers Also Loved</h2>
 				</span>
-			</div>		
-		</div>		
-		<div class="right_content">		
+			</div>
+		</div>
+		<div class="right_content">
 			<?php if(!empty($item['readerloved'])){?>
 			<ul class="thumb-list">
 				<?php foreach ($item['readerloved'] as $key=>$ritem) { ?>
 				<li>
-				
+
 					<div class="im">
 						<a href="<?= SITEURL.$ritem['link']; ?>">
 						<img width="75" height="75" alt="<?= isset($ritem['featuredImage']['filename']) ? $ritem['featured_alt'] : $ritem['default_alt'];?>" src="<?= ASSETURL; ?>/itemimages/75/75/3/<?= isset($ritem['featuredImage']['filename']) ? $ritem['featuredImage']['filename'] : $ritem['image']['filename']; ?>" />
 						</a>
 					</div>
-					
+
 					<div class="desc">
 						<h5><a href="<?= SITEURL.$ritem['link']; ?>"><?= $ritem['title']; ?></a></h5>
 						<div class="rating text-content fl">
 							<?php include(BLUPATH_TEMPLATES.'/articles/items/reader_loved_rating.php'); ?>
 						</div>
 					</div>
-					
+
 					<div class="clear"></div>
-					
+
 				</li>
 				<?php } ?>
-			</ul>	
+			</ul>
 			<?php } else{?>
 				No matched recipes.
-			<?php }?>			
+			<?php }?>
 		</div>
 	</div><!--End entry right-->
 <?php }?>
@@ -142,49 +129,7 @@
 	</div>
 </div>
 <?php include(BLUPATH_TEMPLATES.'/box/addalt.php'); ?>
-	
-	<?php
-	/*
-	
-	NOTE:  ABOVE INGREGIENTS NEEDS TO BE UPDATED ONCE NORMALIZATION IS DONE.  WE NEED TO SPLIT "AMOUNT" AND "NAME" INTO TWO SEPARATE TAGS.
-	
-	CHANGE FROM THIS:
-	
-	<li class="ingredient" itemprop="ingredients"><?= $ingredient; ?></li>
-	
-	TO THIS:
-	
-	<li class="ingredient" itemprop="ingredients"><span class="amount">1 1/2 C</span>. <span class="name">self-raising flour</span></li>
-	
-	
-	
-	******************************************************************************************************************************************
-	
-	
-	
-	NOTES: ONCE THE NORMALIZATION IS DONE AND WE HAVE NUTRITION FACTS, WE CAN USE BELOW CODE (CURRENTLY COMMENTED OUT) TO DISPLAY NUTRITION FACTS INFORMATION ON EACH RECIPE PAGE, 
-	THIS WILL ENABLE GOOGLE TO READ THIS INFORMATION SINCE THEY ARE TAGGED SO GOOGLE RECIPE SEARCH ENGINE CAN READ IT.
-	
-	NOTES ADDED BY SAMIR.  SEE http://schema.org/Recipe FOR EXAMPLE.
-	
-	*/
-	?>
-	<!--
-	<div itemprop="nutrition" itemscope itemtype="http://schema.org/NutritionInformation" class="block">
-		<h2>Nutrition Facts</h2>
-		<div class="content">
-			<span itemprop="calories">240 calories</span>,
-    		<span itemprop="fatContent">9 grams fat</span>
-		</div>
-	</div>
-	-->
-	
-	
-	
-	
-	
-	
-	
+
 
 	<?php if ($this->_doc->getFormat() != 'print') { if (!empty($item['related'])) { ?>
 	<div class="block screenonly" id="similar-dishes">
