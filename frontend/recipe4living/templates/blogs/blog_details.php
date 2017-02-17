@@ -84,15 +84,6 @@
 					
 					<div class="clear"></div>
 				</div>
-				
-				<?php //if (STAGING) { ?>
-				<div class="conversationalist ad">
-					<!-- By Samir Patel /frontend/recipe4living/templates/recipes/recipe_details.php -->
-					<!-- FM Test STAMP ("Home") 500x250 Zone -->
-					<script type='text/javascript' src='http://static.fmpub.net/zone/2560'></script>
-					<!-- FM Test STAMP ("Home") 500x250 Zone -->
-				</div>
-				<?php //} ?>
 			</div>
 
 			<div id="panel-left" class="column screenonly">
@@ -102,18 +93,7 @@
 			<div id="panel-right" class="column screenonly">
 				<?php include(BLUPATH_TEMPLATES.'/site/newsletter.php') ?>
 				
-				<?php //if (STAGING) { ?>
-				<div class="ad">
-					<!-- THIS AD REMOVED PER MAXINE'S REQUEST by Samir Patel /frontend/recipe4living/templates/recipes/recipe_details.php -->
-					<!-- FM Test STAMP 300x250 expands to 300x600 Zone -->
-					<!-- <script type='text/javascript' src='http://static.fmpub.net/zone/2461'></script>-->
-					<!-- FM Test STAMP 300x250 expands to 300x600 Zone -->
-				</div>
-				<?php //} ?>
-				
 				<div class="ad"><?php $this->_advert('AD_RIGHT1'); ?></div>
-
-				<?php // $this->landing_featured_question(); ?>
 
 				<?php $this->_box('reference_guides', array('limit' => 10)); ?>
 				<?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?>

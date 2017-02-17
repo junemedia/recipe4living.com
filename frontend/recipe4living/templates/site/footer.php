@@ -153,10 +153,6 @@
 					if (isset($_GET['cid'])) { $found_in_array = true; }
 			?>
 
-			<!-- FM Tracking Pixel -->
-			<script type='text/javascript' src='http://static.fmpub.net/site/recipe4livingco'></script>
-			<!-- FM Tracking Pixel -->
-
 			<?php if ($found_in_array == false) {
 				echo '<script type="text/javascript">var infolinks_pid = 1863387;var infolinks_wsid = 0;</script><script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>';
 			} ?>

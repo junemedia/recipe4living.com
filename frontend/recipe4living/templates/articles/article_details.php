@@ -103,11 +103,6 @@
 
         <div class="clear"></div>
       </div>
-
-      <div class="conversationalist ad">
-        <!-- FM Test STAMP ("Home") 500x250 Zone -->
-        <script type='text/javascript' src='http://static.fmpub.net/zone/2560'></script>
-      </div>
     </div>
 
     <div id="panel-right" class="column screenonly">

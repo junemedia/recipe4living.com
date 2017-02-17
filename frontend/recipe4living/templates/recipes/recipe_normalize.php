@@ -30,16 +30,6 @@
 					<div class="clear"></div>
 					
 				</div>
-				
-				<?php //if (STAGING) { ?>
-				<div class="conversationalist ad">
-					<!-- frontend/recipe4living/templates/recipes/recipe_preview.php -->
-					<!-- FM Test STAMP ("Home") 500x250 Zone -->
-					<script type='text/javascript' src='http://static.fmpub.net/zone/2560'></script>
-					<!-- FM Test STAMP ("Home") 500x250 Zone -->
-				</div>
-				<?php //} ?>
-				
 			</div>
 
 			<div id="panel-left" class="column screenonly">

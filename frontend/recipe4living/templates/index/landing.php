@@ -8,10 +8,6 @@
 			<!-- SlideShow -->
 			<div>
 				<?php $this->_box('slideshow', array('limit' => 7)); ?>
-				<div class="homepage conversationalist ad">
-					<!-- FM Test STAMP ("Home") 500x250 Zone -->
-					<script type='text/javascript' src='http://static.fmpub.net/zone/2560'></script>
-				</div>
 			</div>
 
 			<!-- Center -->

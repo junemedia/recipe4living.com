@@ -94,15 +94,6 @@
 			<div id="panel-right" class="column screenonly">
 				<?php include(BLUPATH_TEMPLATES.'/site/newsletter.php') ?>
 				
-				<?php //if (STAGING) { ?>
-				<div class="ad">
-					<!-- frontend/recipe4living/articles/image_gallery.php -->
-					<!-- FM Test STAMP 300x250 expands to 300x600 Zone -->
-					<!--<script type='text/javascript' src='http://static.fmpub.net/zone/2461'></script>-->
-					<!-- FM Test STAMP 300x250 expands to 300x600 Zone -->
-				</div>
-				<?php //} ?>
-				
 				<div class="ad"><?php $this->_advert('AD_RIGHT1'); ?></div>
 
 				<?php // $this->landing_featured_question(); ?>

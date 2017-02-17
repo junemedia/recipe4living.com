@@ -179,10 +179,6 @@
 					<div class="clear"></div>
 				</div>
 
-				<div class="conversationalist ad">
-					<script type='text/javascript' src='http://static.fmpub.net/zone/2560'></script>
-				</div>
-
 			</div>
 		</div>
 		<!-- end of class hrecipe -->
