@@ -17,6 +17,7 @@
 				<div class="clear"></div>
 
 				<div id="top_recipes" class="toprecipes rounded half fr">
+					<div id="rcjsload_807088"></div>
 				</div>
 
 			</div>
