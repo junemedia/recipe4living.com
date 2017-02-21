@@ -17,7 +17,6 @@
 				<div class="clear"></div>
 
 				<div id="top_recipes" class="toprecipes rounded half fr">
-					<div id="pubexchange_below_content___narrow"></div>
 				</div>
 
 			</div>
