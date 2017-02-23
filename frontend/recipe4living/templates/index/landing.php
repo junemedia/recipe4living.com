@@ -17,6 +17,14 @@
 				<div class="clear"></div>
 
 				<div id="top_recipes" class="toprecipes rounded half fr">
+					<div>
+					<?php include BLUPATH_TEMPLATES.'/site/ads/medianet_490x200.html'; ?><br/>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<!-- Revconent unit -->
+				<div id="top_recipes" class="toprecipes rounded half fr">
 					<div id="rcjsload_807088"></div>
 				</div>
 
