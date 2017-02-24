@@ -66,6 +66,21 @@
 	<script type="text/javascript" src="<?= COREASSETURL ?>/js/mootoolsCore.js,mootoolsMore.js,StickyWin.js,Interface.js,Nav.js,HistoryManager.js,Forms.js,BrowseArea.js,Autocompleter.js,Milkbox.js,Wizard.js,sifr.js,Slideshow.js,Articles.js?ver=6wnp"></script>
   <?php } ?>
 
+  <script>
+    <?php
+      /*
+       * a dirty dirty hack; loading mootoolsCore.js seems to
+       * overwrite JSON.parse, causing OpenX jstag to break, so we
+       * need to polyfill it here if necessary
+       */
+    ?>
+
+    if (window.JSON && !window.JSON.parse) {
+      console.log('polyfill JSON.parse');
+      window.JSON.parse = function (sJSON) { return eval('(' + sJSON + ')'); };
+    }
+  </script>
+
 	<script type="text/javascript" src="<?= COREASSETURL ?>/js/jquery.min.js,jquery.fancybox-1.3.4.pack.js,jquery.cookie.js"></script>
 
 	<script type="text/javascript">
