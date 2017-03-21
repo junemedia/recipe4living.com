@@ -23,9 +23,8 @@
 				</div>
 				<div class="clear"></div>
 
-				<!-- Revconent unit -->
 				<div id="top_recipes" class="toprecipes rounded half fr">
-					<div id="rcjsload_807088"></div>
+					<?php include BLUPATH_TEMPLATES.'/site/ads/outbrain_TF_3.php'; ?>
 				</div>
 
 			</div>
