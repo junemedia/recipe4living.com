@@ -64,10 +64,10 @@
         </div>
 
         <div class="clear2"></div>
-        <?php include BLUPATH_TEMPLATES.'/site/ads/medianet_604x250.php'; ?>
+        <?php include BLUPATH_TEMPLATES.'/site/ads/lockerdome.html'; ?>
 
         <div class="clear2"></div>
-        <?php include BLUPATH_TEMPLATES.'/site/ads/outbrain_TF_1.php'; ?>
+        <?php include BLUPATH_TEMPLATES.'/site/ads/medianet_604x250.php'; ?>
 
         <div class="clear"></div>
       </div>
