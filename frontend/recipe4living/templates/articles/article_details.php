@@ -95,6 +95,8 @@
           <div class="clear"></div>
         </div>
 
+        <?php include BLUPATH_TEMPLATES.'/site/ads/lockerdome.html'; ?>
+
         <?php include BLUPATH_TEMPLATES.'/site/ads/medianet_604x250.php'; ?>
 
         <?php $this->_addReview(); ?>

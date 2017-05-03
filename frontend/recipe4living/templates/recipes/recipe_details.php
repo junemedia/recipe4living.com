@@ -156,6 +156,8 @@
 						$this->view_page(); ?>
 					</div>
 
+					<?php include BLUPATH_TEMPLATES.'/site/ads/lockerdome.html'; ?>
+
 					<?php include BLUPATH_TEMPLATES.'/site/ads/medianet_604x250.php'; ?>
 
 					<?php Template::startScript(); ?>
@@ -189,8 +191,6 @@
 			<?php $this->showNtent = true; ?>
 
 			<?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?>
-
-			<?php include BLUPATH_TEMPLATES.'/site/ads/outbrain_TF_2.php'; ?>
 		</div>
 		<div class="clear"></div>
 
