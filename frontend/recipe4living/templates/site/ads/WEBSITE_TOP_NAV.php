@@ -1,4 +1,3 @@
-<?php if (!isset($_GET['cid'])) { ?>
 <div class="screenonly">
 
 	<script type="text/javascript">
@@ -32,4 +31,3 @@
 	<!-- end openx 728x90ATF -->
 
 </div>
-<?php } ?>

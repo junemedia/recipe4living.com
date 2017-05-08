@@ -66,14 +66,3 @@
 			</ul>
 		</div>
 	</div>
-<?php 
-/*
-    if ($this->_doc->getFormat() != 'print') { ?>
-<div align="center" style="padding-top:2px;padding-bottom:2px;">
-	<!-- begin ZEDO for channel:  R4L_PromotionalBanner_BelowNavBar , publisher: AmpereMedia , Ad Dimension: R4L_PromotionalBanner_BelowNavBar - 950 x 50 -->
-	<script language="JavaScript">var zflag_nid="608"; var zflag_cid="105/5/4"; var zflag_sid="1"; var zflag_width="950"; var zflag_height="50"; var zflag_sz="19"; </script><script language="JavaScript" src="http://c5.zedo.com/jsc/c5/fo.js"></script>
-	<!-- end ZEDO for channel:  R4L_PromotionalBanner_BelowNavBar , publisher: AmpereMedia , Ad Dimension: R4L_PromotionalBanner_BelowNavBar - 950 x 50 -->
-</div>
-<?php } 
-
-*/?>
