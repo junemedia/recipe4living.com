@@ -12,17 +12,11 @@
       </div>
       <?php }?>
       <?php $this->view_items(); ?>
-    </div>
 
-    <?php Template::startScript(); ?>
-    /* Article items */
-    /*				var articleItems = new ArticleItems($('panel-center'), null, {
-    quickView: {
-    use: false
-    },
-    scrollTo: true
-    }); */ // Don't execute this in order to cater for abysmal code.
-    <?php Template::endScript(); ?>
+      <br><br>
+
+      <?php include BLUPATH_TEMPLATES.'/site/ads/lockerdome.html'; ?>
+    </div>
 
     <?php if(!$iscategory){?>
     <div id="panel-left" class="column">
