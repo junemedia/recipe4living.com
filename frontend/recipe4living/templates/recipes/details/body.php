@@ -130,6 +130,8 @@
 </div>
 <?php include(BLUPATH_TEMPLATES.'/box/addalt.php'); ?>
 
+	<br>
+	<?php include BLUPATH_TEMPLATES.'/site/ads/lockerdome.html'; ?>
 
 	<?php if ($this->_doc->getFormat() != 'print') { if (!empty($item['related'])) { ?>
 	<div class="block screenonly" id="similar-dishes">
