@@ -100,8 +100,9 @@ class BoxoutModel extends BluModel
     $cacheKey = 'box_'.$boxId.'_'.$siteId.'_'.$langCode.'_'.serialize($args);
     $box = $this->_cache->get($cacheKey);
 
-    // Reload for Chicago office only
+    // Reload for JM offices only
     if (($_SERVER["REMOTE_ADDR"] == "66.54.186.254")) { $box = false; }
+    if (($_SERVER["REMOTE_ADDR"] == "66.117.119.138")) { $box = false; }
 
     if ($box === false) {
 
