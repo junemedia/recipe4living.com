@@ -12,10 +12,6 @@
       </div>
       <?php }?>
       <?php $this->view_items(); ?>
-
-      <br><br>
-
-      <?php include BLUPATH_TEMPLATES.'/site/ads/lockerdome.html'; ?>
     </div>
 
     <?php if(!$iscategory){?>

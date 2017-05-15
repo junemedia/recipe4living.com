@@ -100,7 +100,9 @@
 		<div class="thumb-list">
 			<ul style="<?php echo $iscategory?'width:640px':'';?>">
 			<?php
+        $i = 0;
 				foreach ($items as $item) {
+          $i++;
 					// Do some controller stuff, eugh
 					$recipeBoxLink = $itemsModel->getTaskLink($item['link'], 'save_to_recipe_box');
 					$recipeBoxRemoveLink = $itemsModel->getTaskLink($item['link'], 'remove_from_recipe_box');
@@ -241,6 +243,10 @@
 			<?php 
 						break;
 					}
+          // place Lockerdome unit after 6th item (2nd row of grid view)
+          if ($i === 6) {
+            include BLUPATH_TEMPLATES.'/site/ads/lockerdome.html';
+          }
 				}
 			?>
 			</ul>
