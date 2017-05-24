@@ -1,4 +1,3 @@
-<?php if ($format != 'print') { echo "<!--INFOLINKS_OFF-->"; }?>
 		<div class="clear"></div>
 		<div id="footer-ad"><?= Template::get('footerAdvert'); ?></div>
 	</div>
@@ -135,28 +134,7 @@
 
 		<div class="clear"></div>
 
-		<?php if (ADS) {
-				$array_url_to_hide_vibrant_code = array('giveaway','login','register','share','delicious_and_gluten_free_with_tasteguru_it_s_true','stonefire');
-
-					if ($_SERVER['REQUEST_URI'] != '') {
-						$found_in_array = false;
-						foreach ($array_url_to_hide_vibrant_code as $temp_slug) {
-							if (strstr($_SERVER['REQUEST_URI'], $temp_slug)) {
-								$found_in_array = true;
-								break;
-							}
-						}
-					} else {
-						$found_in_array = true;
-					}
-
-					if (isset($_GET['cid'])) { $found_in_array = true; }
-			?>
-
-			<?php if ($found_in_array == false) {
-				echo '<script type="text/javascript">var infolinks_pid = 1863387;var infolinks_wsid = 0;</script><script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>';
-			} ?>
-
+		<?php if (ADS) { ?>
 			<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
 			<script type="text/javascript">
 				_qacct="p-ed7ji9FtIlPSo";quantserve();

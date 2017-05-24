@@ -1,4 +1,3 @@
-<!--INFOLINKS_OFF-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -257,5 +256,3 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div id="content-wrapper">
 	<div class="site-wrapper">
-	<!--INFOLINKS_ON-->
-  <?php if ($format == 'print') { echo "<!--INFOLINKS_OFF-->"; }; ?>

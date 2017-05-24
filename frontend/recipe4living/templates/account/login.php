@@ -7,7 +7,6 @@
 			
 				<div id="sign-in" class="rounded">
 				<div class="content">
-					<!--INFOLINKS_OFF-->
 					<h2>Sign in to your account</h2>
 					
 					<?= Messages::getMessages(); ?>
@@ -81,7 +80,6 @@
 					<div class="clear"></div>
 					
 				</div></div>
-		<!--INFOLINKS_ON-->
 			</div>
 
 			<div id="panel-left" class="column">

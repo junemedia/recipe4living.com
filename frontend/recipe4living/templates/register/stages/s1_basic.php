@@ -1,4 +1,3 @@
-<!--INFOLINKS_OFF-->
 <form action="<?= SITEURL ?>/register" method="post" class="fullsubmit"><div>
 
 	<dl>
@@ -75,4 +74,3 @@
 
 	<input type="hidden" name="task" value="s1_basic_save" />
 </div></form>
-<!--INFOLINKS_ON-->

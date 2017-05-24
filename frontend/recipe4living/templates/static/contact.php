@@ -5,7 +5,6 @@
 			<div id="panel-center" class="column">
 		
 				<div id="contact" class="rounded"><div class="content">
-<!--INFOLINKS_OFF-->
 					<h1>Contact Recipe4Living</h1>
 			
 					<?= Messages::getMessages('contact'); ?>
@@ -66,7 +65,6 @@
 							<input type="hidden" name="task" value="contact_send" />
 						</form>
 					</div></div>
-<!--INFOLINKS_ON-->
 				</div></div>
 
 			</div>

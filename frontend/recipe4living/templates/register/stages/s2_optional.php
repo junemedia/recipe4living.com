@@ -1,4 +1,3 @@
-<!--INFOLINKS_OFF-->
 <div class="wrapper">
   <div class="content">
     <form action="<?= SITEURL ?>/register" method="post" enctype="multipart/form-data" class="fullsubmit"><div>
@@ -88,4 +87,3 @@
     </div></form>
   </div>
 </div>
-<!--INFOLINKS_ON-->
