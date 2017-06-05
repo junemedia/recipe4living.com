@@ -573,20 +573,6 @@ class Recipe4livingIndexController extends ClientFrontendController
 
 
   /**
-   *  netseer page
-   *
-   *  @access public
-   */
-  public function netseer()
-  {
-    Template::set('netseer', true);
-    include(BLUPATH_TEMPLATES.'/static/netseer.php');
-  }
-
-
-
-
-  /**
    *  subctr page
    *
    *  @access public
