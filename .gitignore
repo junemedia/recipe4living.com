@@ -5,13 +5,10 @@ cache_rss/
 sitemap*
 *.sql
 
-## IDEs, frameworks, etc. files
-nbproject/
-.project
-
-
+# don't track config files, except for config template
 /config.*
 !/config.template.php
+
 logs/
 *.bak
 *.bak.php
