@@ -1,9 +1,11 @@
 cache/
 leon/
+test/
 assets/
 cache_rss/
 sitemap*
 *.sql
+
 
 # don't track config files, except for config template
 /config.*
