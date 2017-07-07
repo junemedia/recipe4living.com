@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="x-ua-compatible" content="IE=edge" />
-	<script type="text/javascript">
-    /* var mobile_domain ="m.recipe4living.com"; */
-    /* // Set to false to not redirect on iPad. */
-    /* var ipad = false; */
-    /* // Set to false to not redirect on other tablets (Android , BlackBerry, WebOS tablets). */
-    /* var other_tablets = false; */
-    /* document.write(unescape("%3Cscript src='"+location.protocol+"//s3.amazonaws.com/me.static/js/me.redirect.min.js' type='text/javascript'%3E%3C/script%3E")); */
-	</script>
-
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 	<?php if (strstr($_SERVER['REQUEST_URI'], '/links') ) { ?>
