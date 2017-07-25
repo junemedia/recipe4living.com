@@ -29,23 +29,6 @@ class ClientBackendController extends BackendController {
     $user = $userModel->getCurrentUser();
 
     $nav = Array();
-    $nav[] = Array(
-      'name' => 'Categories',
-      'link' => SITEURL . '/categories',
-      'on' => Array('category_listing', 'category'),
-      'children' => Array(
-        SITEURL.'/articles/new_list' => 'category - live',
-      )
-    );
-
-    /*
-    $nav[] = Array(
-      'name' => 'Groups',
-      'link' => SITEURL . '/meta',
-      'on' => Array('meta', 'meta_add_value', 'meta_edit_value'),
-      'children' => Array()
-    );
-    */
 
     $nav[] = Array(
       'name' => 'Articles',
@@ -70,6 +53,52 @@ class ClientBackendController extends BackendController {
     );
 
     $nav[] = Array(
+      'name' => 'Users',
+      'link' => SITEURL . '/users',
+      'on' => Array('user_listing', 'user_details'),
+      'children' => Array()
+    );
+
+    $boxNav = array(
+      'name' => 'Content',
+      'link' => SITEURL.'/box',
+      'on' => Array('box', 'box_details'),
+      'children' => Array()
+    );
+    $boxModel = BluApplication::getModel('boxout');
+    $boxes = $boxModel->getBoxes();
+    foreach ($boxes as $box) {
+      $boxNav['children'][SITEURL.'/box/details/'.$box['id']] = $box['internalName'];
+    }
+    $nav[] = $boxNav;
+
+    $nav[] = Array(
+      'name' => 'Config',
+      'link' => SITEURL.'/config/edit/adminEmail',
+      'on' => Array('config'),
+      'children' => Array(
+        SITEURL.'/config/edit/adminEmail' => 'Contact form recipients'
+      )
+    );
+
+    /*
+    $nav[] = Array(
+      'name' => 'Categories',
+      'link' => SITEURL . '/categories',
+      'on' => Array('category_listing', 'category'),
+      'children' => Array(
+        SITEURL.'/articles/new_list' => 'category - live',
+      )
+    );
+
+    $nav[] = Array(
+      'name' => 'Groups',
+      'link' => SITEURL . '/meta',
+      'on' => Array('meta', 'meta_add_value', 'meta_edit_value'),
+      'children' => Array()
+    );
+
+    $nav[] = Array(
       'name' => 'Blogs',
       'link' => SITEURL.'/blogs',
       'on' => Array('blog_listing', 'blog_details'),
@@ -89,13 +118,6 @@ class ClientBackendController extends BackendController {
     );
 
     $nav[] = Array(
-      'name' => 'Users',
-      'link' => SITEURL . '/users',
-      'on' => Array('user_listing', 'user_details'),
-      'children' => Array()
-    );
-
-    $nav[] = Array(
       'name' => 'Reviews',
       'link' => SITEURL . '/comments',
       'on' => Array('comment_listing', 'comment_details'),
@@ -109,7 +131,6 @@ class ClientBackendController extends BackendController {
       'children' => Array()
     );
 
-    /*
     $nav[] = Array(
       'name' => 'Text',
       'link' => SITEURL . '/languages',
@@ -117,20 +138,6 @@ class ClientBackendController extends BackendController {
       'children' => Array(
       )
     );
-    */
-
-    $boxNav = array(
-      'name' => 'Content',
-      'link' => SITEURL.'/box',
-      'on' => Array('box', 'box_details'),
-      'children' => Array()
-    );
-    $boxModel = BluApplication::getModel('boxout');
-    $boxes = $boxModel->getBoxes();
-    foreach ($boxes as $box) {
-      $boxNav['children'][SITEURL.'/box/details/'.$box['id']] = $box['internalName'];
-    }
-    $nav[] = $boxNav;
 
     $nav[] = Array(
       'name' => 'Images',
@@ -170,15 +177,7 @@ class ClientBackendController extends BackendController {
         SITEURL.'/slideshows/slideshow' => 'Create slideshow'
       )
     );
-
-    $nav[] = Array(
-      'name' => 'Config',
-      'link' => SITEURL.'/config/edit/adminEmail',
-      'on' => Array('config'),
-      'children' => Array(
-        SITEURL.'/config/edit/adminEmail' => 'Contact form recipients'
-      )
-    );
+    */
 
     if(isset($this->_menuSlug)) {
       $menu_slug = $this->_menuSlug;
