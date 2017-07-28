@@ -73,6 +73,15 @@ class ClientBackendController extends BackendController {
     $nav[] = $boxNav;
 
     $nav[] = Array(
+      'name' => 'Newsletters',
+      'link' => SITEURL . '/newsletters',
+      'on' => Array('newsletters'),
+      'children' => Array(
+        SITEURL.'/newsletters/daily' => 'Daily'
+      )
+    );
+
+    $nav[] = Array(
       'name' => 'Config',
       'link' => SITEURL.'/config/edit/adminEmail',
       'on' => Array('config'),
