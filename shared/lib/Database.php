@@ -60,7 +60,7 @@ class Database
 	private $_querylist;
 
 	/**
-	 *	Whether or not to continue on error 
+	 *	Whether or not to continue on error
 	 *
 	 *	@access protected
 	 *	@var bool
@@ -68,7 +68,7 @@ class Database
 	protected $_allowErrors;
 
 	/**
-	 *	List of all errors 
+	 *	List of all errors
 	 *
 	 *	@access protected
 	 *	@var array
@@ -95,17 +95,17 @@ class Database
 		if ($this->_dbh === true) trigger_error('Failed to connect to database', E_USER_ERROR);
 		$this->_allowErrors = false;
 		$this->_errorStack = array();
-		
+
 		// Set active database.
 		$this->_selectDatabase($name);
-		
+
 		// Set encoding.
 		$this->_setEncoding('utf8');
-		
+
 		// Set timezone
 		$this->_setTimezone();
 	}
-	
+
 	/**
 	 *	Connect to a database server
 	 *
@@ -120,7 +120,7 @@ class Database
         	ini_set("mysql.connect_timeout", 5);
 		return mysql_connect($host, $user, $pass);
 	}
-	
+
 	/**
 	 *	Set active database
 	 *
@@ -132,7 +132,7 @@ class Database
 	{
 		return mysql_select_db($name, $this->_dbh);
 	}
-	
+
 	/**
 	 *	Set database encoding
 	 *
@@ -146,7 +146,7 @@ class Database
 		$set = mysql_set_charset($encoding, $this->_dbh);
 		return $query && $set;
 	}
-	
+
 	/**
 	 *	Set timezone
 	 *
@@ -186,17 +186,17 @@ class Database
 		return $instances[$signature];
 	}
 
-   public function getStats()
-        {
-                $rawStats = mysql_stat();
-                $stats = explode('  ', $rawStats);
-                foreach ($stats as $stat) {
-                        list($key, $value) = explode(":", $stat);
-                        $output[$key] = trim($value);
-                }
-                $output['raw'] = $rawStats;
-                return $output;
-        }
+	public function getStats()
+	{
+		$rawStats = mysql_stat();
+		$stats = explode('  ', $rawStats);
+		foreach ($stats as $stat) {
+			list($key, $value) = explode(":", $stat);
+			$output[$key] = trim($value);
+		}
+		$output['raw'] = $rawStats;
+		return $output;
+	}
 
 
 	/**
@@ -278,8 +278,8 @@ class Database
 				$this->_querylist[] = $this->_sql." <br/>#### ".round(($end - $start), 5);
 			}
 		}
-		
-		// Log 
+
+		// Log
 		if ($log){
 			$this->_log(trim($this->_sql));
 		}
@@ -300,7 +300,7 @@ class Database
 		}
 		return $this->_cursor;
 	}
-	
+
 	/**
 	 *	Query
 	 *
@@ -326,7 +326,7 @@ class Database
 		//echo "<p style=\"color:$color;\">$queryNum: " . $statement . "</p></ hr>";
 		return mysql_query($statement, $this->_dbh);
 	}
-	
+
 	/**
 	 *	Error text from previous operation
 	 *
@@ -337,7 +337,7 @@ class Database
 	{
 		return mysql_error($this->_dbh);
 	}
-	
+
 	/**
 	 *	Error code from previous operation
 	 *
@@ -348,7 +348,7 @@ class Database
 	{
 		return mysql_errno($this->_dbh);
 	}
-	
+
 	/**
 	 *	Get last error code
 	 *
@@ -363,12 +363,12 @@ class Database
 		if (!$lastError = end($stack)) {
 			return false;
 		}
-		
+
 		// Looking for something?
 		if (isset($lastError[$key])) {
 			return $lastError[$key];
 		}
-		
+
 		// Return
 		return $lastError;
 	}
@@ -438,7 +438,7 @@ class Database
 	{
 		return mysql_insert_id($this->_dbh);
 	}
-	
+
 	/**
 	 *	Free result memory
 	 *
@@ -450,7 +450,7 @@ class Database
 	{
 		return mysql_free_result($result);
 	}
-	
+
 	/**
 	 *	Fetch the next enumerated row of results
 	 *
@@ -462,7 +462,7 @@ class Database
 	{
 		return mysql_fetch_row($result);
 	}
-	
+
 	/**
 	 *	Fetch the next row of results as an associative array
 	 *
@@ -572,14 +572,14 @@ class Database
 
 		return $array;
 	}
-	
+
 	/*
 	 * @author by leon
 	 * replace the poor loadAssocList()
 	 */
 	public function loadArrayById($sql,$key)
 	{
-	
+
 		if($key == false || $sql == false){
 			return false;
 		}else{
@@ -600,7 +600,7 @@ class Database
 	 */
 	public function loadArray($sql)
 	{
-	
+
 		if($sql == false){
 			return false;
 		}else{
@@ -614,7 +614,7 @@ class Database
 		return $returnArray;
 	}
 
-	
+
 	/**
 	 *	Load associative arrays, grouped by one of its keys.
 	 *
@@ -639,7 +639,7 @@ class Database
 			}
 		}
 		$this->_freeResult($cur);
-		
+
 		return $groups;
 	}
 
@@ -697,11 +697,11 @@ class Database
 		}
 		return $output;
 	}
-	
+
 	/**
 	 *	Escape a string
 	 *
-	 *	N.B. Should use above, ideally (would take into account database's character encoding), 
+	 *	N.B. Should use above, ideally (would take into account database's character encoding),
 	 *	but just can't be bothered to change all the templates.
 	 *
 	 *	@access protected
@@ -713,7 +713,7 @@ class Database
 		//return mysql_real_escape_string($string, $this->_dbh);
 		return mysql_real_escape_string($string);
 	}
-	
+
 	/**
 	 *	Escape a string for a LIKE string
 	 *
@@ -745,34 +745,34 @@ class Database
 	{
 		return $this->_querylist;
 	}
-	
+
 	/**
 	 *	Log query.
 	 *
 	 *	@return bool Success value of log append.
 	 */
 	protected function _log($text){
-		
+
 		/* Sanitise text */
 		$text = str_replace(array("\r", "\n", "\t"), ' ', $text);
-		
+
 		/* Define log filepath */
 		$path = BLUPATH_BASE.'/log.sql';
-		
+
 		/* Write to file */
 		$handle = fopen($path, 'at');
 		$written = fwrite($handle, "\n".'['.date('d:m:y H:i:s.u').'] '.$text);
 		fclose($handle);
-		
+
 		/* Return */
 		return (bool) $written;
-		
+
 	}
     /**
      *  @desc Close the db connection.
      *  @author Leon Zhao
      *  @return bool result
-     */    
+     */
     function close()
     {
         $result = mysql_close($this->_dbh);
