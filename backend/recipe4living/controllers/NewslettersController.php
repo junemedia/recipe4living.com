@@ -20,6 +20,7 @@ class Recipe4livingNewslettersController extends ClientBackendController {
   protected $_newsletter;
   protected $_campaign;
 
+
   /**
    *  Default view -- display list of upcoming campaigns for a
    *  given newsletter
@@ -27,53 +28,109 @@ class Recipe4livingNewslettersController extends ClientBackendController {
    *  @access public
    */
   public function view() {
-    $this->_newsletter = $this->_args[0];
+    echo "Please select a newsletter from the dropdown.";
+  }
 
-    if ($this->_newsletter) {
-      // Get model
-      $newslettersModel = BluApplication::getModel('newsletters');
+  public function daily() {
+    $this->_newsletter = 'daily';
+    $target = $this->_args[0];
 
-      $campaigns = $newslettersModel->getCampaigns($this->_newsletter);
-
-      // Load template
-      include(BLUPATH_TEMPLATES.'/newsletters/listCampaigns.php');
+    // check for a campaign id
+    if (ctype_digit($target)) {
+      $this->_editCampaign($target);
     }
-    else {
-      echo "Please select a newsletter from the dropdown.";
+
+    // new campaign
+    else if ($target === 'new') {
+      $this->_createCampaign();
     }
+
+    // if no args, then show list of upcoming campaigns
+    else if ($target === NULL) {
+      $this->_listCampaigns();
+    }
+  }
+
+  /**
+   *  List newsletter campaigns
+   *
+   *  @access protected
+   *
+   */
+  protected function _listCampaigns() {
+    // Get model
+    $newslettersModel = BluApplication::getModel('newsletters');
+
+    $campaigns = $newslettersModel->getCampaigns($this->_newsletter);
+
+    // Load template
+    include(BLUPATH_TEMPLATES.'/newsletters/listCampaigns.php');
+
+  }
+
+
+  /**
+   *  Create a new campaign
+   *
+   *  @access protected
+   *
+   */
+  protected function _createCampaign() {
+    $this->_campaign = array(
+      'id' => 0,
+      'newsletter' => $this->_newsletter,
+      'campaign' => '',
+      'subject' => ''
+    );
+
+    include(BLUPATH_TEMPLATES.'/newsletters/'.$this->_campaign['newsletter'].'.php');
   }
 
 
   /**
    *  Edit/update items for a campaign
    *
-   *  @access public
+   *  @access protected
    *
    */
-  public function campaign() {
-    $newsletterCampaignId = end($this->_args);
-
+  protected function _editCampaign($newsletterCampaignId) {
     // Get model
     $newslettersModel = BluApplication::getModel('newsletters');
+    $this->_campaign = $newslettersModel->getCampaign((int)$newsletterCampaignId);
 
-    $this->_campaign = $newslettersModel->getDetails($newsletterCampaignId);
-
-    // show/change newsletter items
+    // view/edit newsletter items
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       $items = $newslettersModel->getItems($newsletterCampaignId);
       include(BLUPATH_TEMPLATES.'/newsletters/'.$this->_campaign['newsletter'].'.php');
     }
 
-    // handle form submission from the above
+    // handle form submission
     else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      $items = array();
-      $items[0] = Request::getString('feature');
-      $items[1] = Request::getString('mwl1');
-      $items[2] = Request::getString('mwl2');
-      $items[3] = Request::getString('mwl3');
-      $items[4] = Request::getString('mwl4');
+      $campaignData = array(
+        'id' => Request::getInt('newsletterCampaignId'),
+        'newsletter' => Request::getString('newsletter'),
+        'campaign' => Request::getString('date'),
+        'subject' => Request::getString('subject'),
+        'items' => array(
+          Request::getString('feature'),
+          Request::getString('mwl1'),
+          Request::getString('mwl2'),
+          Request::getString('mwl3'),
+          Request::getString('mwl4')
+        )
+      );
 
-      $success = $newslettersModel->updateCampaignItems($newsletterCampaignId, $items);
+      if ($campaignData['id'] === 0) {
+        $newId = $newslettersModel->createCampaign($campaignData);
+        if ($newId) {
+          $this->_campaign = $newslettersModel->getCampaign((int)$newId);
+        }
+        $success = !!$this->_campaign;
+      }
+
+      else {
+        $success = $newslettersModel->updateCampaign($newsletterCampaignId, $campaignData);
+      }
 
       if ($success) {
         header('Location: '.SITEURL.'/newsletters/'.$this->_campaign['newsletter']);
@@ -83,9 +140,4 @@ class Recipe4livingNewslettersController extends ClientBackendController {
       }
     }
   }
-
-
-
 }
-
-?>

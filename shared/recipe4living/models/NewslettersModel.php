@@ -16,10 +16,10 @@ class ClientNewslettersModel extends BluModel {
    *  @return array campaigns
    */
   public function getCampaigns($newsletter) {
-
     $sql = "SELECT *
             FROM `newsletterCampaign`
             WHERE `newsletter` = '$newsletter'
+            AND `campaign` >= CURDATE()
             ORDER BY `campaign` ASC";
     $this->_db->setQuery($sql);
     $campaigns = $this->_db->loadAssocList('id');
@@ -33,7 +33,7 @@ class ClientNewslettersModel extends BluModel {
    *  @param int id
    *  @return array details
    */
-  public function getDetails($id) {
+  public function getCampaign($id) {
     $sql = "SELECT *
             FROM `newsletterCampaign`
             WHERE `id` = $id";
@@ -43,8 +43,6 @@ class ClientNewslettersModel extends BluModel {
     // return single array item
     return current($details);
   }
-
-
 
   /**
    *  Get campaign items
@@ -64,24 +62,48 @@ class ClientNewslettersModel extends BluModel {
     return $items;
   }
 
-
   /**
-   *  Update campaign items
+   *  Create a campaign
    */
-  public function updateCampaignItems($campaignId, $items) {
-    foreach ($items as $order => $targetUrl) {
-      $sql = "INSERT INTO `newsletterItem`
-              SET `newsletterCampaignId` = ".(int)$campaignId.",
-                  `targetUrl` = '$targetUrl',
-                  `order` = ".(int)$order."
-              ON DUPLICATE KEY UPDATE
-                  `targetUrl` = '$targetUrl'";
+  public function createCampaign($campaignData) {
+    $sql = "INSERT INTO `newsletterCampaign` (`id`, `newsletter`, `campaign`, `subject`)
+            VALUES (null, '{$campaignData['newsletter']}', '{$campaignData['campaign']}', '')";
+		$this->_db->setQuery($sql);
+		if (!$this->_db->query()) {
+			return false;
+		}
+	  $campaignId = $this->_db->getInsertID();
+
+    foreach ($campaignData['items'] as $order => $targetUrl) {
+      $sql = "INSERT INTO `newsletterItem` (`id`, `newsletterCampaignId`, `targetUrl`, `articleId`, `order`)
+              VALUES (NULL, $campaignId, '$targetUrl', '', $order)";
 
       $this->_db->setQuery($sql);
       if (!$this->_db->query()) {
         return false;
       }
     }
+    return $campaignId;
+  }
+
+
+  /**
+   *  Update campaign
+   */
+  public function updateCampaign($campaignId, $campaignData) {
+    foreach ($campaignData['items'] as $order => $targetUrl) {
+      $sql = "UPDATE `newsletterItem`
+              SET `targetUrl` = '$targetUrl'
+              WHERE `newsletterCampaignId` = ".(int)$campaignId."
+              AND   `order` = ".(int)$order."
+              LIMIT 1";
+
+      $this->_db->setQuery($sql);
+      if (!$this->_db->query()) {
+        return false;
+      }
+    }
+
     return true;
   }
 }
