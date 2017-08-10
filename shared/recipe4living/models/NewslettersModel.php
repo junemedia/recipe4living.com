@@ -70,6 +70,7 @@ class ClientNewslettersModel extends BluModel {
    *  Create a campaign
    */
   public function createCampaign($campaignData) {
+
     $sql = "INSERT INTO `newsletterCampaign` (`id`, `newsletter`, `campaign`, `subject`)
             VALUES (null, '{$campaignData['newsletter']}', '{$campaignData['campaign']}', '')";
 		$this->_db->setQuery($sql);
@@ -87,6 +88,8 @@ class ClientNewslettersModel extends BluModel {
         return false;
       }
     }
+    $this->_setAutoSubject($campaignId);
+
     return $campaignId;
   }
 
@@ -107,7 +110,78 @@ class ClientNewslettersModel extends BluModel {
         return false;
       }
     }
+    $this->_setAutoSubject($campaignId);
 
     return true;
+  }
+
+
+  /**
+   *  Get article title from url
+   */
+  protected function _getTitleFromUrl($url) {
+
+    $itemsModel = BluApplication::getModel('items');
+
+    $subject = '';
+    if (!empty($url)) {
+      $slug = $this->_getSlug($url);
+      $articleId = $itemsModel->getItemId($slug);
+      $item = $itemsModel->getItem($articleId);
+      $subject = $item['title'];
+    }
+    return $subject;
+  }
+
+
+  /**
+   *  Set subject automatically
+   */
+  protected function _setAutoSubject($campaignId) {
+    $campaign = $this->getCampaign($campaignId);
+    $subject = $this->_getTitleFromUrl($campaign['items'][0]['targetUrl']);
+    $this->_setSubject($campaignId, $subject);
+  }
+
+
+  /**
+   *  Set campaign subject
+   */
+  protected function _setSubject($campaignId, $subject) {
+    $sql = "UPDATE `newsletterCampaign`
+            SET `subject` = '$subject'
+            WHERE `id` = $campaignId
+            LIMIT 1";
+    $this->_db->setQuery($sql);
+    return $this->_db->query();
+  }
+
+  /**
+   *  Extract the slug from a url
+   *
+   *  For now I'm assuming that we're getting something matching:
+   *      http://www.recipe4living.com/slidearticles/details/this_is_the_slug/1
+   *  anything else is basically going to be ignored
+   *
+   *  @access protected
+   *  @param string url
+   *  @return string slug
+   *
+   */
+  protected function _getSlug($url) {
+    $slug = '';
+
+    $path = parse_url($url, PHP_URL_PATH);
+    $path = explode('/', $path);
+    // discard the first element which is empty since path has a leading slash
+    array_shift($path);
+
+    if ($path[0] === 'slidearticles') {
+      if ($path[1] === 'details') {
+        $slug = $path[2];
+      }
+    }
+
+    return $slug;
   }
 }
