@@ -94,13 +94,15 @@ class Recipe4livingNewslettersController extends ClientBackendController {
    *
    */
   protected function _editCampaign($newsletterCampaignId) {
+
     // Get model
     $newslettersModel = BluApplication::getModel('newsletters');
     $this->_campaign = $newslettersModel->getCampaign((int)$newsletterCampaignId);
 
     // view/edit newsletter items
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-      $items = $newslettersModel->getItems($newsletterCampaignId);
+      $items = $this->_campaign['items'];
+
       include(BLUPATH_TEMPLATES.'/newsletters/'.$this->_campaign['newsletter'].'.php');
     }
 
@@ -120,6 +122,7 @@ class Recipe4livingNewslettersController extends ClientBackendController {
         )
       );
 
+      // creating a new campaign
       if ($campaignData['id'] === 0) {
         $newId = $newslettersModel->createCampaign($campaignData);
         if ($newId) {
@@ -128,6 +131,7 @@ class Recipe4livingNewslettersController extends ClientBackendController {
         $success = !!$this->_campaign;
       }
 
+      // updating an existing campaign
       else {
         $success = $newslettersModel->updateCampaign($newsletterCampaignId, $campaignData);
       }

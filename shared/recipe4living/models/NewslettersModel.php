@@ -36,13 +36,17 @@ class ClientNewslettersModel extends BluModel {
   public function getCampaign($id) {
     $sql = "SELECT *
             FROM `newsletterCampaign`
-            WHERE `id` = $id";
+            WHERE `id` = $id
+            LIMIT 1";
     $this->_db->setQuery($sql);
-    $details = $this->_db->loadAssocList('id');
+    $result = $this->_db->loadAssocList('id');
 
-    // return single array item
-    return current($details);
+    // grab first result (should be only result)
+    $campaign = current($result);
+    $campaign['items'] = $this->_getItems($id);
+    return $campaign;
   }
+
 
   /**
    *  Get campaign items
@@ -51,7 +55,7 @@ class ClientNewslettersModel extends BluModel {
    *  @param int id
    *  @return array items
    */
-  public function getItems($id) {
+  protected function _getItems($id) {
     $sql = "SELECT *
             FROM `newsletterItem`
             WHERE `newsletterCampaignId` = $id
