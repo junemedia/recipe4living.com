@@ -11,18 +11,24 @@
 
     <tr class="metadata">
       <!--th class="textfield" style="padding: 5px;">&nbsp;</th-->
-      <th class="textfield" style="padding: 5px;">Date</th>
+      <th class="textfield" style="padding: 5px;width:10em;">Date</th>
       <th class="textfield" style="padding: 5px;">Subject</th>
-      <th class="textfield" style="padding: 5px;">&nbsp;</th>
+      <th class="textfield" style="padding: 5px;width:6em;">&nbsp;</th>
+      <th class="textfield" style="padding: 5px;width:6em;">&nbsp;</th>
     </tr>
 
     <?php foreach ($campaigns as $campaign) { ?>
     <tr>
 
       <!--td style="text-align: center;"><img src="<?= ASSETURL.'/campaignimages/50/50/1/'.$campaign['filename'] ?>" alt="" /></td-->
-      <td style="text-align: center;"><?php echo $campaign['campaign']; ?></td>
-      <td class="textfield" style="padding: 5px;"><?= Text::trim($campaign['subject'], 100); ?></td>
-      <td style="padding: 5px; text-align: center;"><a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/{$campaign['id']}"; ?>">Edit</a></td>
+      <td style="text-align: center;">
+        <?php echo $campaign['campaign']; ?> </td>
+      <td class="textfield" style="padding: 5px;">
+        <?php echo Text::trim($campaign['subject'], 100); ?> </td>
+      <td style="padding: 5px; text-align: center;">
+        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/{$campaign['id']}"; ?>">Edit</a> </td>
+      <td style="padding: 5px; text-align: center;">
+        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/delete/{$campaign['id']}"; ?>">Delete</a> </td>
     </tr>
     <?php } ?>
 

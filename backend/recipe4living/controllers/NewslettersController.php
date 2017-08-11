@@ -45,9 +45,32 @@ class Recipe4livingNewslettersController extends ClientBackendController {
       $this->_createCampaign();
     }
 
+    else if ($target === 'delete') {
+      if (ctype_digit($this->_args[1])) {
+        $this->_deleteCampaign($this->_args[1]);
+      }
+    }
+
     // if no args, then show list of upcoming campaigns
     else if ($target === NULL) {
       $this->_listCampaigns();
+    }
+  }
+
+  /**
+   *  Delete a campaign
+   */
+  protected function _deleteCampaign($campaignId) {
+    $newslettersModel = BluApplication::getModel('newsletters');
+    $this->_campaign = $newslettersModel->getCampaign((int)$campaignId);
+
+    $success = $newslettersModel->deleteCampaign($campaignId);
+
+    if ($success) {
+      header('Location: '.SITEURL.'/newsletters/'.$this->_campaign['newsletter']);
+    }
+    else {
+      Messages::addMessage('There was a problem, unable to delete campaign.', 'error');
     }
   }
 

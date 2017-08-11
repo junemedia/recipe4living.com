@@ -27,11 +27,11 @@ class ClientNewslettersModel extends BluModel {
   }
 
   /**
-   *  Get campaign details
+   *  Get campaign
    *
    *  @access public
    *  @param int id
-   *  @return array details
+   *  @return mixed array if exists, else false
    */
   public function getCampaign($id) {
     $sql = "SELECT *
@@ -43,7 +43,10 @@ class ClientNewslettersModel extends BluModel {
 
     // grab first result (should be only result)
     $campaign = current($result);
-    $campaign['items'] = $this->_getItems($id);
+    // don't try to get items if campaign doesn't exist
+    if ($campaign) {
+      $campaign['items'] = $this->_getItems($id);
+    }
     return $campaign;
   }
 
@@ -111,6 +114,30 @@ class ClientNewslettersModel extends BluModel {
       }
     }
     $this->_setAutoSubject($campaignId);
+
+    return true;
+  }
+
+
+  /**
+   *  Delete a campaign
+   */
+  public function deleteCampaign($campaignId) {
+    $sql = "DELETE FROM `newsletterItem`
+            WHERE `newsletterCampaignId` = $campaignId";
+    $this->_db->setQuery($sql);
+    if (!$this->_db->query()) {
+      return false;
+    }
+
+    $sql = "DELETE from `newsletterCampaign`
+            WHERE `id` = $campaignId
+            LIMIT 1";
+    $this->_db->setQuery($sql);
+    if (!$this->_db->query()) {
+      return false;
+    }
+
 
     return true;
   }
