@@ -14,7 +14,7 @@
 </style>
 
 <div class="centered horizontal" style="clear:both">&nbsp;</div>
-<h2>Daily Recipe</h2>
+<h2>Daily Recipe: <?php echo $this->_campaign['subject']; ?></h2>
 <div class="centered horizontal">&nbsp;</div>
 
 <div>
