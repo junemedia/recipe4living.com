@@ -18,7 +18,7 @@
 <div class="centered horizontal">&nbsp;</div>
 
 <div>
-  <form action="<?php echo SITEURL.$baseUrl.'/newsletters/daily/'.$this->_campaign['id'] ?>" method="POST">
+  <form action="<?php echo SITEURL.$baseUrl.'/newsletters/daily/'.$this->_campaign['id'] ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
     <input type="hidden" name="newsletterCampaignId" value="<?php echo $this->_campaign['id']; ?>"/>
     <input type="hidden" name="newsletter" value="daily"/>
     <input type="hidden" name="subject" value="<?php echo $this->_campaign['subject']; ?>"/>
@@ -33,6 +33,7 @@
           <input type="text" name="date" value="<?php echo $this->_campaign['campaign']; ?>" placeholder="yyyy-mm-dd" style="width: 8em;" />
         <?php } else { ?>
           <?php echo $this->_campaign['campaign']; ?>
+          <input type="hidden" name="date" value="<?php echo $this->_campaign['campaign']; ?>" />
         <?php } ?>
         </td>
       </tr>
@@ -82,3 +83,27 @@
     </table>
   </form>
 </div>
+
+<script type="text/javascript">
+  function newsletterValidateForm(form) {
+    var d = form.date.value;
+    if (!isValidDate(d)) {
+      alert("A valid date of the form YYYY-MM-DD is required");
+      return false;
+    }
+    return true;
+  }
+
+  function isValidDate(dateString) {
+    var d;
+    var regEx = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateString.match(regEx)) {
+      return false;  // Invalid format
+    }
+
+    if(!((d = new Date(dateString))|0)) {
+      return false; // Invalid date (or this could be epoch)
+    }
+    return d.toISOString().slice(0,10) == dateString;
+  }
+</script>
