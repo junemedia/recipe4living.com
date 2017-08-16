@@ -17,6 +17,8 @@ class Recipe4livingNewslettersController extends ClientBackendController {
    */
   protected $_baseUrl = '/newsletters';
 
+  protected $_apiUrl = 'http://api.recipe4living.com';
+
   protected $_newsletter;
   protected $_campaign;
 

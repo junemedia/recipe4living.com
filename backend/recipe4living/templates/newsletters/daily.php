@@ -68,6 +68,17 @@
           <input type="submit" name="update" value="Save" />
         </td>
       </tr>
+
+      <tr style="border:none;">
+        <td colspan="2" style="height:25px;">&nbsp;</td>
+      </tr>
+
+      <tr style="background-color: white !important">
+        <td class="label" style="vertical-align:top"> Preview: </td>
+        <td>
+          <iframe src="<?php echo "{$this->_apiUrl}/newsletter/{$this->_newsletter}.html"; ?>" id="iframe1" frameborder="0" scrolling="auto" width="800" height="1500"></iframe>
+        </td>
+      </tr>
     </table>
   </form>
 </div>
