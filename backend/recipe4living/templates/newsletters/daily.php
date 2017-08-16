@@ -30,7 +30,7 @@
         <?php
         // make date editable only for new campaigns
         if (!$this->_campaign['id']) { ?>
-          <input type="text" name="date" value="<?php echo $this->_campaign['campaign']; ?>" style="width: 8em;" />
+          <input type="text" name="date" value="<?php echo $this->_campaign['campaign']; ?>" placeholder="yyyy-mm-dd" style="width: 8em;" />
         <?php } else { ?>
           <?php echo $this->_campaign['campaign']; ?>
         <?php } ?>
