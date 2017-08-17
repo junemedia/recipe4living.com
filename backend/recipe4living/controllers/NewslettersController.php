@@ -133,6 +133,7 @@ class Recipe4livingNewslettersController extends ClientBackendController {
 
     // handle form submission
     else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $process = Request::getString('process');
       $campaignData = array(
         'id' => Request::getInt('newsletterCampaignId'),
         'newsletter' => Request::getString('newsletter'),
@@ -162,7 +163,15 @@ class Recipe4livingNewslettersController extends ClientBackendController {
       }
 
       if ($success) {
-        header('Location: '.SITEURL.'/newsletters/'.$this->_campaign['newsletter']);
+        switch($process) {
+          case 'Update':
+            header('Location: '.SITEURL.'/newsletters/'.$this->_campaign['newsletter'].'/'.$this->_campaign['id']);
+            break;
+          case 'Save':
+          default:
+            header('Location: '.SITEURL.'/newsletters/'.$this->_campaign['newsletter']);
+            break;
+        }
       }
       else {
         Messages::addMessage('There was a problem, please go back and try again.', 'error');

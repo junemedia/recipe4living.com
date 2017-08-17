@@ -66,7 +66,8 @@
       <tr style="border:none;">
         <td>&nbsp;</td>
         <td>
-          <input type="submit" name="update" value="Save" />
+          <input type="submit" name="process" value="Update" />
+          <input type="submit" name="process" value="Save" />
         </td>
       </tr>
 
