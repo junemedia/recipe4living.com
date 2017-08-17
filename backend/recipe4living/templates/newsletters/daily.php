@@ -14,7 +14,7 @@
 </style>
 
 <div class="centered horizontal" style="clear:both">&nbsp;</div>
-<h2>Daily Recipe: <?php echo $this->_campaign['subject']; ?></h2>
+<h2>Daily Recipes: <em><?php echo $this->_campaign['subject']; ?></em></h2>
 <div class="centered horizontal">&nbsp;</div>
 
 <div>
@@ -77,7 +77,7 @@
       <tr style="background-color: white !important">
         <td class="label" style="vertical-align:top"> Preview: </td>
         <td>
-          <iframe src="<?php echo "{$this->_apiUrl}/newsletter/{$this->_newsletter}.html/{$this->_campaign['campaign']}"; ?>" id="iframe1" frameborder="0" scrolling="auto" width="800" height="1500"></iframe>
+          <iframe src="<?php echo "{$this->_apiUrl}/newsletter/{$this->_newsletter}.html/{$this->_campaign['campaign']}"; ?>" id="iframe1" frameborder="0" scrolling="auto" width="800" height="1600"></iframe>
         </td>
       </tr>
     </table>
