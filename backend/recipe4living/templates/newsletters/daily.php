@@ -24,14 +24,13 @@
 </style>
 
 <div class="centered horizontal" style="clear:both">&nbsp;</div>
-<h2>Daily Recipes: <em><?php echo $this->_campaign['subject']; ?></em></h2>
+<h2>Daily Recipes</em></h2>
 <div class="centered horizontal">&nbsp;</div>
 
 <div>
   <form action="<?php echo SITEURL.$baseUrl.'/newsletters/daily/'.$this->_campaign['id'] ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
     <input type="hidden" name="newsletterCampaignId" value="<?php echo $this->_campaign['id']; ?>"/>
     <input type="hidden" name="newsletter" value="daily"/>
-    <input type="hidden" name="subject" value="<?php echo $this->_campaign['subject']; ?>"/>
 
     <table id="items_data" class="centered horizontal" style="width: 1200px;">
       <tr>
@@ -46,6 +45,11 @@
           <input type="hidden" name="date" value="<?php echo $this->_campaign['campaign']; ?>" />
         <?php } ?>
         </td>
+      </tr>
+
+      <tr>
+        <td class="label">Subject:</td>
+        <td><input type="text" name="subject" value="<?php echo $this->_campaign['subject']; ?>" /></td>
       </tr>
 
       <tr>

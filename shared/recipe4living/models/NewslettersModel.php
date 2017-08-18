@@ -91,7 +91,7 @@ class ClientNewslettersModel extends BluModel {
         return false;
       }
     }
-    $this->_setAutoSubject($campaignId);
+    $this->_setSubject($campaignId, $campaignData['subject']);
 
     return $campaignId;
   }
@@ -113,7 +113,7 @@ class ClientNewslettersModel extends BluModel {
         return false;
       }
     }
-    $this->_setAutoSubject($campaignId);
+    $this->_setSubject($campaignId, $campaignData['subject']);
 
     return true;
   }
@@ -162,12 +162,12 @@ class ClientNewslettersModel extends BluModel {
 
 
   /**
-   *  Set subject automatically
+   *  Get article title
    */
-  protected function _setAutoSubject($campaignId) {
+  protected function _getArticleTitle($campaignId) {
     $campaign = $this->getCampaign($campaignId);
-    $subject = $this->_getTitleFromUrl($campaign['items'][0]['targetUrl']);
-    $this->_setSubject($campaignId, $subject);
+    $title = $this->_getTitleFromUrl($campaign['items'][0]['targetUrl']);
+    return $title;
   }
 
 
@@ -175,6 +175,9 @@ class ClientNewslettersModel extends BluModel {
    *  Set campaign subject
    */
   protected function _setSubject($campaignId, $subject) {
+    if ($subject === '') {
+      $subject = $this->_getArticleTitle($campaignId);
+    }
     $sql = "UPDATE `newsletterCampaign`
             SET `subject` = '$subject'
             WHERE `id` = $campaignId
