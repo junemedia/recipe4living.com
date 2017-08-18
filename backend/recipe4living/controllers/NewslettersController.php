@@ -133,7 +133,7 @@ class Recipe4livingNewslettersController extends ClientBackendController {
 
     // handle form submission
     else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      $process = Request::getString('process');
+      $process = strtolower(Request::getString('process'));
       $campaignData = array(
         'id' => Request::getInt('newsletterCampaignId'),
         'newsletter' => Request::getString('newsletter'),
@@ -164,10 +164,10 @@ class Recipe4livingNewslettersController extends ClientBackendController {
 
       if ($success) {
         switch($process) {
-          case 'Update':
+          case 'update':
             header('Location: '.SITEURL.'/newsletters/'.$this->_campaign['newsletter'].'/'.$this->_campaign['id']);
             break;
-          case 'Save':
+          case 'save':
           default:
             header('Location: '.SITEURL.'/newsletters/'.$this->_campaign['newsletter']);
             break;

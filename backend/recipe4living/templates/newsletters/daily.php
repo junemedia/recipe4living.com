@@ -11,6 +11,16 @@
   #items_data input[type=text] {
     width: 80%;
   }
+  button {
+    font-size: 10px;
+    padding: 4px 10px;
+    border: solid 1px #ccc;
+    background-color: #e7eaef;
+    border-radius: 6px;
+    margin-right: .5em;
+    color: #555;
+    width: 10em;
+  }
 </style>
 
 <div class="centered horizontal" style="clear:both">&nbsp;</div>
@@ -66,8 +76,8 @@
       <tr style="border:none;">
         <td>&nbsp;</td>
         <td>
-          <input type="submit" name="process" value="Update" />
-          <input type="submit" name="process" value="Save" />
+          <button type="submit" name="process" value="update">Save &amp; refresh</button>
+          <button type="submit" name="process" value="save">Save &amp; quit</button>
         </td>
       </tr>
 
