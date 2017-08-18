@@ -126,6 +126,7 @@ class Recipe4livingNewslettersController extends ClientBackendController {
 
     // view/edit newsletter items
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+      // set a shorthand for the template to make use of...
       $items = $this->_campaign['items'];
 
       include(BLUPATH_TEMPLATES.'/newsletters/'.$this->_campaign['newsletter'].'.php');

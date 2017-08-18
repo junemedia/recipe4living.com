@@ -9,6 +9,13 @@
 class ClientNewslettersModel extends BluModel {
 
   /**
+   * Campaign data
+   *
+   * @var array Campaign data
+   */
+  protected $_campaign = null;
+
+  /**
    *  Get campaigns
    *
    *  @access public
@@ -42,12 +49,12 @@ class ClientNewslettersModel extends BluModel {
     $result = $this->_db->loadAssocList('id');
 
     // grab first result (should be only result)
-    $campaign = current($result);
+    $this->_campaign = current($result);
     // don't try to get items if campaign doesn't exist
-    if ($campaign) {
-      $campaign['items'] = $this->_getItems($id);
+    if ($this->_campaign) {
+      $this->_campaign['items'] = $this->_getNewsletterItems();
     }
-    return $campaign;
+    return $this->_campaign;
   }
 
 
@@ -58,10 +65,10 @@ class ClientNewslettersModel extends BluModel {
    *  @param int id
    *  @return array items
    */
-  protected function _getItems($id) {
+  protected function _getNewsletterItems() {
     $sql = "SELECT *
             FROM `newsletterItem`
-            WHERE `newsletterCampaignId` = $id
+            WHERE `newsletterCampaignId` = {$this->_campaign['id']}
             ORDER BY `order` ASC";
     $this->_db->setQuery($sql);
     $items = $this->_db->loadAssocList('order');
@@ -73,7 +80,7 @@ class ClientNewslettersModel extends BluModel {
    *  Create a campaign
    */
   public function createCampaign($campaignData) {
-
+    // create the campaign
     $sql = "INSERT INTO `newsletterCampaign` (`id`, `newsletter`, `campaign`, `subject`)
             VALUES (null, '{$campaignData['newsletter']}', '{$campaignData['campaign']}', '')";
 		$this->_db->setQuery($sql);
@@ -82,6 +89,7 @@ class ClientNewslettersModel extends BluModel {
 		}
 	  $campaignId = $this->_db->getInsertID();
 
+    // add campaign items
     foreach ($campaignData['items'] as $order => $targetUrl) {
       $sql = "INSERT INTO `newsletterItem` (`id`, `newsletterCampaignId`, `targetUrl`, `articleId`, `order`)
               VALUES (NULL, $campaignId, '$targetUrl', '', $order)";
@@ -91,6 +99,8 @@ class ClientNewslettersModel extends BluModel {
         return false;
       }
     }
+
+    // set the subject line for the new campaign
     $this->_setSubject($campaignId, $campaignData['subject']);
 
     return $campaignId;
