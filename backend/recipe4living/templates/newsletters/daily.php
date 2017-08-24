@@ -49,32 +49,32 @@
 
       <tr>
         <td class="label">Subject:</td>
-        <td><input type="text" name="subject" value="<?php echo $this->_campaign['subject']; ?>" /></td>
+        <td><input type="text" name="subject" value="<?php echo htmlspecialchars($this->_campaign['subject']); ?>" /></td>
       </tr>
 
       <tr>
         <td class="label">Feature:</td>
-        <td><input type="text" name="feature" value="<?php echo $items[0]['targetUrl']; ?>" /></td>
+        <td><input type="text" name="feature" value="<?php echo htmlspecialchars($items[0]['targetUrl']); ?>" /></td>
       </tr>
 
       <tr>
         <td class="label">MWL 1:</td>
-        <td><input type="text" name="mwl1" value="<?php echo $items[1]['targetUrl']; ?>" /></td>
+        <td><input type="text" name="mwl1" value="<?php echo htmlspecialchars($items[1]['targetUrl']); ?>" /></td>
       </tr>
 
       <tr>
         <td class="label">MWL 2:</td>
-        <td><input type="text" name="mwl2" value="<?php echo $items[2]['targetUrl']; ?>" /></td>
+        <td><input type="text" name="mwl2" value="<?php echo htmlspecialchars($items[2]['targetUrl']); ?>" /></td>
       </tr>
 
       <tr>
         <td class="label">MWL 3:</td>
-        <td><input type="text" name="mwl3" value="<?php echo $items[3]['targetUrl']; ?>" /></td>
+        <td><input type="text" name="mwl3" value="<?php echo htmlspecialchars($items[3]['targetUrl']); ?>" /></td>
       </tr>
 
       <tr>
         <td class="label">MWL 4:</td>
-        <td><input type="text" name="mwl4" value="<?php echo $items[4]['targetUrl']; ?>" /></td>
+        <td><input type="text" name="mwl4" value="<?php echo htmlspecialchars($items[4]['targetUrl']); ?>" /></td>
       </tr>
 
       <tr style="border:none;">
