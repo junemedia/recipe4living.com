@@ -91,6 +91,8 @@ class ClientNewslettersModel extends BluModel {
 
     // add campaign items
     foreach ($campaignData['items'] as $order => $targetUrl) {
+      $targetUrl = mysql_real_escape_string($targetUrl);
+
       $sql = "INSERT INTO `newsletterItem` (`id`, `newsletterCampaignId`, `targetUrl`, `articleId`, `order`)
               VALUES (NULL, $campaignId, '$targetUrl', '', $order)";
 
@@ -111,7 +113,10 @@ class ClientNewslettersModel extends BluModel {
    *  Update campaign
    */
   public function updateCampaign($campaignId, $campaignData) {
+
     foreach ($campaignData['items'] as $order => $targetUrl) {
+      $targetUrl = mysql_real_escape_string($targetUrl);
+
       $sql = "UPDATE `newsletterItem`
               SET `targetUrl` = '$targetUrl'
               WHERE `newsletterCampaignId` = ".(int)$campaignId."
@@ -188,6 +193,8 @@ class ClientNewslettersModel extends BluModel {
     if ($subject === '') {
       $subject = $this->_getArticleTitle($campaignId);
     }
+    $subject = mysql_real_escape_string($subject);
+
     $sql = "UPDATE `newsletterCampaign`
             SET `subject` = '$subject'
             WHERE `id` = $campaignId
