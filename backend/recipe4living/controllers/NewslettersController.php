@@ -134,7 +134,10 @@ class Recipe4livingNewslettersController extends ClientBackendController {
 
     // handle form submission
     else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      // `process` comes from the submit button and is either 'update' or
+      // 'save', and determines whether or not to return to the edit form
       $process = strtolower(Request::getString('process'));
+
       $campaignData = array(
         'id' => Request::getInt('newsletterCampaignId'),
         'newsletter' => Request::getString('newsletter'),
