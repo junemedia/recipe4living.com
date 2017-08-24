@@ -1,6 +1,6 @@
 -- MySQL dump 10.14  Distrib 5.5.44-MariaDB, for Linux (x86_64)
 --
--- Host: stgdb.junemedia.com    Database: r4l_stage
+-- Host: stgdb.junemedia.com    Database: r4l_dev
 -- ------------------------------------------------------
 -- Server version	10.0.31-MariaDB-1~wheezy
 
@@ -27,6 +27,7 @@ CREATE TABLE `newsletterCampaign` (
   `newsletter` varchar(16) NOT NULL,
   `campaign` date NOT NULL,
   `subject` varchar(255) NOT NULL,
+  `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `newsletter_campaign` (`newsletter`,`campaign`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -41,4 +42,4 @@ CREATE TABLE `newsletterCampaign` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-08-03 11:36:38
+-- Dump completed on 2017-08-24 17:15:06

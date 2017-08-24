@@ -1,6 +1,6 @@
 -- MySQL dump 10.14  Distrib 5.5.44-MariaDB, for Linux (x86_64)
 --
--- Host: stgdb.junemedia.com    Database: r4l_stage
+-- Host: stgdb.junemedia.com    Database: r4l_dev
 -- ------------------------------------------------------
 -- Server version	10.0.31-MariaDB-1~wheezy
 
@@ -32,6 +32,31 @@ CREATE TABLE `newsletterItem` (
   UNIQUE KEY `newsletterCampaignId_order` (`newsletterCampaignId`,`order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `newsletterItem_after_update` AFTER UPDATE
+  ON `newsletterItem`
+  FOR EACH ROW
+  BEGIN
+    -- only do the update if a change has been made
+    IF NEW.targetUrl <> OLD.targetUrl THEN
+      UPDATE  `newsletterCampaign`
+      SET     `updated` = CURRENT_TIMESTAMP
+      WHERE   `id` = NEW.newsletterCampaignId;
+    END IF;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -42,4 +67,4 @@ CREATE TABLE `newsletterItem` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-08-03 11:36:14
+-- Dump completed on 2017-08-24 17:16:24
