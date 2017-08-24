@@ -24,7 +24,7 @@
 </style>
 
 <div class="centered horizontal" style="clear:both">&nbsp;</div>
-<h2>Daily Recipes</em></h2>
+<h2>Daily Recipes</h2>
 <div class="centered horizontal">&nbsp;</div>
 
 <div>
@@ -35,16 +35,7 @@
     <table id="items_data" class="centered horizontal" style="width: 1200px;">
       <tr>
         <td class="label">Date:</td>
-        <td>
-        <?php
-        // make date editable only for new campaigns
-        if (!$this->_campaign['id']) { ?>
-          <input type="text" name="date" value="<?php echo $this->_campaign['campaign']; ?>" placeholder="yyyy-mm-dd" style="width: 8em;" />
-        <?php } else { ?>
-          <?php echo $this->_campaign['campaign']; ?>
-          <input type="hidden" name="date" value="<?php echo $this->_campaign['campaign']; ?>" />
-        <?php } ?>
-        </td>
+        <td><input type="text" name="date" value="<?php echo $this->_campaign['campaign']; ?>" placeholder="yyyy-mm-dd" style="width: 8em;" /></td>
       </tr>
 
       <tr>

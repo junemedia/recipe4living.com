@@ -113,6 +113,15 @@ class ClientNewslettersModel extends BluModel {
    *  Update campaign
    */
   public function updateCampaign($campaignId, $campaignData) {
+    $sql = "UPDATE `newsletterCampaign`
+            SET `campaign` = '{$campaignData['campaign']}'
+            WHERE `id` = $campaignId
+            LIMIT 1";
+    $this->_db->setQuery($sql);
+    if (!$this->_db->query()) {
+      return false;
+    }
+
 
     foreach ($campaignData['items'] as $order => $targetUrl) {
       $targetUrl = mysql_real_escape_string($targetUrl);
