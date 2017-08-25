@@ -4,6 +4,11 @@
     <td colspan="5" style="border: none;">
       <div style="height: 10px; margin: 23px 0px 5px;">
         <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/new" ?>" style="font-weight:bold;text-decoration:none;">+ New campaign</a>
+        <?php if ($this->_view === 'upcoming') { ?>
+        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/archive" ?>" style="font-weight:bold;text-decoration:none;margin-left:3em;">View archive</a>
+        <?php } else { ?>
+        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}" ?>" style="font-weight:bold;text-decoration:none;margin-left:3em;">View upcoming</a>
+        <?php } ?>
       </div>
     </td>
   </tr>
@@ -24,10 +29,20 @@
       <?php echo Text::trim($campaign['subject'], 100); ?> </td>
     <td style="padding: 5px; text-align: center;">
       <?php echo Text::trim($campaign['updated']); ?> </td>
+
     <td style="padding: 5px; text-align: center;">
-      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/{$campaign['id']}"; ?>">Edit</a> </td>
+    <?php if ($this->_view === 'upcoming') { ?>
+      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/{$campaign['id']}"; ?>">Edit</a>
+    <?php } else { ?>
+      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/{$campaign['id']}"; ?>">View</a>
+    <?php } ?>
+    </td>
+
     <td style="padding: 5px; text-align: center;">
-      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/delete/{$campaign['id']}"; ?>">Delete</a> </td>
+    <?php if ($this->_view === 'upcoming') { ?>
+      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/delete/{$campaign['id']}"; ?>">Delete</a>
+    <?php } ?>
+    </td>
   </tr>
 <?php } ?>
 

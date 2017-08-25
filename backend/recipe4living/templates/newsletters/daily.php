@@ -1,3 +1,10 @@
+<?php
+  // if the campaign is in the past, make it non-editable
+  $viewOnly = $this->_campaign['campaign'] < date('Y-m-d');
+  $formClass = $viewOnly ? 'view_only'
+                         : '';
+?>
+
 <style>
   #items_data td {
     padding: 5px 5px 10px;
@@ -21,6 +28,11 @@
     color: #555;
     width: 10em;
   }
+
+  #newsletterEditForm.view_only input[type=text] {
+    border: none;
+    background-color: white;
+  }
 </style>
 
 <div class="centered horizontal" style="clear:both">&nbsp;</div>
@@ -28,7 +40,7 @@
 <div class="centered horizontal">&nbsp;</div>
 
 <div>
-  <form action="<?php echo SITEURL.$baseUrl.'/newsletters/daily/'.$this->_campaign['id'] ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
+  <form id="newsletterEditForm" class="<?php echo $formClass; ?> action="<?php echo SITEURL.$baseUrl.'/newsletters/daily/'.$this->_campaign['id'] ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
     <input type="hidden" name="newsletterCampaignId" value="<?php echo $this->_campaign['id']; ?>"/>
     <input type="hidden" name="newsletter" value="daily"/>
 
@@ -68,6 +80,7 @@
         <td><input type="text" name="mwl4" value="<?php echo htmlspecialchars($items[4]['targetUrl']); ?>" /></td>
       </tr>
 
+      <?php if (!$viewOnly) { ?>
       <tr style="border:none;">
         <td>&nbsp;</td>
         <td>
@@ -75,6 +88,7 @@
           <button type="submit" name="process" value="save">Save &amp; quit</button>
         </td>
       </tr>
+      <?php } ?>
 
       <tr style="border:none;">
         <td colspan="2" style="height:25px;">&nbsp;</td>
@@ -112,4 +126,15 @@
     }
     return d.toISOString().slice(0,10) == dateString;
   }
+
+  <?php if ($viewOnly) { ?>
+  /* disable all the text input fields */
+  (function disableInputs() {
+    var inputs = document.querySelectorAll('#newsletterEditForm input[type=text]');
+    console.log(inputs);
+    for (var i=0; i<inputs.length; i++) {
+      inputs[i].disabled = true;
+    }
+  }());
+  <?php } ?>
 </script>

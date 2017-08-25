@@ -22,6 +22,8 @@ class Recipe4livingNewslettersController extends ClientBackendController {
   protected $_newsletter;
   protected $_campaign;
 
+  protected $_view;
+
 
   /**
    *  Default view -- display list of upcoming campaigns for a
@@ -45,6 +47,11 @@ class Recipe4livingNewslettersController extends ClientBackendController {
     // new campaign
     else if ($target === 'new') {
       $this->_createCampaign();
+    }
+
+    // view archive
+    else if ($target === 'archive') {
+      $this->_listCampaigns(false);
     }
 
     else if ($target === 'delete') {
@@ -82,15 +89,23 @@ class Recipe4livingNewslettersController extends ClientBackendController {
    *  @access protected
    *
    */
-  protected function _listCampaigns() {
+  protected function _listCampaigns($viewUpcoming = true) {
+    if ($viewUpcoming) {
+      $this->_view = 'upcoming';
+      $sortAscending = true;
+    }
+    else {
+      $this->_view = 'archive';
+      $sortAscending = false;
+    }
+
     // Get model
     $newslettersModel = BluApplication::getModel('newsletters');
 
-    $campaigns = $newslettersModel->getCampaigns($this->_newsletter);
+    $campaigns = $newslettersModel->getCampaigns($this->_newsletter, $sortAscending);
 
     // Load template
     include(BLUPATH_TEMPLATES.'/newsletters/listCampaigns.php');
-
   }
 
 
@@ -119,6 +134,8 @@ class Recipe4livingNewslettersController extends ClientBackendController {
    *
    */
   protected function _editCampaign($newsletterCampaignId) {
+    $this->_view = Request::getString('view_only') === 'true' ? 'view_only'
+                                                              : 'edit';
 
     // Get model
     $newslettersModel = BluApplication::getModel('newsletters');

@@ -22,12 +22,24 @@ class ClientNewslettersModel extends BluModel {
    *  @param string newsletter
    *  @return array campaigns
    */
-  public function getCampaigns($newsletter) {
-    $sql = "SELECT *
-            FROM `newsletterCampaign`
-            WHERE `newsletter` = '$newsletter'
-            AND `campaign` >= CURDATE()
-            ORDER BY `campaign` ASC";
+  public function getCampaigns($newsletter, $ascending=true) {
+
+    $select = "SELECT *
+               FROM `newsletterCampaign`
+               WHERE `newsletter` = '$newsletter'";
+
+    if ($ascending) {
+      $and = "`campaign` >= CURDATE()";
+      $order = "ASC";
+    }
+    else {
+      $and = "`campaign` < CURDATE()";
+      $order = "DESC";
+
+    }
+
+    $sql = "$select AND $and ORDER BY `campaign` $order";
+
     $this->_db->setQuery($sql);
     $campaigns = $this->_db->loadAssocList('id');
     return $campaigns;
