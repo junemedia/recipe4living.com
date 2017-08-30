@@ -1,6 +1,10 @@
 <?php
-  // if the campaign is in the past, make it non-editable
-  $viewOnly = $this->_campaign['campaign'] < date('Y-m-d');
+  /*
+   * if the campaign is in the past, and it's not a new campaign,
+   * make it non-editable
+   */
+  $viewOnly = $this->_campaign['campaign'] < date('Y-m-d') &&
+              $this->_campaign['id'] !== 0;
   $formClass = $viewOnly ? 'view_only'
                          : '';
 ?>
@@ -40,7 +44,7 @@
 <div class="centered horizontal">&nbsp;</div>
 
 <div>
-  <form id="newsletterEditForm" class="<?php echo $formClass; ?> action="<?php echo SITEURL.$baseUrl.'/newsletters/daily/'.$this->_campaign['id'] ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
+  <form id="newsletterEditForm" class="<?php echo $formClass; ?>" action="<?php echo SITEURL.$baseUrl.'/newsletters/daily/'.$this->_campaign['id'] ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
     <input type="hidden" name="newsletterCampaignId" value="<?php echo $this->_campaign['id']; ?>"/>
     <input type="hidden" name="newsletter" value="daily"/>
 
