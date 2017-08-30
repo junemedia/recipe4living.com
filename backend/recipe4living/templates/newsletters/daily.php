@@ -7,6 +7,7 @@
               $this->_campaign['id'] !== 0;
   $formClass = $viewOnly ? 'view_only'
                          : '';
+  $items = $this->_campaign['items'];
 ?>
 
 <style>
@@ -44,9 +45,9 @@
 <div class="centered horizontal">&nbsp;</div>
 
 <div>
-  <form id="newsletterEditForm" class="<?php echo $formClass; ?>" action="<?php echo SITEURL.$baseUrl.'/newsletters/daily/'.$this->_campaign['id'] ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
+  <form id="newsletterEditForm" class="<?php echo $formClass; ?>" action="<?php echo SITEURL."/newsletters/{$this->_newsletter}/{$this->_campaign['id']}" ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
     <input type="hidden" name="newsletterCampaignId" value="<?php echo $this->_campaign['id']; ?>"/>
-    <input type="hidden" name="newsletter" value="daily"/>
+    <input type="hidden" name="newsletter" value="<?php echo $this->_newsletter; ?>"/>
 
     <table id="items_data" class="centered horizontal" style="width: 1200px;">
       <tr>
@@ -64,25 +65,13 @@
         <td><input type="text" name="feature" value="<?php echo htmlspecialchars($items[0]['targetUrl']); ?>" /></td>
       </tr>
 
+      <?php for ($i = 1; $i < count($items); $i++) { ?>
       <tr>
-        <td class="label">MWL 1:</td>
-        <td><input type="text" name="mwl1" value="<?php echo htmlspecialchars($items[1]['targetUrl']); ?>" /></td>
+        <td class="label">MWL <?php echo $i; ?>:</td>
+        <td><input type="text" name="mwl<?php echo $i; ?>" value="<?php echo htmlspecialchars($items[$i]['targetUrl']); ?>" /></td>
       </tr>
+      <?php } ?>
 
-      <tr>
-        <td class="label">MWL 2:</td>
-        <td><input type="text" name="mwl2" value="<?php echo htmlspecialchars($items[2]['targetUrl']); ?>" /></td>
-      </tr>
-
-      <tr>
-        <td class="label">MWL 3:</td>
-        <td><input type="text" name="mwl3" value="<?php echo htmlspecialchars($items[3]['targetUrl']); ?>" /></td>
-      </tr>
-
-      <tr>
-        <td class="label">MWL 4:</td>
-        <td><input type="text" name="mwl4" value="<?php echo htmlspecialchars($items[4]['targetUrl']); ?>" /></td>
-      </tr>
 
       <?php if (!$viewOnly) { ?>
       <tr style="border:none;">
