@@ -98,6 +98,7 @@ class Recipe4livingNewslettersController extends ClientBackendController {
    */
   protected function _deleteCampaign($campaignId) {
     $newslettersModel = BluApplication::getModel('newsletters');
+    $this->_campaign = $newslettersModel->getCampaign((int)$campaignId);
 
     $success = $newslettersModel->deleteCampaign($campaignId);
 
