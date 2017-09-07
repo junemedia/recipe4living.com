@@ -41,8 +41,13 @@ class Recipe4livingNewslettersController extends ClientBackendController {
     $target = isset($this->_args[0]) ? $this->_args[0]
                                      : NULL;
 
+    // if no newsletter has been selected
+    if (!isset($this->_newsletter)) {
+      echo "Please select a newsletter from the dropdown";
+    }
+
     // check for a campaign id
-    if (ctype_digit($target)) {
+    else if (ctype_digit($target)) {
       $this->_editCampaign($target);
     }
 
