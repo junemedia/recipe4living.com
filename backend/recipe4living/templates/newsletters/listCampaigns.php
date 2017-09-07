@@ -40,7 +40,7 @@
 
     <td style="padding: 5px; text-align: center;">
     <?php if ($this->_view === 'upcoming') { ?>
-      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/delete/{$campaign['id']}"; ?>">Delete</a>
+      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/delete/{$campaign['id']}"; ?>" class="delete">Delete</a>
     <?php } ?>
     </td>
   </tr>
@@ -53,3 +53,20 @@
 <?php } ?>
 
 </table>
+
+
+<script>
+  // Confirm before deletion
+  (function () {
+    var deleteLinks = document.querySelectorAll('a.delete');
+    for (var i = 0; i < deleteLinks.length; i++) {
+      deleteLinks[i].addEventListener('click', confirmDelete, false);
+    }
+  })();
+
+  function confirmDelete(e) {
+    if (!confirm('Are you sure you want to delete this campaign?')) {
+      e.preventDefault();
+    }
+  }
+</script>
