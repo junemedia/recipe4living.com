@@ -11,10 +11,13 @@ class Recipe4livingSingleserveController extends Recipe4livingNewslettersControl
 
   public function __construct($args) {
     parent::__construct($args);
-    $this->_newsletter = 'singleserve';
+    $this->_newsletter = array(
+      'id' => 'singleserve',
+      'label' => 'Single Serving'
+    );
     $this->_campaignBlank = array(
       'id'         => 0,
-      'newsletter' => $this->_newsletter,
+      'newsletter' => $this->_newsletter['id'],
       'campaign'   => '',
       'subject'    => '',
       'items' => array(

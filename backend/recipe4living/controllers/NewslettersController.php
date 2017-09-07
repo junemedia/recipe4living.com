@@ -84,7 +84,7 @@ class Recipe4livingNewslettersController extends ClientBackendController {
 
     // view/edit newsletter items
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-      include(BLUPATH_TEMPLATES.'/newsletters/'.$this->_campaign['newsletter'].'.php');
+      include(BLUPATH_TEMPLATES.'/newsletters/editor.php');
     }
 
     // handle form submission
@@ -129,7 +129,7 @@ class Recipe4livingNewslettersController extends ClientBackendController {
     // Get model
     $newslettersModel = BluApplication::getModel('newsletters');
 
-    $campaigns = $newslettersModel->getCampaigns($this->_newsletter, $sortAscending);
+    $campaigns = $newslettersModel->getCampaigns($this->_newsletter['id'], $sortAscending);
 
     // Load template
     include(BLUPATH_TEMPLATES.'/newsletters/listCampaigns.php');
@@ -145,6 +145,6 @@ class Recipe4livingNewslettersController extends ClientBackendController {
   protected function _createCampaign() {
     $this->_campaign = $this->_campaignBlank;
 
-    include(BLUPATH_TEMPLATES.'/newsletters/'.$this->_campaign['newsletter'].'.php');
+    include(BLUPATH_TEMPLATES.'/newsletters/editor.php');
   }
 }

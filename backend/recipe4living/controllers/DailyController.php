@@ -11,10 +11,13 @@ class Recipe4livingDailyController extends Recipe4livingNewslettersController {
 
   public function __construct($args) {
     parent::__construct($args);
-    $this->_newsletter = 'daily';
+    $this->_newsletter = array(
+      'id' => 'daily',
+      'label' => 'Daily Recipe'
+    );
     $this->_campaignBlank = array(
       'id'         => 0,
-      'newsletter' => $this->_newsletter,
+      'newsletter' => $this->_newsletter['id'],
       'campaign'   => '',
       'subject'    => '',
       'items' => array(

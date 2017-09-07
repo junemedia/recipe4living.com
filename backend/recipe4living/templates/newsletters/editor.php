@@ -40,14 +40,13 @@
   }
 </style>
 
-<div class="centered horizontal" style="clear:both">&nbsp;</div>
-<h2>Daily Recipes</h2>
+<h2><?php echo $this->_newsletter['label']; ?></h2>
 <div class="centered horizontal">&nbsp;</div>
 
 <div>
-  <form id="newsletterEditForm" class="<?php echo $formClass; ?>" action="<?php echo SITEURL."/newsletters/{$this->_newsletter}/{$this->_campaign['id']}" ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
+  <form id="newsletterEditForm" class="<?php echo $formClass; ?>" action="<?php echo SITEURL."/newsletters/{$this->_newsletter['id']}/{$this->_campaign['id']}" ?>" method="POST" onsubmit="return newsletterValidateForm(this)">
     <input type="hidden" name="newsletterCampaignId" value="<?php echo $this->_campaign['id']; ?>"/>
-    <input type="hidden" name="newsletter" value="<?php echo $this->_newsletter; ?>"/>
+    <input type="hidden" name="newsletter" value="<?php echo $this->_newsletter['id']; ?>"/>
 
     <table id="items_data" class="centered horizontal" style="width: 1200px;">
       <tr>
@@ -67,7 +66,7 @@
 
       <?php for ($i = 1; $i < count($items); $i++) { ?>
       <tr>
-        <td class="label">MWL <?php echo $i; ?>:</td>
+        <td class="label">More <?php echo $i; ?>:</td>
         <td><input type="text" name="mwl<?php echo $i; ?>" value="<?php echo htmlspecialchars($items[$i]['targetUrl']); ?>" /></td>
       </tr>
       <?php } ?>
@@ -90,7 +89,7 @@
       <tr style="background-color: white !important">
         <td class="label" style="vertical-align:top"> Preview: </td>
         <td>
-          <iframe src="<?php echo "{$this->_apiUrl}/newsletter/{$this->_newsletter}.html/{$this->_campaign['campaign']}"; ?>" id="iframe1" frameborder="0" scrolling="auto" width="800" height="1600"></iframe>
+          <iframe src="<?php echo "{$this->_apiUrl}/newsletter/{$this->_newsletter['id']}.html/{$this->_campaign['campaign']}"; ?>" id="iframe1" frameborder="0" scrolling="auto" width="800" height="1600"></iframe>
         </td>
       </tr>
     </table>

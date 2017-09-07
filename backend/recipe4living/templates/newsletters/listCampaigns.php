@@ -1,13 +1,15 @@
+<h2><?php echo $this->_newsletter['label']; ?></h2>
+
 <table id="items_data" class="centered horizontal" style="width: 1200px">
 
   <tr class="metadata">
     <td colspan="5" style="border: none;">
       <div style="height: 10px; margin: 23px 0px 5px;">
-        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/new" ?>" style="font-weight:bold;text-decoration:none;">+ New campaign</a>
+        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter['id']}/new" ?>" style="font-weight:bold;text-decoration:none;">+ New campaign</a>
         <?php if ($this->_view === 'upcoming') { ?>
-        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/archive" ?>" style="font-weight:bold;text-decoration:none;margin-left:3em;">View archive</a>
+        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter['id']}/archive" ?>" style="font-weight:bold;text-decoration:none;margin-left:3em;">View archive</a>
         <?php } else { ?>
-        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}" ?>" style="font-weight:bold;text-decoration:none;margin-left:3em;">View upcoming</a>
+        <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter['id']}" ?>" style="font-weight:bold;text-decoration:none;margin-left:3em;">View upcoming</a>
         <?php } ?>
       </div>
     </td>
@@ -32,15 +34,15 @@
 
     <td style="padding: 5px; text-align: center;">
     <?php if ($this->_view === 'upcoming') { ?>
-      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/{$campaign['id']}"; ?>">Edit</a>
+      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter['id']}/{$campaign['id']}"; ?>">Edit</a>
     <?php } else { ?>
-      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/{$campaign['id']}"; ?>">View</a>
+      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter['id']}/{$campaign['id']}"; ?>">View</a>
     <?php } ?>
     </td>
 
     <td style="padding: 5px; text-align: center;">
     <?php if ($this->_view === 'upcoming') { ?>
-      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter}/delete/{$campaign['id']}"; ?>" class="delete">Delete</a>
+      <a href="<?php echo SITEURL . "/newsletters/{$this->_newsletter['id']}/delete/{$campaign['id']}"; ?>" class="delete">Delete</a>
     <?php } ?>
     </td>
   </tr>
