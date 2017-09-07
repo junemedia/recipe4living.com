@@ -86,12 +86,15 @@
         <td colspan="2" style="height:25px;">&nbsp;</td>
       </tr>
 
+      <?php if ($this->_campaign['id'] !== 0) { ?>
       <tr style="background-color: white !important">
         <td class="label" style="vertical-align:top"> Preview: </td>
         <td>
           <iframe src="<?php echo "{$this->_apiUrl}/newsletter/{$this->_newsletter['id']}.html/{$this->_campaign['campaign']}"; ?>" id="iframe1" frameborder="0" scrolling="auto" width="800" height="1600"></iframe>
         </td>
       </tr>
+      <?php } ?>
+
     </table>
   </form>
 </div>
