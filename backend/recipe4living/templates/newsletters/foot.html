@@ -1,0 +1,45 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+<script>
+  var picker = new Pikaday(
+  {
+      field: document.getElementById('datepicker'),
+      firstDay: 1,
+      format: 'YYYY-MM-DD'
+  });
+</script>
+
+<script type="text/javascript">
+  function newsletterValidateForm(form) {
+    var d = form.date.value;
+    if (!isValidDate(d)) {
+      alert("A valid date of the form YYYY-MM-DD is required");
+      return false;
+    }
+    return true;
+  }
+
+  function isValidDate(dateString) {
+    var d;
+    var regEx = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateString.match(regEx)) {
+      return false;  // Invalid format
+    }
+
+    if(!((d = new Date(dateString))|0)) {
+      return false; // Invalid date (or this could be epoch)
+    }
+    return d.toISOString().slice(0,10) == dateString;
+  }
+
+  <?php if ($viewOnly) { ?>
+  /* disable all the text input fields */
+  (function disableInputs() {
+    var inputs = document.querySelectorAll('#newsletterEditForm input[type=text]');
+    console.log(inputs);
+    for (var i=0; i<inputs.length; i++) {
+      inputs[i].disabled = true;
+    }
+  }());
+  <?php } ?>
+</script>

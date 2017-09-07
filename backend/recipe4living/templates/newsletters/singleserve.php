@@ -52,7 +52,7 @@
     <table id="items_data" class="centered horizontal" style="width: 1200px;">
       <tr>
         <td class="label">Date:</td>
-        <td><input type="text" name="date" value="<?php echo $this->_campaign['campaign']; ?>" placeholder="yyyy-mm-dd" style="width: 8em;" /></td>
+        <td><input type="text" name="date" id="datepicker" value="<?php echo $this->_campaign['campaign']; ?>" placeholder="yyyy-mm-dd" style="width: 8em;" /></td>
       </tr>
 
       <tr>
@@ -97,37 +97,4 @@
   </form>
 </div>
 
-<script type="text/javascript">
-  function newsletterValidateForm(form) {
-    var d = form.date.value;
-    if (!isValidDate(d)) {
-      alert("A valid date of the form YYYY-MM-DD is required");
-      return false;
-    }
-    return true;
-  }
-
-  function isValidDate(dateString) {
-    var d;
-    var regEx = /^\d{4}-\d{2}-\d{2}$/;
-    if (!dateString.match(regEx)) {
-      return false;  // Invalid format
-    }
-
-    if(!((d = new Date(dateString))|0)) {
-      return false; // Invalid date (or this could be epoch)
-    }
-    return d.toISOString().slice(0,10) == dateString;
-  }
-
-  <?php if ($viewOnly) { ?>
-  /* disable all the text input fields */
-  (function disableInputs() {
-    var inputs = document.querySelectorAll('#newsletterEditForm input[type=text]');
-    console.log(inputs);
-    for (var i=0; i<inputs.length; i++) {
-      inputs[i].disabled = true;
-    }
-  }());
-  <?php } ?>
-</script>
+<?php include(BLUPATH_TEMPLATES.'/newsletters/foot.html'); ?>

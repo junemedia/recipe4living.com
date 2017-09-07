@@ -78,6 +78,8 @@
 		}
 	</style>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css" />
+
 	<?php
 	/* Page-specific script includes */
 	echo $includeScript;
