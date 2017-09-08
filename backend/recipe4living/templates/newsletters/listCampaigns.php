@@ -50,7 +50,7 @@
 
 <?php if (empty($campaigns)) { ?>
   <tr>
-    <td colspan="4" style="text-align:center">No campaigns</td>
+    <td colspan="5">No campaigns scheduled</td>
   </tr>
 <?php } ?>
 
