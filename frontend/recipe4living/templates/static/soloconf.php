@@ -13,10 +13,7 @@
 					<p>If you have unsubscribed in error - <a href="http://www.dailygiftsforinput.com/dispatch2.asp?home=70-28629O-L4" target="_blank">please click here to resubscribe</a>.</p>
 				</td>
 				<td width="300px" valign="top"><div id="panel-right" class="column">
-				<?php include(BLUPATH_TEMPLATES.'/site/newsletter.php') ?>
-				
 				<div class="ad"><?php $this->_advert('AD_RIGHT1'); ?></div>
-				<?php // $this->landing_featured_question(); ?>
 				<?php $this->_box('reference_guides', array('limit' => 10)); ?>
 				<div class="ad"><?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?></div>
 			</div></td>

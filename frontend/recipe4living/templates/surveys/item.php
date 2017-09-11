@@ -103,8 +103,6 @@
 
 
 <div id="panel-right" class="column screenonly"> 
-    <?php include(BLUPATH_TEMPLATES.'/site/newsletter.php') ?>  
-    <div class="ad"></div>
     <div class="ad"><?php $this->_advert('AD_RIGHT1'); ?></div>
     <div class="ad"><?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?></div>
 </div> 
