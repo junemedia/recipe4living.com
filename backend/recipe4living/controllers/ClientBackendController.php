@@ -79,6 +79,7 @@ class ClientBackendController extends BackendController {
       'children' => Array(
         SITEURL.'/newsletters/daily' => 'Daily',
         SITEURL.'/newsletters/singleserve' => 'Single Serving',
+        SITEURL.'/newsletters/onepot' => 'One Pot Wonders',
       )
     );
 
