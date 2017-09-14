@@ -87,6 +87,12 @@ class Recipe4livingNewslettersController extends ClientBackendController {
     $newslettersModel = BluApplication::getModel('newsletters');
     $this->_campaign = $newslettersModel->getCampaign((int)$newsletterCampaignId);
 
+
+    // make sure we're at the right newsletter url
+    if ($this->_newsletter['id'] !== $this->_campaign['newsletter']) {
+      header('Location: '.SITEURL.'/newsletters/'.$this->_campaign['newsletter'].'/'.$newsletterCampaignId);
+    }
+
     // view/edit newsletter items
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       include(BLUPATH_TEMPLATES.'/newsletters/editor.php');
