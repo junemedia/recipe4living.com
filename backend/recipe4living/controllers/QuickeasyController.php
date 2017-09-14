@@ -1,19 +1,19 @@
 <?php
 
 /**
- *  Daily newsletter controller
+ *  Quick & Easy newsletter controller
  *
  *  @package BluApplication
  *  @subpackage BackendControllers
  */
-class Recipe4livingDailyController extends Recipe4livingNewslettersController {
+class Recipe4livingQuickeasyController extends Recipe4livingNewslettersController {
 
 
   public function __construct($args) {
     parent::__construct($args);
     $this->_newsletter = array(
-      'id' => 'daily',
-      'label' => 'Daily Recipe'
+      'id' => 'quickeasy',
+      'label' => 'Quick and Easy'
     );
     $this->_campaignBlank = array(
       'id'         => 0,

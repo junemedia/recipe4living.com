@@ -1,19 +1,19 @@
 <?php
 
 /**
- *  Daily newsletter controller
+ *  Copycat Classics newsletter controller
  *
  *  @package BluApplication
  *  @subpackage BackendControllers
  */
-class Recipe4livingDailyController extends Recipe4livingNewslettersController {
+class Recipe4livingCopycatController extends Recipe4livingNewslettersController {
 
 
   public function __construct($args) {
     parent::__construct($args);
     $this->_newsletter = array(
-      'id' => 'daily',
-      'label' => 'Daily Recipe'
+      'id' => 'copycat',
+      'label' => 'Copycat Classics'
     );
     $this->_campaignBlank = array(
       'id'         => 0,
