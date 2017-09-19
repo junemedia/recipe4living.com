@@ -77,11 +77,12 @@ class ClientBackendController extends BackendController {
       'link' => SITEURL . '/newsletters',
       'on' => Array('newsletters'),
       'children' => Array(
-        SITEURL.'/newsletters/daily' => 'Daily',
+        SITEURL.'/newsletters/daily'       => 'Daily',
         SITEURL.'/newsletters/singleserve' => 'Single Serving',
-        SITEURL.'/newsletters/onepot' => 'One Pot Wonders',
-        SITEURL.'/newsletters/copycat' => 'Copycat Classics',
-        SITEURL.'/newsletters/quickeasy' => 'Quick & Easy'
+        SITEURL.'/newsletters/onepot'      => 'One Pot Wonders',
+        SITEURL.'/newsletters/copycat'     => 'Copycat Classics',
+        SITEURL.'/newsletters/quickeasy'   => 'Quick & Easy',
+        SITEURL.'/newsletters/secondsend'  => 'Second Helping'
       )
     );
 
