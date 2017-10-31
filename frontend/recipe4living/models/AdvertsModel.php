@@ -24,8 +24,7 @@ class ClientFrontendAdvertsModel extends FrontendAdvertsModel
 			'WEBSITE_INLINE_1' => 9,
 			'AD_RIGHT1' => 11,	// Website 11 doesn't exist in OpenX...
 			'WEBSITE_RIGHT_BANNER_1' => 12,
-			'WEBSITE_BOTTOM_NAV' => 19,
-			'WEBSITE_LEFT_SIDEBAR_BELOW_GOOGLE' => 18
+			'WEBSITE_BOTTOM_NAV' => 19
 		);
 		
 	}

@@ -824,6 +824,3 @@
 	</div>
 
 	<?php $this->_advert('WEBSITE_LEFT_BANNER_1'); ?>
-	<br>
-	<div><?php $this->_advert('WEBSITE_LEFT_SIDEBAR_BELOW_GOOGLE'); ?></div>
-	

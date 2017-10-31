@@ -156,7 +156,6 @@ abstract class ClientFrontendController extends FrontendController
 		case 'AD_RIGHT1':
 		case 'WEBSITE_RIGHT_BANNER_1':
 		case 'WEBSITE_BOTTOM_NAV':
-		case 'WEBSITE_LEFT_SIDEBAR_BELOW_GOOGLE':
 		case 'swoop':
 		case 'underdog':
 			include(BLUPATH_TEMPLATES.'/site/ads/'.$type.'.php');
