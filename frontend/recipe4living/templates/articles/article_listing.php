@@ -21,7 +21,7 @@
     <?php }?>
 
     <div id="panel-right" class="column">
-      <div class="ad"><?php $this->_advert('AD_RIGHT1'); ?></div>
+      <div class="ad"><?php $this->_advert('openx_300x250atf'); ?></div>
 
       <?php if (!$iscategory) {
         $this->_box('reference_guides', array('limit' => 10));

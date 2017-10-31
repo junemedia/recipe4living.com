@@ -63,7 +63,7 @@
 			</div>
 	
 			<div id="panel-right" class="column">
-				<div class="ad"><?php $this->_advert('AD_RIGHT1'); ?></div>
+				<div class="ad"><?php $this->_advert('openx_300x250atf'); ?></div>
 	
 				<?php $this->_box('referenceGuides', array('limit' => 10)); ?>
 

@@ -75,7 +75,7 @@
 
 
     <div id="panel-right" class="column screenonly">
-      <div class="ad"><?php $this->_advert('AD_RIGHT1'); ?></div>
+      <div class="ad"><?php $this->_advert('openx_300x250atf'); ?></div>
 
       <?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?>
     </div>

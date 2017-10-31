@@ -77,7 +77,7 @@ abstract class ClientFrontendController extends FrontendController
 		// Load top/bottom ad
 		//if (BluApplication::getOption() != 'index') {	// because we want top banner in all pages including homepage, Samir commented out this if condition.
 			ob_start();
-			$this->_advert('WEBSITE_TOP_NAV');
+			$this->_advert('openx_728x90atf');
 			Template::set('headerAdvert', ob_get_clean());
 		//}
 		/////////////////////////////
@@ -112,7 +112,7 @@ abstract class ClientFrontendController extends FrontendController
 				
 		/////////////////////////////
 		ob_start();
-		$this->_advert('WEBSITE_BOTTOM_NAV');
+		$this->_advert('openx_728x90btf');
 		Template::set('footerAdvert', ob_get_clean());
 
 		// Underdog media tag
@@ -150,12 +150,12 @@ abstract class ClientFrontendController extends FrontendController
 		}
 
 		switch ($type) {
-		case 'WEBSITE_TOP_NAV':
+		case 'openx_728x90atf':
 		case 'WEBSITE_LEFT_BANNER_1':
 		case 'WEBSITE_INLINE_1':
-		case 'AD_RIGHT1':
+		case 'openx_300x250atf':
 		case 'WEBSITE_RIGHT_BANNER_1':
-		case 'WEBSITE_BOTTOM_NAV':
+		case 'openx_728x90btf':
 		case 'swoop':
 		case 'underdog':
 			include(BLUPATH_TEMPLATES.'/site/ads/'.$type.'.php');
