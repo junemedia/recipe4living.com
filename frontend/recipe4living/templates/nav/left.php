@@ -147,4 +147,4 @@
 		</div>
 	</div>
 
-	<?php $this->_advert('WEBSITE_LEFT_BANNER_1'); ?>
+  <?php if (!isset($_GET['cid'])) { $this->_advert('medianet_120x300'); } ?>

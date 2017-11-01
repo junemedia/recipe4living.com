@@ -20,7 +20,7 @@ class ClientFrontendAdvertsModel extends FrontendAdvertsModel
 		// "Website" IDs
 		$this->_siteMapping = array(
 			'openx_728x90atf' => 1,
-			'WEBSITE_LEFT_BANNER_1' => 2,
+			'medianet_120x300' => 2,
 			'WEBSITE_INLINE_1' => 9,
 			'openx_300x250atf' => 11,	// Website 11 doesn't exist in OpenX...
 			'WEBSITE_RIGHT_BANNER_1' => 12,

@@ -151,7 +151,7 @@ abstract class ClientFrontendController extends FrontendController
 
 		switch ($type) {
 		case 'openx_728x90atf':
-		case 'WEBSITE_LEFT_BANNER_1':
+		case 'medianet_120x300':
 		case 'WEBSITE_INLINE_1':
 		case 'openx_300x250atf':
 		case 'WEBSITE_RIGHT_BANNER_1':

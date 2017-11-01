@@ -1,4 +1,3 @@
-<?php if (!isset($_GET['cid'])) { ?>
 <div class="screenonly" style="padding: 5px 15px;">
   <script id="mNCC" language="javascript">
     medianet_width = "120";
@@ -12,4 +11,3 @@
     })();
   </script>
 </div>
-<?php } ?>
