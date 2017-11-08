@@ -41,6 +41,7 @@ class ClientRoutesModel extends RoutesModel
 		// Static pages
 		$staticPages = array(
 			'contact', 
+      'add_to_address_book',
 			'about', 
 			'links',
 			'press',

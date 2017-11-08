@@ -82,6 +82,17 @@ class Recipe4livingIndexController extends ClientFrontendController
   }
 
   /**
+   *  Add to address book page
+   *
+   *  @access public
+   */
+  public function add_to_address_book()
+  {
+    $this->_doc->setTitle('Add Us To Your Address Book');
+    include (BLUPATH_TEMPLATES.'/static/add_to_address_book.php');
+  }
+
+  /**
    *  Contact submission
    *
    *  @access public
