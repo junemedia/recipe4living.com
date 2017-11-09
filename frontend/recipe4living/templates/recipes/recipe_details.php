@@ -4,6 +4,9 @@
 		<!-- start of class hrecipe -->
 		<div itemscope itemtype="http://schema.org/Recipe">
 			<div id="panel-center" class="column">
+
+				<?php $this->_advert('connatix_infeed'); ?>
+
 				<?= Messages::getMessages(); ?>
 
 				<? if (isset($format) && $format == 'print') { ?>
