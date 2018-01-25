@@ -38,7 +38,7 @@
   <link href="<?= SITEINSECUREURL.Template::get('rssUrl'); ?>" rel="alternate" type="application/rss+xml" title="<?= BluApplication::getSetting('storeName'); ?> | <?= Template::get('rssTitle', 'Latest Recipes'); ?>" />
   <?php } ?>
 
-  <?php if (($format != 'print') && (strpos($_SERVER['HTTP_USER_AGENT'], 'CrazyEgg Robot') !== 0)) { ?>
+  <?php if ($format != 'print') { ?>
   <script type="text/javascript">
     /* Define global static variables. */
     DEBUG = <?= DEBUG ? 'true' : 'false' ?>;
