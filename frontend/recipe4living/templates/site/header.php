@@ -29,6 +29,7 @@
   <?php }?>
 
   <link type="text/css" href="/frontend/recipe4living/css/print.css?v=4" media="print" rel="stylesheet">
+  <link rel="stylesheet" href="<?= SITEASSETURL; ?>/css/duda.css" />
   <!--[if IE 6]><link href="<?= SITEASSETURL; ?>/css/ie6.css?v=4" rel="stylesheet" type="text/css" /><![endif]-->
   <!--[if IE 7]><link href="<?= SITEASSETURL; ?>/css/ie7.css?v=4" rel="stylesheet" type="text/css" /><![endif]-->
   <link rel="shortcut icon" href="<?= SITEASSETURL; ?>/images/favicon.ico" type="image/vnd.microsoft.icon" />

@@ -32,6 +32,7 @@
 
             <!-- Preview gallery-->
             <div>
+              <a href="<?php echo $pageLinkPre;?>" class="duda-only"><img src="/frontend/recipe4living/images/site/slideshows_back.png" alt=""></a>
               <?php
               foreach($slideAll as $key=> $value){
               $order = $itemsModel->getSlideOrderBySlidePageArticleId($item['id'], $value['id']);
@@ -40,6 +41,7 @@
                 <img style="<?php  if($value['id'] == $pages['id']){?> border: red 5px solid;<?php }else { ?> border: white 5px solid; <?php } ?>" src="<?= ASSETURL; ?>/itemimages/50/50/3/<?= $value['image']['filename']; ?>" alt="">
               </a>
               <?php } ?>
+              <a href="<?php echo $pageLinkNext;?>" class="duda-only"><img src="/frontend/recipe4living/images/site/slideshows_forward.png" alt=""></a>
             </div>
 
             <!-- Main Content-->
