@@ -91,6 +91,7 @@ RewriteRule ^giveaway$ index.php?controller=index&task=giveaway
 # Run all non-file-asset requests through site entry point
 RewriteCond %{REQUEST_URI} !^/server-status
 RewriteCond %{REQUEST_URI} !^/index\.php [NC]
+RewriteCond %{REQUEST_URI} !^/ads\.txt [NC]
 RewriteCond %{REQUEST_URI} !^/(front|back)end/([A-Za-z_0-9]+)/(images|swf|languages/([a-z]{2})/buttons|plugins) [NC]
 RewriteCond %{REQUEST_URI} !^/(.*)xml\.gz [NC]
 RewriteCond %{REQUEST_URI} !^/sitema(.*)\.xml [NC]
