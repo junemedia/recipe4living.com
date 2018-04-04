@@ -125,19 +125,6 @@ class Error
 
 		date_default_timezone_set('America/Chicago');
 		global $leon;
-		mail('r4l.tech@junemedia.com',
-			   'R4L Code Error ' . $_SERVER['SERVER_ADDR'].' - '. $leon . ' - ' . date("Y-m-d H:m:s", time()),
-			   'Server IP: ' . $_SERVER['SERVER_ADDR'] . "\n".
-			   'Client IP: ' . $_SERVER['REMOTE_ADDR'] . "\n".
-			   'Database Info: ' . $leon . "\n".
-			   $errorLine[3]."\n".
-			   'Severity: '.$errorLine[2]."\n".
-			   'File: '.$errorLine[4]."\n".
-			   'Line: '.$errorLine[5]."\n".
-			   'Stack: '.str_replace('>>>', "\n      ", $errorLine[6])."\n".
-			   'Visitor ID: '.$errorLine[0]."\n".
-			   'URI: '.$errorLine[7]."\n",
-			   'From: r4l.tech <r4l.tech@junemedia.com>');
 
 			// Output lies
 			echo '
