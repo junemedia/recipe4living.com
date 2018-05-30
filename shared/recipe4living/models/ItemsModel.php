@@ -25,13 +25,12 @@ class ClientItemsModel extends BluModel
 		if (!$itemId) {
 			return false;
 		}
-		// To rebuild cache for item(s), simply update below array with article/recipe IDs.
-		//$array_rebuild = array('61879');
-		//if(in_array($itemId, $array_rebuild))$forceRebuild = true;
+
 		// Get base details
 		$cacheKey = 'item_'.$itemId;
 		$item = $forceRebuild ? false : $this->_cache->get($cacheKey);
-		if ($item === false) {
+    // if $forceRebuild has been set or item is not in cache
+		if ($item == false) {
 			// Get from database
 			$query = 'SELECT a.*
 				FROM `articles` AS `a`
@@ -3679,11 +3678,17 @@ class ClientItemsModel extends BluModel
     }    
 
     public function getSlideOrderBySlidePageArticleId($articleId, $slideArticleId){
+      // make sure we have both params otherwise database throws error and kills page
+      if ($articleId && $slideArticleId) {
         $sql = "SELECT sa.id,sa.articleId,sa.sequence,sa.articleIdPage,sa.description FROM slidearticles as sa where sa.articleIdPage=$slideArticleId AND sa.articleId=$articleId";
         $this->_db->setQuery($sql);
         $result = $this->_db->loadAssoc('sequence');
         $order = $result["sequence"];
         return $order;
+      }
+      else {
+        return "1";
+      }
     }    
 	
 	public function getSlideArticleIdByArticleId($articleId){
