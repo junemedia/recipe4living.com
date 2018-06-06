@@ -290,27 +290,6 @@ class Recipe4livingIndexController extends ClientFrontendController
   }
 
   /**
-   *  Contest rules page
-   *
-   *  @access public
-   */
-  public function contestrules()
-  {
-    include (BLUPATH_TEMPLATES.'/static/contestrules.php');
-  }
-
-
-  /**
-   *  A Holiday Contest rules page
-   *
-   *  @access public
-   */
-  public function holidaycontestrules()
-  {
-    include (BLUPATH_TEMPLATES.'/static/holidaycontestrules.php');
-  }
-
-  /**
    *  Abuse page
    *
    *  @access public
@@ -361,14 +340,14 @@ class Recipe4livingIndexController extends ClientFrontendController
     return parent::leftnav(array_merge($this->_getRecipeCategoryLinks(), $links));
   }
 
-    /**
+  /**
    *  open advertiser link in footer to links.php
    *
    */
   public function advertiser() {
-  Template::set('advertiser', true);
-  include (BLUPATH_TEMPLATES.'/static/links.php');
-}
+    Template::set('advertiser', true);
+    include (BLUPATH_TEMPLATES.'/static/links.php');
+  }
 
   /**
    *  Display info popup
@@ -516,9 +495,6 @@ class Recipe4livingIndexController extends ClientFrontendController
    */
   public function giveaway()
   {
-    //Template::set('giveaway', true);
-    //$this->_doc->setTitle("Contest - Recipe4Living.com");
-    //include(BLUPATH_TEMPLATES.'/static/giveaway.php');
     header('Location: http://win.recipe4living.com');
   }
 
