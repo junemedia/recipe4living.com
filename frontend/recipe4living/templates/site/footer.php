@@ -122,9 +122,8 @@
         <a href="<?= SITEURL ?>/sitemap">Site Map</a>&nbsp;|&nbsp;
         <a href="<?= SITEURL ?>/index/links">Advertising</a>&nbsp;|&nbsp;
         <a href="<?= SITEURL ?>/privacy">Privacy Policy</a>&nbsp;|&nbsp;
-        <a href="<?= SITEURL ?>/terms">Terms of Use</a>&nbsp;|&nbsp;
-        <a href="<?= SITEURL ?>/index/unsub">Unsubscribe</a>&nbsp;|&nbsp;
-        <a href="<?= SITEURL; ?>/index/subctr">Manage My Newsletters</a>
+        <a href="<?= SITEURL ?>/terms">Terms of Use</a><!--&nbsp;|&nbsp;-->
+        <!--<a href="<?= SITEURL; ?>/index/subctr">Manage My Newsletters</a>-->
       </span>
       <p class="text-content"><br>&copy; <?php echo date('Y'); ?> <a href="http://www.junemedia.com/" target="_blank">June Media Inc</a> All rights reserved</p>
     </div>
