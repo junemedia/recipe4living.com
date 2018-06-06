@@ -196,8 +196,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!--Sticky Menu-->
 <script type="text/javascript" src="<?= COREASSETURL; ?>/js/stickymenu.js"></script>
 
-<?php include_once("dhtml.php"); ?>
-
 <div id="nav-header">
   <div class="site-wrapper" id="top-ad"><?= Template::get('headerAdvert'); ?></div>
   <div class="site-wrapper">
