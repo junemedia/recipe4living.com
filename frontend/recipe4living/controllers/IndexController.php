@@ -267,16 +267,6 @@ class Recipe4livingIndexController extends ClientFrontendController
   }
 
   /**
-   *  Community page
-   *
-   *  @access public
-   */
-  public function community()
-  {
-    echo 'this is the community page';
-  }
-
-  /**
    *  Privacy page
    *
    *  @access public

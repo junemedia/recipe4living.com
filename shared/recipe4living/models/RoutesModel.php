@@ -47,7 +47,6 @@ class ClientRoutesModel extends RoutesModel
 			'press',
 			'review_program', 
 			'submission',
-			'community',
 			'privacy',
 			'terms', 
 			'abuse',
