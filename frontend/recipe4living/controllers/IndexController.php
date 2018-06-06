@@ -629,20 +629,6 @@ class Recipe4livingIndexController extends ClientFrontendController
 
 
 
-
-  /**
-   *  Test page
-   *
-   *  @access public
-   */
-  public function test()
-  {
-    Template::set('test', true);
-    include(BLUPATH_TEMPLATES.'/static/test.php');
-  }
-
-
-
   /**
    *  soloconf page
    *
