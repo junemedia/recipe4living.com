@@ -544,18 +544,6 @@ class Recipe4livingIndexController extends ClientFrontendController
     include(BLUPATH_TEMPLATES.'/static/newsletters.php');
   }
 
-  /**
-   *  Paula deen page
-   *
-   *  @access public
-   */
-  public function paula_deen()
-  {
-    Template::set('paula_deen', true);
-    include(BLUPATH_TEMPLATES.'/static/paula_deen.php');
-  }
-
-
 
   /**
    *  Meebo page

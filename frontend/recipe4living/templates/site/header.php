@@ -180,7 +180,7 @@
 
 </head>
 
-<body<?= Template::get('paula_deen') ? ' id="paula_deen"' : ''; ?>>
+<body>
 
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPMDBL"

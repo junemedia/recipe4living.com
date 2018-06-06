@@ -57,8 +57,7 @@ class ClientRoutesModel extends RoutesModel
 			'maillist_form',
 			'maillist_unsubscribe',
 			'help',
-			'product_tester',
-			'paula_deen'
+			'product_tester'
 		);
 		foreach ($staticPages as $task) {
 			$this->_routes['/^\/'.$task.'(.*)$/'] = '/index/'.$task.'$1';

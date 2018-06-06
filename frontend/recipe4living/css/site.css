@@ -478,11 +478,6 @@ div.waiter {
 	padding-right: 310px; 	 /* RC fullwidth + CC padding */
 }
 
-#paula_deen #column-container {
-	padding-left: 0;
-	width: 650px;
-}
-
 #column-container .column {
 	position: relative;
 	float: left;
