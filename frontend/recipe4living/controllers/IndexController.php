@@ -512,19 +512,6 @@ class Recipe4livingIndexController extends ClientFrontendController
 
 
   /**
-   *  Meebo page
-   *
-   *  @access public
-   */
-  public function meebo()
-  {
-    Template::set('meebo', true);
-    include(BLUPATH_TEMPLATES.'/static/meebo.php');
-  }
-
-
-
-  /**
    *  Coupons page
    *
    *  @access public
