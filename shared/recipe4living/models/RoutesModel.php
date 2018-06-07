@@ -52,9 +52,6 @@ class ClientRoutesModel extends RoutesModel
       'terms',
       'abuse',
       'forums',
-      'maillist_signup',
-      'maillist_form',
-      'maillist_unsubscribe',
       'help',
       'product_tester'
     );
