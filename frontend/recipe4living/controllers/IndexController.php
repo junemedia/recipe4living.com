@@ -567,21 +567,6 @@ class Recipe4livingIndexController extends ClientFrontendController
   }
 
 
-
-
-  /**
-   *  soloconf page
-   *
-   *  @access public
-   */
-  public function soloconf()
-  {
-    Template::set('soloconf', true);
-    include(BLUPATH_TEMPLATES.'/static/soloconf.php');
-  }
-
-
-
   /**
    *  faq page
    *
