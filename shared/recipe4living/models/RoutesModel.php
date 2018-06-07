@@ -44,6 +44,7 @@ class ClientRoutesModel extends RoutesModel
       'add_to_address_book',
       'about',
       'links',
+      'faq',
       'press',
       'review_program',
       'submission',
