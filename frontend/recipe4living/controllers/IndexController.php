@@ -367,17 +367,6 @@ class Recipe4livingIndexController extends ClientFrontendController
   }
 
   /**
-   *  giveaway page
-   *
-   *  @access public
-   */
-  public function giveaway()
-  {
-    header('Location: http://win.recipe4living.com');
-  }
-
-
-  /**
    *  newsletters page
    *
    *  @access public
