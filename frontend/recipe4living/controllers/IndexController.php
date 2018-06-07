@@ -300,16 +300,6 @@ class Recipe4livingIndexController extends ClientFrontendController
   }
 
   /**
-   *  Forums page
-   *
-   *  @access public
-   */
-  public function forums()
-  {
-    include (BLUPATH_TEMPLATES.'/static/forums.php');
-  }
-
-  /**
    *  Help page
    *
    *  @access public

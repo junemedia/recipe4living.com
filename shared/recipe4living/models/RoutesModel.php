@@ -51,7 +51,6 @@ class ClientRoutesModel extends RoutesModel
       'privacy',
       'terms',
       'abuse',
-      'forums',
       'help',
       'product_tester'
     );
