@@ -1,10 +1,4 @@
-###########TURN THE BELOW OFF IN PRODUCTION############                                                                                                    
-#php_value xdebug.profiler_output_dir /tmp                                                                                                                  
-#php_value xdebug.profiler_output_name cachegrind.out.%R.%p                                                                                                 
-#php_value xdebug.profiler_enable 1                                                                                                                         
-####################################################### 
 ExpiresActive On
-#ExpiresDefault A18000
 ExpiresByType image/gif A864000
 ExpiresByType image/jpeg A864000
 ExpiresByType image/png A864000
@@ -44,10 +38,6 @@ RewriteRule .* http://www.recipe4living.com/? [L,R=301]
 
 RewriteRule ^cookbooks(.*)$ / [R=301,L]
 
-# Force checkout to use SSL
-#RewriteCond %{SERVER_PORT} !^443
-#RewriteCond %{REQUEST_URI} ^(/checkout)$ [NC]
-#RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 RewriteRule ^(.*)$ - [env=siteId:recipe4living]
 
 RewriteCond %{REQUEST_URI} ^/assets/(.*)/(.*)/(.*)/(.*)/$
@@ -59,7 +49,7 @@ RewriteCond %{REQUEST_URI} ^/assets/(.*)/(.*)/(.*)/(.*)/(.*)$
 RewriteCond %{DOCUMENT_ROOT}/cache/%{ENV:siteId}/images/%1/%2x%3/zc%4/80/%5 -f
 RewriteRule ^assets/(.*)/(.*)/(.*)/(.*)/(.*)$ /cache/%{ENV:siteId}/images/$1/$2x$3/zc$4/80/$5 [L]
 
-RewriteCond %{REQUEST_URI}  ^(.*)/(.*)/(css|js)/(.*)$ 
+RewriteCond %{REQUEST_URI}  ^(.*)/(.*)/(css|js)/(.*)$
 RewriteCond  %{DOCUMENT_ROOT}/cache/%{ENV:siteId}/text/%1_%2_%3_%4 -f
 RewriteRule  ^(.*)/(.*)/(css|js)/(.*)$ /cache/%{ENV:siteId}/text/$1_$2_$3_$4 [L]
 
@@ -67,21 +57,14 @@ RewriteRule  ^(.*)/(.*)/(css|js)/(.*)$ /cache/%{ENV:siteId}/text/$1_$2_$3_$4 [L]
 RewriteRule ^(.*/css/.*)$ index.php?controller=compressor&format=asset&type=css&files=$1 [NC]
 RewriteRule ^(.*/js/.*)$ index.php?controller=compressor&format=asset&type=js&files=$1 [NC]
 
-# Append format to XML requests
-#RewriteRule ^(.*)\.xml$ index.php?format=xml&controller=$1 [NC,QSA]
-
 RewriteRule home/ / [R=301,L]
-
-# Append format to asset requests
-# No thanks, just do that in the assets controller.
-#RewriteRule ^(assets.*)$ $1?format=asset [NC] 
 
 # Append word-press passthru to comment posts
 RewriteRule ^(.*)wp-comments-post\.php$ $1wp-comments-post?wppt=1 [L,QSA]
 
 # Redirect Wordpress blogs.
 RewriteRule ^blog/feed index.php?controller=bloggers&task=feed&format=xml [L]
-RewriteRule ^blog/(.*)$	/bloggers/workitmom/$1 [R=301,L] 
+RewriteRule ^blog/(.*)$	/bloggers/workitmom/$1 [R=301,L]
 
 # Redirect custom pages
 RewriteRule ^giveaway$ index.php?controller=index&task=giveaway
