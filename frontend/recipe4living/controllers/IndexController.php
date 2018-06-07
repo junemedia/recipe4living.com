@@ -400,22 +400,6 @@ class Recipe4livingIndexController extends ClientFrontendController
     include(BLUPATH_TEMPLATES.'/static/subctr.php');
   }
 
-
-
-  /**
-   *  store page
-   *
-   *  @access public
-   */
-  public function store()
-  {
-    Template::set('store', true);
-    include(BLUPATH_TEMPLATES.'/static/store.php');
-  }
-
-
-
-
   /**
    *  Unsub page
    *
