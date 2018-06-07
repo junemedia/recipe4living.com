@@ -84,7 +84,6 @@ RewriteRule ^blog/feed index.php?controller=bloggers&task=feed&format=xml [L]
 RewriteRule ^blog/(.*)$	/bloggers/workitmom/$1 [R=301,L] 
 
 # Redirect custom pages
-RewriteRule ^coupons$ index.php?controller=index&task=coupons
 RewriteRule ^giveaway$ index.php?controller=index&task=giveaway
 
 # Run all non-file-asset requests through site entry point

@@ -512,19 +512,6 @@ class Recipe4livingIndexController extends ClientFrontendController
 
 
   /**
-   *  Coupons page
-   *
-   *  @access public
-   */
-  public function coupons()
-  {
-    Template::set('coupons', true);
-    include(BLUPATH_TEMPLATES.'/static/coupons.php');
-  }
-
-
-
-  /**
    *  subctr page
    *
    *  @access public
