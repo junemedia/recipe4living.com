@@ -10,5 +10,5 @@
     }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <div class="fb-comments" style="margin-top:20px;" data-href="http://www.recipe4living.com<?php echo substr($_SERVER["REQUEST_URI"],0,strlen($_SERVER["REQUEST_URI"])-1); ?>" data-numposts="5" data-colorscheme="light"></div>
+  <div class="fb-comments" style="margin-top:20px;" data-href="http://www.recipe4living.com<?php echo htmlspecialchars(rtrim($_SERVER["REQUEST_URI"], '/')); ?>" data-numposts="5" data-colorscheme="light"></div>
 <?php } ?>

@@ -3,7 +3,7 @@
 			<h1 style="font-size: 1.25em; color: #FFFFFF; margin-bottom: 0; line-height: 1.25em;<?php echo $iscategory?'float:left;':'';?>">Recipes - <?= $listingTitle; ?> (<?php echo number_format($pagination->get('total')); ?>)</h1>
 
 			<?php if ($showSearchExtra) { ?>
-			<form id="listing-recipe-search-refine" style="<?php echo $iscategory?'margin-top: -10px;':'';?>" action="<?= SITEURL.$listingBaseUrl; ?>" method="get" class="reloads fr"><div>
+			<form id="listing-recipe-search-refine" style="<?php echo $iscategory?'margin-top: -10px;':'';?>" action="<?php echo SITEURL . htmlspecialchars($listingBaseUrl); ?>" method="get" class="reloads fr"><div>
 				<label for="refine_search" class="fl">
 					Refine results:
 					<input id="refine_search" type="text" name="searchterm_extra" value="<?= $searchTermExtra; ?>" class="textinput" autocomplete="off" />
@@ -33,7 +33,7 @@
 
 		<?php if (!empty($items)) { ?>
 
-		<form id="listing-recipe-search" action="<?= SITEURL.$listingBaseUrl; ?>" method="get" class="reloads"><div>
+		<form id="listing-recipe-search" action="<?php echo SITEURL . htmlspecialchars($listingBaseUrl); ?>" method="get" class="reloads"><div>
 
 			<div id="list-sort" class="fl">
 				<label for="sort" class="fl">Sort by:</label>
@@ -50,8 +50,8 @@
 			<div class="recipe-view fr">
 				<strong class="fl">View:</strong>
 				<ul>
-					<li id="view-list"><a class="reloads<?= $layout == 'list' ? ' current' : ''; ?>" href="<?= SITEURL.$layoutBaseUrl ?>list">List</a></li>
-					<li id="view-gallery"><a class="reloads<?= $layout == 'grid' ? ' current' : ''; ?>" href="<?= SITEURL.$layoutBaseUrl ?>grid">Grid</a></li>
+					<li id="view-list"><a class="reloads<?= $layout == 'list' ? ' current' : ''; ?>" href="<?php echo SITEURL . htmlspecialchars($layoutBaseUrl); ?>list">List</a></li>
+					<li id="view-gallery"><a class="reloads<?= $layout == 'grid' ? ' current' : ''; ?>" href="<?php echo SITEURL . htmlspecialchars($layoutBaseUrl); ?>grid">Grid</a></li>
 				</ul>
 			</div>
 

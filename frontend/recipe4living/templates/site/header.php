@@ -42,7 +42,7 @@
   <link rel="icon" href="<?= SITEASSETURL; ?>/images/favicon.ico" type="image/vnd.microsoft.icon" />
 
   <?php if (Template::get('rssUrl')) { ?>
-  <link href="<?= SITEINSECUREURL.Template::get('rssUrl'); ?>" rel="alternate" type="application/rss+xml" title="<?= BluApplication::getSetting('storeName'); ?> | <?= Template::get('rssTitle', 'Latest Recipes'); ?>" />
+  <link href="<?php echo SITEINSECUREURL . htmlspecialchars(Template::get('rssUrl')); ?>" rel="alternate" type="application/rss+xml" title="<?= BluApplication::getSetting('storeName'); ?> | <?= Template::get('rssTitle', 'Latest Recipes'); ?>" />
   <?php } ?>
 
   <?php if ($format != 'print') { ?>
@@ -173,7 +173,7 @@
 
   <meta property="og:title" content="<?php echo $curr_title; ?>" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="http://<?php echo $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']; ?>" />
+  <meta property="og:url" content="http://<?php echo $_SERVER['SERVER_NAME'] . htmlspecialchars($_SERVER['REQUEST_URI']); ?>" />
   <meta property="og:image" content="<?php echo $img_url; ?>" />
 
     <?php } ?>

@@ -79,7 +79,8 @@ class Pagination
         break;
 
       case 'url':
-        $this->_baseUrl = $value;
+        // need to decode this before re-encoding it because $value may already be encoded
+        $this->_baseUrl = htmlspecialchars(htmlspecialchars_decode($value));
         break;
 
       case 'locationHash':
