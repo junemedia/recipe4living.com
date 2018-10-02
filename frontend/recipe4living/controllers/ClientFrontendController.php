@@ -133,7 +133,6 @@ abstract class ClientFrontendController extends FrontendController
     case 'openx_300x250atf':
     case 'WEBSITE_RIGHT_BANNER_1':
     case 'openx_728x90btf':
-    case 'swoop':
     case 'underdog':
     case 'connatix_infeed':
       include(BLUPATH_TEMPLATES.'/site/ads/'.$type.'.php');
