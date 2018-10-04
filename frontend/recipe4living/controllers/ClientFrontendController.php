@@ -91,11 +91,6 @@ abstract class ClientFrontendController extends FrontendController
     ob_start();
     $this->_advert('openx_728x90btf');
     Template::set('footerAdvert', ob_get_clean());
-
-    // Underdog media tag
-    ob_start();
-    $this->_advert('underdog');
-    Template::set('underdogAdvert', ob_get_clean());
   }
 
   public function _getLandingLinks($slug)
@@ -133,7 +128,6 @@ abstract class ClientFrontendController extends FrontendController
     case 'openx_300x250atf':
     case 'WEBSITE_RIGHT_BANNER_1':
     case 'openx_728x90btf':
-    case 'underdog':
     case 'connatix_infeed':
       include(BLUPATH_TEMPLATES.'/site/ads/'.$type.'.php');
     break;
