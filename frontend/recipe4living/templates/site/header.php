@@ -142,19 +142,6 @@
     });
   </script>
 
-  <!-- Yieldbot.com Intent Tag LOADING -->
-  <script type="text/javascript" src="https://cdn.yldbt.com/js/yieldbot.intent.js"></script>
-  <!-- Yieldbot.com Intent Tag ACTIVATION -->
-  <script type="text/javascript">
-    yieldbot.pub('6e09');
-    yieldbot.defineSlot('LB_ATF');
-    yieldbot.defineSlot('MR_ATF');
-    yieldbot.defineSlot('MR_Mid');
-    yieldbot.defineSlot('LB_BTF');
-    yieldbot.go();
-  </script>
-  <!-- END Yieldbot.com Intent Tag -->
-
   <?php include BLUPATH_TEMPLATES.'/site/ads/medianet_js.php'; ?>
 
   <?php } ?>
@@ -197,7 +184,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script type="text/javascript" src="<?= COREASSETURL; ?>/js/stickymenu.js"></script>
 
 <div id="nav-header">
-  <div class="site-wrapper" id="top-ad"><?= Template::get('headerAdvert'); ?></div>
   <div class="site-wrapper">
     <div id="logo">
       <a href="<?= SITEURL; ?>/"><img style="width:387px;margin-left: -5px;" class="screenonly" alt="<?= BluApplication::getSetting('storeName'); ?>" src="<?= SITEASSETURL; ?>/images/site/R4L-Homepage-Logo.png" /></a>

@@ -74,11 +74,6 @@ abstract class ClientFrontendController extends FrontendController
   {
     parent::__construct($args);
 
-    // Load top/bottom ad
-    ob_start();
-    $this->_advert('openx_728x90atf');
-    Template::set('headerAdvert', ob_get_clean());
-
     $recipesslug = 'recipes';
     $recipelinks = $this->_getLandingLinks($recipesslug);
     Template::set('recipelinks',$recipelinks);
@@ -87,10 +82,6 @@ abstract class ClientFrontendController extends FrontendController
     $articlelinks = '';
     Template::set('articlelinks',$articlelinks);
 
-    /////////////////////////////
-    ob_start();
-    $this->_advert('openx_728x90btf');
-    Template::set('footerAdvert', ob_get_clean());
   }
 
   public function _getLandingLinks($slug)
@@ -122,12 +113,9 @@ abstract class ClientFrontendController extends FrontendController
     }
 
     switch ($type) {
-    case 'openx_728x90atf':
     case 'medianet_120x300':
     case 'WEBSITE_INLINE_1':
-    case 'openx_300x250atf':
     case 'WEBSITE_RIGHT_BANNER_1':
-    case 'openx_728x90btf':
     case 'connatix_infeed':
       include(BLUPATH_TEMPLATES.'/site/ads/'.$type.'.php');
     break;

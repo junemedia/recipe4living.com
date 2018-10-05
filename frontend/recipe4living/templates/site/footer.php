@@ -1,5 +1,4 @@
     <div class="clear"></div>
-    <div id="footer-ad"><?= Template::get('footerAdvert'); ?></div>
   </div>
 </div>
 

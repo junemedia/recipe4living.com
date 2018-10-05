@@ -95,8 +95,6 @@
 			</div>
 	
 			<div id="panel-right" class="column screenonly">
-				<div class="ad"><?php $this->_advert('openx_300x250atf'); ?></div>
-
 				<?php 
 					if (DEBUG || STAGING) {
 //						$this->nutrition(true); 

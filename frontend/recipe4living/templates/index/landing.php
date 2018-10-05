@@ -37,8 +37,6 @@
 
     <!-- Right -->
     <div id="panel-right" class="column">
-      <div class="ad"><?php $this->_advert('openx_300x250atf', 'index'); ?></div>
-
       <?php include(BLUPATH_TEMPLATES.'/polls/polls.php') ?>
 
       <?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?>

@@ -91,8 +91,6 @@
 			</div>
 	
 			<div id="panel-right" class="column screenonly">
-				<div class="ad"><?php $this->_advert('openx_300x250atf'); ?></div>
-
 				<?php $this->_box('reference_guides', array('limit' => 10)); ?>
 
 				<?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?>

@@ -187,8 +187,6 @@
     <!-- end of class hrecipe -->
 
     <div id="panel-right" class="column screenonly">
-      <div class="ad"><?php $this->_advert('openx_300x250atf'); ?></div>
-
       <?php $this->showNtent = true; ?>
 
       <?php $this->_advert('WEBSITE_RIGHT_BANNER_1'); ?>
