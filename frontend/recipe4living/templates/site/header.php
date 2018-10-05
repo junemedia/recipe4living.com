@@ -45,6 +45,8 @@
   <link href="<?php echo SITEINSECUREURL . htmlspecialchars(Template::get('rssUrl')); ?>" rel="alternate" type="application/rss+xml" title="<?= BluApplication::getSetting('storeName'); ?> | <?= Template::get('rssTitle', 'Latest Recipes'); ?>" />
   <?php } ?>
 
+  <?php include BLUPATH_TEMPLATES.'/site/ads/adthrive_js.php'; ?>
+
   <?php if ($format != 'print') { ?>
   <script type="text/javascript">
     /* Define global static variables. */
