@@ -95,8 +95,6 @@
           <div class="clear"></div>
         </div>
 
-        <?php include BLUPATH_TEMPLATES.'/site/ads/medianet_604x250.php'; ?>
-
         <?php $this->_addReview(); ?>
 
         <?php $this->reviews(); ?>
