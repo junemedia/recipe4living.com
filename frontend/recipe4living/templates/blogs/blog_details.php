@@ -59,7 +59,6 @@
 			
 					<div class="entry">
 						<?php $this->view_page(); ?>
-						<?php $this->_advert('WEBSITE_INLINE_1'); ?>
 					</div>
 					
 					<?php Template::startScript(); ?>

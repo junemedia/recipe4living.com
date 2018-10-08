@@ -154,9 +154,7 @@
           <?php Template::endScript(); ?>
 
           <div class="entry">
-            <?php
-            include_once(BLUPATH_TEMPLATES.'/site/ads/AOL_VIDEOS.php');
-            $this->view_page(); ?>
+            <?php $this->view_page(); ?>
           </div>
 
           <?php Template::startScript(); ?>
