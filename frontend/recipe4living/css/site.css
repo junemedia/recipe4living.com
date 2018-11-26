@@ -172,16 +172,21 @@ ol.rssfeed #li_item{
 }
 
 #mainFooterDiv {
-background:#e2ded5 url('/frontend/recipe4living/images/site/footer.jpg') no-repeat center center;
 margin: 0 auto;
-height: 145px;
-position: relative;
 }
 
 .rssdiv {
-height: 90px; 
-width: 30%;
-margin: 0 auto;
+  margin: 0;
+  border-top: solid 2px #e2ded5;
+  border-bottom: solid 1px #e2ded5;
+  padding: 5px 0 20px;
+  margin: 0 0 5px;
+}
+
+.rssdiv > div {
+  float: left;
+  width: 17%;
+  padding: 0 4%;
 }
 
 
@@ -207,10 +212,20 @@ top: 70px;
 left: 750px;         
 }
 
-#box-link-ff { position: absolute; top: 8px; left: 10px; width: 180px; height: 50px; background-color: transparent; }
-#box-link-wim { position: absolute; top: 5px; left: 300px; width: 110px; height: 50px; background-color: transparent; }
-#box-link-rwm { position: absolute; top: 10px; left: 545px; width: 150px; height: 50px; background-color: transparent; }
-#box-link-cot { position: absolute; top: 10px; left: 800px; width: 120px; height: 50px; background-color: transparent; }
+.rssdiv > div > a {
+  display: block;
+  width: 180px;
+  height: 0;
+  padding-top: 60px;
+  overflow: hidden;
+  background-color: #fcc;
+  background:#e2ded5 url('/frontend/recipe4living/images/site/footer.jpg') no-repeat;
+}
+
+#box-link-ff  { background-position: -45px  -5px; }
+#box-link-wim { background-position: -310px -5px;}
+#box-link-rwm { background-position: -545px -5px;}
+#box-link-cot { background-position: -795px -5px;}
 
 /* RSS footer end */
 

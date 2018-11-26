@@ -4,7 +4,7 @@
 
 <div id="footer" class="site-wrapper screenonly">
 
-  <div style="text-align: center; margin: 0px; padding-bottom: 0px;background-color: background:#e2ded5;">
+  <div style="text-align: center; margin: 0; padding-bottom: 0px;">
     <img src="/frontend/recipe4living/images/site/FamilyOfSites.png" border="0" />
   </div>
 
@@ -19,101 +19,99 @@
   $rwm_rss = fetch_rss("http://".$_SERVER['SERVER_NAME']."/cache_rss/rwm_rss_xml.cache");
   $cot_cacheFile = dirname(__FILE__) . '/../../../../cache_rss/cot_rss_xml.cache';
   $cot_rss = fetch_rss("http://".$_SERVER['SERVER_NAME']."/cache_rss/cot_rss_xml.cache");
+
+  if (!defined('RSS_TITLE_LENGTH')) { define('RSS_TITLE_LENGTH', 30); }
   ?>
 
-  <div style="width: 980px;" id="mainFooterDiv">
-    <div class="rssdiv" id="ffrss">
+  <div id="mainFooterDiv">
+    <div class="rssdiv">
+      <div class="ffrss">
+        <a href="http://www.fitandfabliving.com/" id="box-link-ff">Fit and Fab Living</a>
 
-      <?php
-        if (!defined('RSS_TITLE_LENGTH')) { define('RSS_TITLE_LENGTH', 30); }
-        $ff_rss = $ff_rss->items;
-        $i = 0;
-        echo '<ol class="rssfeed">';
-        foreach ($ff_rss as $item) { ?>
-          <div id="li_item">
-            <a target="_blank" title="<?php echo $item['title']; ?>" href="<?php echo $item['link']; ?>">
-              <?php $string = $item['title']; if (strlen($string) > RSS_TITLE_LENGTH) { $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...'; } else {$string = $item['title'];} echo $string; ?></a>
-          </div>
-
-          <?php
-          $i++;
-          if ($i >= 3) { break; }
-        }
-        echo '</li>';
-      ?>
-    </div>
-
-    <div class="rssdiv" id="wimrss">
-      <?php
-        $wim_rss = $wim_rss->items;
-        $i = 0;
-        echo '<ol class="rssfeed">';
-        foreach ($wim_rss as $item) { ?>
-          <div id="li_item">
-            <a target="_blank" title="<?php echo $item['title']; ?>" href="<?php echo $item['link']; ?>">
-              <?php $string = $item['title'];
-                      if (strlen($string) > RSS_TITLE_LENGTH) {
-                          $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...';
-                      } else {$string = $item['title'];} echo $string; ?>
-                  </a>
-              </div>
-          <?php
-          $i++;
-          if ($i>=3) break;
-        }
-        echo '</ol>';
-      ?>
-    </div>
-
-    <div class="rssdiv" id="rwmrss">
-      <ol class="rssfeed">
-      <div id="li_item"><a target="_blank" title="Beautiful Appetizer Recipes" href="http://www.savvyfork.com/component/yoorecipe/category/11-appetizers.html">Beautiful Appetizer Recipes</a></div>
-      <div id="li_item"><a target="_blank" title="Sumptuous Main Dish Recipes" href="http://www.savvyfork.com/component/yoorecipe/category/13-main-dishes.html">Sumptuous Main Dish Recipes</a></div>
-      <div id="li_item"><a target="_blank" title="Gorgeous Dessert Recipes" href="http://www.savvyfork.com/component/yoorecipe/category/15-desserts.html">Gorgeous Dessert Recipes</a></div>
-      </ol>
-    </div>
-
-    <div class="rssdiv" id="cotrss">
-    <?php
-      $cot = $cot_rss->items;
-      $i = 0;
-      echo '<ol class="rssfeed">';
-      foreach ($cot as $item) { ?>
-        <div id="li_item">
-                <a target="_blank" title="<?php echo $item['title']; ?>" href="<?php echo $item['link']; ?>">
-                <?php
-                    $string = $item['title'];
-                    if (strlen($string) > RSS_TITLE_LENGTH) {
-                        $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...';
-                    }else {
-                        $string = $item['title'];
-                    }
-                    echo $string;
-                ?>
-                </a>
-            </div>
+        <ol class="rssfeed">
         <?php
-        $i++;
-        if ($i>=3) break;
-      }
-      echo '</ol>';
-    ?>
+          $ff_rss = $ff_rss->items;
+          $i = 0;
+          foreach ($ff_rss as $item) { ?>
+            <div id="li_item">
+              <a target="_blank" title="<?php echo $item['title']; ?>" href="<?php echo $item['link']; ?>">
+                <?php $string = $item['title']; if (strlen($string) > RSS_TITLE_LENGTH) { $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...'; } else {$string = $item['title'];} echo $string; ?></a>
+            </div>
+
+            <?php
+            $i++;
+            if ($i >= 3) { break; }
+          }
+        ?>
+        </ol>
+      </div>
+
+      <div class="wimrss">
+        <a href="http://www.workitmom.com/" id="box-link-wim">Work It Mom!</a>
+
+        <ol class="rssfeed">
+        <?php
+          $wim_rss = $wim_rss->items;
+          $i = 0;
+          foreach ($wim_rss as $item) { ?>
+            <div id="li_item">
+              <a target="_blank" title="<?php echo $item['title']; ?>" href="<?php echo $item['link']; ?>">
+                <?php $string = $item['title'];
+                        if (strlen($string) > RSS_TITLE_LENGTH) {
+                            $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...';
+                        } else {$string = $item['title'];} echo $string; ?>
+                    </a>
+                </div>
+            <?php
+            $i++;
+            if ($i>=3) break;
+          }
+        ?>
+        </ol>
+      </div>
+
+      <div class="rwmrss">
+        <a href="http://www.savvyfork.com/" id="box-link-rwm">Running With Mascara</a>
+        <ol class="rssfeed">
+          <div id="li_item"><a target="_blank" title="Beautiful Appetizer Recipes" href="http://www.savvyfork.com/component/yoorecipe/category/11-appetizers.html">Beautiful Appetizer Recipes</a></div>
+          <div id="li_item"><a target="_blank" title="Sumptuous Main Dish Recipes" href="http://www.savvyfork.com/component/yoorecipe/category/13-main-dishes.html">Sumptuous Main Dish Recipes</a></div>
+          <div id="li_item"><a target="_blank" title="Gorgeous Dessert Recipes" href="http://www.savvyfork.com/component/yoorecipe/category/15-desserts.html">Gorgeous Dessert Recipes</a></div>
+        </ol>
+      </div>
+
+      <div class="cotrss">
+        <a href="http://www.chewonthatblog.com/" id="box-link-cot">Chew On That</a>
+
+        <ol class="rssfeed">
+        <?php
+          $cot = $cot_rss->items;
+          $i = 0;
+          foreach ($cot as $item) { ?>
+            <div id="li_item">
+                    <a target="_blank" title="<?php echo $item['title']; ?>" href="<?php echo $item['link']; ?>">
+                    <?php
+                        $string = $item['title'];
+                        if (strlen($string) > RSS_TITLE_LENGTH) {
+                            $string = substr(wordwrap($string, RSS_TITLE_LENGTH), 0, strpos(wordwrap($string, RSS_TITLE_LENGTH), "\n")) . '...';
+                        }else {
+                            $string = $item['title'];
+                        }
+                        echo $string;
+                    ?>
+                    </a>
+                </div>
+            <?php
+            $i++;
+            if ($i>=3) break;
+          }
+        ?>
+        </ol>
+      </div>
+
+      <div style="float:none; width: 100%; clear: left;"></div>
     </div>
-  <?php
-  //  END OF RSS OF OTHER SITES
-  ?>
-    <div style="clear: left;"></div>
 
-    <div class="mainFooterDiv">
-      <a target="_blank" id="box-link-ff" href="http://www.fitandfabliving.com/"></a>
-      <a target="_blank" id="box-link-wim" href="http://www.workitmom.com/"></a>
-      <a target="_blank" id="box-link-rwm" href="http://www.savvyfork.com/"></a>
-      <a target="_blank" id="box-link-cot" href="http://www.chewonthatblog.com/"></a>
-    </div>
-
-    <div style="clear: left;"></div>
-
-    <div id="topLinks" style="text-align: center;padding-top:150px;">
+    <div id="topLinks" style="text-align: center;">
       <span style="padding-left: 0px;">
         <a href="<?= SITEURL ?>/about">About Us</a>&nbsp;|&nbsp;
         <a href="<?= SITEURL ?>/contact/">Contact Us</a>&nbsp;|&nbsp;
