@@ -27,11 +27,6 @@
 
             <p><br></p>
 
-            <p><b>What is Chew on That blog?</b></p>
-            <p>Chew on That is the official blog of Recipe4Living. The editors of Recipe4Living blog daily about their favorite recipes, food stories, restaurant reviews and much more! Stop by Chew on That and see what it's all about. Comment on some posts and be part of the blogosphere! You can also read about Chew on That in our <a href="http://chewonthatblog.com/beginners-guide/" target="_blank">Beginner's Guide to Blogging</a>.</p>
-
-            <p><br></p>
-
             <p><b>How do I sign up for Recipe4Living? </b></p>
             <p>To register for Recipe4Living and take advantage of all of the social networking features like a Recipe Box, Shopping List and Recipe Commenting, click here. Fill in all the required fields on the first page including and then select "Continue". Fill your profile information and then select "Complete Sign Up And Go To My Account". <a href="http://www.recipe4living.com/register/">Register</a></p>
 

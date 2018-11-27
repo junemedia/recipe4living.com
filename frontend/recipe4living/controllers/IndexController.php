@@ -24,10 +24,6 @@ class Recipe4livingIndexController extends ClientFrontendController
     shuffle($recentlyAddedRecipes);
     $recentlyAddedRecipes = array_slice(($recentlyAddedRecipes),0,10);
 
-    // Get blog post
-    $blogsModel = BluApplication::getModel('blogs');
-    $chewonthatBlog = $blogsModel->getChewonthatBlog(0, 1);
-
     // Get popular search terms
     $serachTermsModel = BluApplication::getModel('searchterms');
     //$popularSearchTerms = $serachTermsModel->getPopularSearchTerms();
