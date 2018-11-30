@@ -43,12 +43,12 @@
             </div>
 
             <!-- Main Content-->
-            <div id="slidePageTitle" style="font-size: 16px; margin: 5px; font-family: Arial, Helvetica, sans-serif;"><a href="<?php echo $pages['link'];?>" target="_blank"><?php echo $pages['title']?></a></div>
+            <div id="slidePageTitle" style="font-size: 16px; margin: 5px; font-family: Arial, Helvetica, sans-serif;"><a href="<?php echo $pages['link'];?>"><?php echo $pages['title']?></a></div>
             <div id="slidePageContent" style="margin: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 16px;"><?php if(trim($pages['slide_desc']) == "") {echo $pages['description'];}else{echo $pages['slide_desc'];}?></div>
 
 
             <!-- Jump the Recipe page-->
-            <a href="<?php echo $pages['link'];?>" target="_blank">Get the recipe here!</a>
+            <a href="<?php echo $pages['link'];?>">Get the recipe here!</a>
 
             <!-- Social Sharing Buttons -->
             <div id="shareButton">
