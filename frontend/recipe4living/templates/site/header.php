@@ -38,7 +38,6 @@
   <link href="<?php echo SITEINSECUREURL . htmlspecialchars(Template::get('rssUrl')); ?>" rel="alternate" type="application/rss+xml" title="<?= BluApplication::getSetting('storeName'); ?> | <?= Template::get('rssTitle', 'Latest Recipes'); ?>" />
   <?php } ?>
 
-  <?php include BLUPATH_TEMPLATES.'/site/ads/adthrive_js.php'; ?>
 
   <?php if ($format != 'print') { ?>
   <script type="text/javascript">
@@ -66,6 +65,8 @@
    */
   ?>
   <script src="//cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+
+  <?php include BLUPATH_TEMPLATES.'/site/ads/adthrive_js.php'; ?>
 
 
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/jquery.min.js,jquery.fancybox-1.3.4.pack.js,jquery.cookie.js"></script>
