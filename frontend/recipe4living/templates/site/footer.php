@@ -38,29 +38,6 @@
   </script>
 <?php } ?>
 
-
-<?php
-  // I'm pretty sure this is all dead code, but leaving it for now
-  $encryption_key = "36851a80704f3cbe";
-
-  function lr_encrypt($input, $encryption_key) {
-    $input = pkcs5_pad($input, mcrypt_get_block_size(MCRYPT_BLOWFISH, MCRYPT_MODE_CBC));
-    $td = mcrypt_module_open(MCRYPT_BLOWFISH, '', MCRYPT_MODE_CBC, '');
-    $iv = mcrypt_create_iv(mcrypt_enc_get_iv_size($td), MCRYPT_RAND);
-    mcrypt_generic_init($td, $encryption_key, $iv);
-    $data = mcrypt_generic($td, $input);
-    mcrypt_generic_deinit($td);
-    mcrypt_module_close($td);
-    return array(bin2hex($data), bin2hex($iv), 'bf-cbc');
-  }
-
-  function pkcs5_pad($text, $blocksize) {
-    $pad = $blocksize - (strlen($text) % $blocksize);
-    return $text . str_repeat(chr($pad), $pad);
-  }
-?>
-
-
 <?php include BLUPATH_TEMPLATES.'/site/ads/liveconnect.php'; ?>
 <?php include BLUPATH_TEMPLATES.'/site/ads/outbrain_js.php'; ?>
 
