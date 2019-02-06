@@ -51,20 +51,10 @@
     SITEASSETURL = '<?= SITEASSETURL ?>';
   </script>
 
-  <?php if ((substr($_SERVER['REQUEST_URI'],0,9) == '/recipes/' && strstr($_SERVER['REQUEST_URI'],'.htm'))) { ?>
-  <script type="text/javascript" src="<?= COREASSETURL ?>/js/StickyWin.js,Interface.js,Nav.js,HistoryManager.js,Forms.js,BrowseArea.js,Autocompleter.js,Milkbox.js,Wizard.js,sifr.js,Slideshow.js,Articles.js?ver=6wnp"></script>
-  <?php } else { ?>
-  <script type="text/javascript" src="<?= COREASSETURL ?>/js/mootoolsCore.js,mootoolsMore.js,StickyWin.js,Interface.js,Nav.js,HistoryManager.js,Forms.js,BrowseArea.js,Autocompleter.js,Milkbox.js,Wizard.js,sifr.js,Slideshow.js,Articles.js?ver=6wnp"></script>
+  <?php if ((substr($_SERVER['REQUEST_URI'],0,9) != '/recipes/' && !strstr($_SERVER['REQUEST_URI'],'.htm'))) { ?>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/mootoolsCore.js,mootoolsMore.js"></script>
   <?php } ?>
-
-  <?php
-  /*
-   * a dirty dirty hack; loading mootoolsCore.js seems to
-   * overwrite JSON.parse, causing OpenX jstag to break, so we
-   * need to polyfill it here if necessary
-   */
-  ?>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/StickyWin.js,Interface.js,Nav.js,HistoryManager.js,Forms.js,BrowseArea.js,Autocompleter.js,Milkbox.js,Wizard.js,sifr.js,Slideshow.js,Articles.js?ver=6wnp"></script>
 
   <?php include BLUPATH_TEMPLATES.'/site/ads/adthrive_js.php'; ?>
 
