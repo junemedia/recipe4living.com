@@ -21,6 +21,10 @@ class Recipe4livingSingleserveController extends Recipe4livingNewslettersControl
       'campaign'   => '',
       'subject'    => '',
       'items' => array(
+        array('targetUrl' => ''),
+        array('targetUrl' => ''),
+        array('targetUrl' => ''),
+        array('targetUrl' => ''),
         array('targetUrl' => '')
       )
     );
@@ -47,7 +51,11 @@ class Recipe4livingSingleserveController extends Recipe4livingNewslettersControl
       'campaign'   => Request::getString('date'),
       'subject'    => Request::getString('subject'),
       'items' => array(
-        Request::getString('feature')
+        Request::getString('feature'),
+        Request::getString('mwl1'),
+        Request::getString('mwl2'),
+        Request::getString('mwl3'),
+        Request::getString('mwl4')
       )
     );
 
