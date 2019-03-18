@@ -16,6 +16,10 @@
         <?php $this->_box('middle_featured_recipes', array('limit' => 4,'boxid'=>33)); ?>
         <div class="clear"></div>
 
+        <div id="top_recipes" class="toprecipes rounded half fr">
+          Taboola Feed unit
+        </div>
+        <div class="clear"></div>
       </div>
 
       <!-- Left -->
