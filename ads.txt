@@ -107,11 +107,6 @@ google.com, pub-5480205708168063, RESELLER, f08c47fec0942fa0
 google.com, pub-9914992914910847, DIRECT, f08c47fec0942fa0
 
 
-#   Media.net
-# ----------------------------------------------------------------------
-media.net, 8CU52X6SM, Direct
-
-
 #   LiveIntent
 # ----------------------------------------------------------------------
 liveintent.com, 783, DIRECT
