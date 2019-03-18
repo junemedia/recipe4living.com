@@ -23,10 +23,6 @@
         </div>
         <div class="clear"></div>
 
-        <div id="top_recipes" class="toprecipes rounded half fr">
-          <?php include BLUPATH_TEMPLATES.'/site/ads/outbrain_TF_3.php'; ?>
-        </div>
-
       </div>
 
       <!-- Left -->

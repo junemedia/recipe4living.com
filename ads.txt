@@ -112,17 +112,6 @@ google.com, pub-9914992914910847, DIRECT, f08c47fec0942fa0
 media.net, 8CU52X6SM, Direct
 
 
-#   Outbrain
-# ----------------------------------------------------------------------
-outbrain.com, 016d081e8eb35103eecb91b6a4519ac4a9, DIRECT
-outbrain.com, 016d081e8eb35103eecb91b6a4519ac4a9, RESELLER
-appnexus.com, 7597, RESELLER, f5ab79cb980f11d1
-tremorhub.com, q017o-78mlk, RESELLER, 1a4e959a1b50034a # Outbrain outstream video
-advertising.com, 12624, RESELLER # Outbrain outstream video
-fyber.com, f2a848067b5fe77e73205e8024940cbf, RESELLER # Outbrain outstream video
-freewheel.tv, 484721, RESELLER # Outbrain outstream video
-
-
 #   LiveIntent
 # ----------------------------------------------------------------------
 liveintent.com, 783, DIRECT
