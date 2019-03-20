@@ -32,6 +32,7 @@
 <div class="clear"></div>
 
 <?php include BLUPATH_TEMPLATES.'/site/ads/liveconnect.php'; ?>
+<?php include BLUPATH_TEMPLATES.'/site/ads/taboola_foot_js.php'; ?>
 
 </body>
 </html>
