@@ -45,17 +45,3 @@
   </div>
   <div class="clear"></div>
 </div>
-
-<?php
-  if (Template::get('showPopup')) {
-
-    // I feel so dirty doing this. Eugh.
-    Template::startScript();
-?>
-
-  /*window.open('http://www.adviceismeaningless.com/dispatch2.asp?home=70-26175X-L1', '_blank', 'width=790,height=480');*/
-
-<?php
-    Template::endScript();
-  }
-?>
