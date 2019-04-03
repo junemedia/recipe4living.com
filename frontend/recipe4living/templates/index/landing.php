@@ -17,7 +17,7 @@
         <div class="clear"></div>
 
         <div id="top_recipes" class="toprecipes rounded half fr">
-          <?php include BLUPATH_TEMPLATES.'/site/ads/taboola_feed.php'; ?>
+          <?php include BLUPATH_TEMPLATES.'/site/ads/taboola_iframe.php'; ?>
         </div>
         <div class="clear"></div>
 

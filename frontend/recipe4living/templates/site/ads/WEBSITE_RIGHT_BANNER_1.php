@@ -5,4 +5,3 @@
 include BLUPATH_TEMPLATES.'/site/ads/zergnet_49586.php';
 
 ?>
-<div>Taboola Audience Exchange</div>
