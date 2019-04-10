@@ -1,5 +1,5 @@
 # ads.txt recipe4living.com
-# 2019-02-15
+# 2019-04-10
 # ----------------------------------------------------------------------
 
 #   CafeMedia/Adthrive
@@ -111,7 +111,10 @@ google.com, pub-9914992914910847, DIRECT, f08c47fec0942fa0
 # ----------------------------------------------------------------------
 liveintent.com, 783, DIRECT
 liveintent.com, 4510, DIRECT
-
+liveintent.com, 47467, DIRECT
+liveintent.com, 47468, DIRECT
+liveintent.com, 47469, DIRECT
+liveintent.com, 47470, DIRECT
 
 #   Solve Media
 # ----------------------------------------------------------------------
