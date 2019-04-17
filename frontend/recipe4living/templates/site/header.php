@@ -123,6 +123,8 @@
     });
   </script>
 
+  <?php include BLUPATH_TEMPLATES.'/site/ads/medianet_js.php'; ?>
+
   <?php } ?>
 
   <meta name="msvalidate.01" content="E03168D9BB4076DC3C37E21B03C7EE91" />
