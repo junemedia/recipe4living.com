@@ -5,7 +5,9 @@
     <div itemscope itemtype="http://schema.org/Recipe">
       <div id="panel-center" class="column">
 
+				<div class="screenonly" style="margin-bottom: 30px;">
         <?php $this->_advert('connatix_infeed'); ?>
+				</div>
 
         <?= Messages::getMessages(); ?>
 
