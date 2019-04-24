@@ -61,3 +61,8 @@
                 </div>
         </div>
         <?php } ?>
+
+	<br>
+	<div class="ad screenonly">
+		<?php include BLUPATH_TEMPLATES.'/site/ads/outbrain_smartfeed.html'; ?>
+	</div>
