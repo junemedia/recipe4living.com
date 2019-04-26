@@ -400,10 +400,10 @@ a.print-popup {
 #post .entry #similar-dishes h5 {
 	margin-bottom: 2px;
 }
-#post .entry ul {
+#post .entry #contentbody ul {
 	margin-bottom: 15px;
 }
-#post .entry ul li {
+#post .entry #contentbody ul li {
 	list-style-type: square;
 	margin-left: 25px;
 	margin-bottom: 3px;
