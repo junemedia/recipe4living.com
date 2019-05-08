@@ -113,7 +113,6 @@ abstract class ClientFrontendController extends FrontendController
     }
 
     switch ($type) {
-    case 'medianet_120x300':
     case 'WEBSITE_RIGHT_BANNER_1':
     case 'connatix_infeed':
       include(BLUPATH_TEMPLATES.'/site/ads/'.$type.'.php');

@@ -19,7 +19,6 @@ class ClientFrontendAdvertsModel extends FrontendAdvertsModel
 		
 		// "Website" IDs
 		$this->_siteMapping = array(
-			'medianet_120x300' => 2,
 			'WEBSITE_RIGHT_BANNER_1' => 12,
 		);
 		

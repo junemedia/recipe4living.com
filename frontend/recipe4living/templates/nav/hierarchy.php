@@ -822,5 +822,3 @@
 			<?php } ?>
 		</div>
 	</div>
-
-  <?php if (!isset($_GET['cid'])) { $this->_advert('medianet_120x300'); } ?>
