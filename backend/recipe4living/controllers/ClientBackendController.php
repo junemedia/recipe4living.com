@@ -81,7 +81,7 @@ class ClientBackendController extends BackendController {
         SITEURL.'/newsletters/singleserve' => 'Single Serving',
         SITEURL.'/newsletters/onepot'      => 'One Pot Wonders',
         SITEURL.'/newsletters/copycat'     => 'Copycat Classics',
-        SITEURL.'/newsletters/quickeasy'   => 'Quick & Easy',
+        SITEURL.'/newsletters/quickeasy'   => 'Simple Recipes',
         SITEURL.'/newsletters/secondsend'  => 'Second Helping'
       )
     );
