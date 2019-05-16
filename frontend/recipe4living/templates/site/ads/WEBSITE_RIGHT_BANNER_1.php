@@ -5,5 +5,5 @@
 include BLUPATH_TEMPLATES.'/site/ads/zergnet_49586.php';
 
 if ($this->_doc->getTitle() !== 'Login') {
-	include BLUPATH_TEMPLATES.'/site/ads/medianet_rail_300x125.php';
+	// nothing at this time
 }
