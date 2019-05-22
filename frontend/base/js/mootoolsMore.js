@@ -1,1 +1,1 @@
-MooTools-More-1.6.0-compat-compressed.js
+MooTools-More-1.6.0-compat.js
