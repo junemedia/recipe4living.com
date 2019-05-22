@@ -54,7 +54,19 @@
   <?php if ((substr($_SERVER['REQUEST_URI'],0,9) != '/recipes/' && !strstr($_SERVER['REQUEST_URI'],'.htm'))) { ?>
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/mootoolsCore.js,mootoolsMore.js"></script>
   <?php } ?>
-  <script type="text/javascript" src="<?= COREASSETURL ?>/js/StickyWin.js,Interface.js,Nav.js,HistoryManager.js,Forms.js,BrowseArea.js,Autocompleter.js,Milkbox.js,Wizard.js,sifr.js,Slideshow.js,Articles.js?ver=6wnp"></script>
+  <!--script type="text/javascript" src="<?= COREASSETURL ?>/js/StickyWin.js,Interface.js,Nav.js,HistoryManager.js,Forms.js,BrowseArea.js,Autocompleter.js,Milkbox.js,Wizard.js,sifr.js,Slideshow.js,Articles.js?ver=6wnp"></script-->
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/StickyWin.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/Interface.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/Nav.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/HistoryManager.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/Forms.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/BrowseArea.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/Autocompleter.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/Milkbox.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/Wizard.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/sifr.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/Slideshow.js?ver=6wnp"></script>
+  <script type="text/javascript" src="<?= COREASSETURL ?>/js/Articles.js?ver=6wnp"></script>
 
   <?php //include BLUPATH_TEMPLATES.'/site/ads/adthrive_js.php'; ?>
 
