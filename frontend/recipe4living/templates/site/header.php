@@ -160,10 +160,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PPMDBL');</script>
 <!-- End Google Tag Manager -->
 
-
-<!--Sticky Menu-->
-<script type="text/javascript" src="<?= COREASSETURL; ?>/js/stickymenu.js"></script>
-
 <div id="nav-header">
   <div class="site-wrapper">
     <div id="logo">
