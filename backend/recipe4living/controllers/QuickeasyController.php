@@ -13,7 +13,7 @@ class Recipe4livingQuickeasyController extends Recipe4livingNewslettersControlle
     parent::__construct($args);
     $this->_newsletter = array(
       'id' => 'quickeasy',
-      'label' => 'Quick and Easy'
+      'label' => 'Simple Recipes'
     );
     $this->_campaignBlank = array(
       'id'         => 0,
