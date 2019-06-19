@@ -2,6 +2,7 @@
 leon/
 test/
 /assets/
+assets
 cache_rss/
 sitemap*
 *.sql
