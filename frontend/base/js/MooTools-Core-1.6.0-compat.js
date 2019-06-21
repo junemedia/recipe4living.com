@@ -820,8 +820,11 @@ Function.implement({
 });
 
 //<1.2compat>
-
+/*
+ * This stomps all over ES5 bind functionality, must come out - JS
+ *
 delete Function.prototype.bind;
+*/
 
 Function.implement({
 
@@ -842,6 +845,9 @@ Function.implement({
 		};
 	},
 
+  /*
+   * This stomps all over ES5 bind functionality, must come out - JS
+   *
 	bind: function(bind, args){
 		var self = this;
 		if (args != null) args = Array.convert(args);
@@ -849,6 +855,7 @@ Function.implement({
 			return self.apply(bind, args || arguments);
 		};
 	},
+	*/
 
 	bindWithEvent: function(bind, args){
 		var self = this;
