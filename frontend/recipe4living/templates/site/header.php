@@ -61,7 +61,6 @@
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/HistoryManager.js?ver=6wnp"></script>
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/Forms.js?ver=6wnp"></script>
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/BrowseArea.js?ver=6wnp"></script>
-  <script type="text/javascript" src="<?= COREASSETURL ?>/js/Autocompleter.js?ver=6wnp"></script>
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/Milkbox.js?ver=6wnp"></script>
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/Wizard.js?ver=6wnp"></script>
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/sifr.js?ver=6wnp"></script>

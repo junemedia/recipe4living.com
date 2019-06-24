@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><?= $title; ?></title>
 	<meta name="author" content="blubolt Design, www.blubolt.com" />
-	<link rel="stylesheet" href="<?= COREASSETURL; ?>/css/autocompleter.css,adminstyles.css,site.css,Table.css,stickywin.css,styles.css,stylesie.css" />
+	<link rel="stylesheet" href="<?= COREASSETURL; ?>/css/adminstyles.css,site.css,Table.css,stickywin.css,styles.css,stylesie.css" />
 </head>
 
 <body<?= $loadScript ? ' onload="'.$loadScript.'"' : '' ?>>

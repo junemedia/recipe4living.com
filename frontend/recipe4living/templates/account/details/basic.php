@@ -52,19 +52,6 @@
 			<dt><label>Location</label></dt>
 			<dd>
 				<input name="form_location" class="textinput" type="text" id="form_location" size="30" maxlength="100" value="<?= $location ?>" />
-				<?php /*Template::startScript(); ?>
-
-					// Location input
-					var locationInput = $('form_location');
-
-					// Location autocompleter
-					new Autocompleter.Request.JSON(locationInput, SITEURL + '/locations/search/', {postVar: 'criteria'});
-
-					// Custom validator
-					locationInput.addClass('validate-custom');
-					locationInput.set('validatorProps', JSON.encode({custom_error: 'Please enter a valid location from the autocompleter.', custom_url: SITEURL + '/locations/'}));
-
-				<?php Template::endScript();*/ ?>
 			</dd>
 
 			<dt><label for="form_about">A little bit about you</label></dt>
