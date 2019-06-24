@@ -56,7 +56,7 @@
   <?php } ?>
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/StickyWin.js,Interface.js,Nav.js,HistoryManager.js,Forms.js,BrowseArea.js,Milkbox.js,Wizard.js,Slideshow.js,Articles.js?ver=6wnp"></script>
 
-  <?php //include BLUPATH_TEMPLATES.'/site/ads/adthrive_js.php'; ?>
+  <?php include BLUPATH_TEMPLATES.'/site/ads/adthrive_js.php'; ?>
 
 
   <script type="text/javascript" src="<?= COREASSETURL ?>/js/jquery.min.js,jquery.fancybox-1.3.4.pack.js,jquery.cookie.js"></script>
@@ -123,7 +123,7 @@
     });
   </script>
 
-  <?php //include BLUPATH_TEMPLATES.'/site/ads/medianet_js.php'; ?>
+  <?php include BLUPATH_TEMPLATES.'/site/ads/medianet_js.php'; ?>
 
   <?php } ?>
 
