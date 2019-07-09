@@ -140,9 +140,4 @@
       <?php include BLUPATH_TEMPLATES.'/site/ads/medianet_bta.html'; ?>
     </div>
 
-    <br>
-    <div class="ad screenonly">
-      <?php include BLUPATH_TEMPLATES.'/site/ads/outbrain_smartfeed.html'; ?>
-    </div>
-
     <?php include BLUPATH_TEMPLATES.'/recipes/details/similar-dishes.php'; ?>

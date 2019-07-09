@@ -66,11 +66,6 @@
         <div class="clear2"></div>
         <?php include BLUPATH_TEMPLATES.'/site/ads/lockerdome.html'; ?>
 
-        <div class="clear2"></div>
-        <div class="ad screenonly">
-          <?php include BLUPATH_TEMPLATES.'/site/ads/outbrain_smartfeed.html'; ?>
-        </div>
-
         <div class="clear"></div>
       </div>
     </div>
