@@ -10,6 +10,8 @@
   <title><?= $title; ?></title>
   <?php } ?>
 
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests;block-all-mixed-content">
+
   <?php if (strstr($_SERVER['REQUEST_URI'],'subctr')) { ?>
   <meta name="keywords" content="recipe newsletters, free recipe newsletter, recipe newsletter, daily recipe newsletter, crockpot recipe newsletter, slow cooker recipe newsletter, free slow cooker recipes, free crockpot recipes, free crockpot recipe newsletter budget cooking recipes, budget cooking newsletter,party recipes and tips, party recipe newsletter, quick and easy recipe newsletter, quick and easy recipes" />
   <?php } else { ?>
