@@ -40,11 +40,6 @@
 						<a href="<?= SITEURL ?>/articles"><span>Articles</span></a>
 					</div>
 				</li>-->
-				<li class="parent">
-					<div class="nav-item">
-						<a href="http://win.recipe4living.com/" target="_blank"><span>Giveaways</span></a>
-					</div>
-				</li>
 
 				<li class="parent">
 					<div class="nav-item">
